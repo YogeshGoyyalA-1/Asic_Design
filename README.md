@@ -16,4 +16,3 @@ This repository contains all the documentation, snapshots, and code files relate
 
 ## Labs
 
-- [Lab 1](./Lab1/README.md): Sum of Natural Numbers
