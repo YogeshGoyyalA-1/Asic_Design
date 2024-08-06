@@ -20,7 +20,10 @@ This repository contains all the documentation, snapshots, and code files relate
 
 ### Step-by-Step Procedure:
 
-**Step 1:** Create a new `sum1ton.c` file in the specified directory (asic_flow) in a Linux environment.
+**Step 1:** Create a new `sum1ton.c` file in the specified directory (asic_flow) in a Linux environment using gedit editor.
 ![Step 1](./Lab1/1.png)
+
+Save your C program
+(./lab1/2.png)
 
 
