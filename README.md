@@ -29,5 +29,5 @@ Save your C program
 **Step 2:** Compile the source code `sum1ton.c` using gcc compiler (`gcc sum1ton.c`) which will generate an executable a.out file. Run the executable file(`./a.out`) in terminal window to view the output.
 ![3.png](./Lab1/3.png)
 
-
+**Observation** Sum of first 100 natural numbers come out to be 5050
 
