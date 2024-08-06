@@ -31,7 +31,7 @@ Save your C program
 
 **Observation** Sum of first 100 natural numbers come out to be 5050
 
-<details>
+</details>
 
 <details>
 <summary><strong>Laboratory 2:</strong> Compile the C program developed in Laboratory 1 using the RISCV compiler.</summary>
