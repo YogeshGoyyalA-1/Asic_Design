@@ -38,3 +38,5 @@ Save your C program
 
 ### Step-by-Step Procedure:
 
+```bash
+riscv64-unknown-elf-gcc sum1ton.c -o sum1ton_riscv
