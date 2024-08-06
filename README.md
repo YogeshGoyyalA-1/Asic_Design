@@ -22,13 +22,14 @@ This repository contains all the documentation and snapshots related to the expe
 **Step 1:** Create a new `sum1ton.c` file in the specified directory (asic_flow) in a Linux environment using gedit editor.
 ![Step 1](./Lab1/1.png)
 
-Save your C program
+- Save your C program
 ![2.png](./Lab1/2.png)
 
 **Step 2:** Compile the source code `sum1ton.c` using gcc compiler (`gcc sum1ton.c`) which will generate an executable a.out file. Run the executable file(`./a.out`) in terminal window to view the output.
 ![3.png](./Lab1/3.png)
 
-**Observation** Sum of first 100 natural numbers come out to be 5050
+**Observation** 
+- Sum of first 100 natural numbers come out to be 5050
 
 </details>
 
@@ -43,7 +44,7 @@ Save your C program
 ```bash
 riscv64-unknown-elf-gcc -O1 -mabi=lp64-march=rv64i -o sum1ton.o  sum1ton.c
 ```
-Also to check whether sum1ton.o has been created or not type the following command
+- Also to check whether sum1ton.o has been created or not type the following command
 ```bash
 ls -ltr sum1ton.o
 ```
@@ -57,14 +58,14 @@ riscv64-unknown-elf-objdump -d sum1ton.o
 ![Step 1](./Lab2/4.png)
 
 ![Step 1](./Lab2/6.png)
-It will give a bunch of assembly language code
+- It will give a bunch of assembly language code
 
 **Step 3:** Use pipe less command with the command used in step 2 as shown below which allows us to scroll through the output interactively.
 
 ```bash
 riscv64-unknown-elf-objdump -d sum1ton.o | less
 ```
-The assembly version of the C program is displayed. Type /main to navigate to the section of the code related to the main function (int main()).
+- The assembly version of the C program is displayed. Type /main to navigate to the section of the code related to the main function (int main()).
 
 ![Step 1](./Lab2/7.png)
 ![Step 1](./Lab2/8.png)
