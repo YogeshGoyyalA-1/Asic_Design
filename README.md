@@ -38,6 +38,8 @@ Save your C program
 
 ### Step-by-Step Procedure:
 
+##**Compilation using O1 flag**
+
 **Step 1:** Compile `sum1ton.c` using RISCV Compiler using the command given below
 ```bash
 riscv64-unknown-elf-gcc -O1 -mabi=lp64-march=rv64i -o sum1ton.o  sum1ton.c
