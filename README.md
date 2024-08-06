@@ -24,6 +24,6 @@ This repository contains all the documentation, snapshots, and code files relate
 ![Step 1](./Lab1/1.png)
 
 Save your C program
-(./lab1/2.png)
+(./Lab1/2.png)
 
 
