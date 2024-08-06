@@ -18,8 +18,6 @@ This repository contains all the documentation, snapshots, and code files relate
 <details>
 <summary><strong>Laboratory 1:</strong> Create a C program to find the sum of `n` natural numbers, compile it using the GCC compiler, and verify the output after execution.</summary>
 
-# **Lab1A**
-
 ### Step-by-Step Procedure:
 
 **Step 1:** Create a new `sum1ton.c` file in the specified directory (asic_flow) in a Linux environment using gedit editor.
@@ -32,4 +30,10 @@ Save your C program
 ![3.png](./Lab1/3.png)
 
 **Observation** Sum of first 100 natural numbers come out to be 5050
+
+
+<details>
+<summary><strong>Laboratory 2:</strong> Compile the C program developed in Laboratory 1 using the RISCV compiler.</summary>
+
+### Step-by-Step Procedure:
 
