@@ -71,3 +71,7 @@ The assembly version of the C program is displayed. Type /main to navigate to th
 ![Step 1](./Lab1/8.png)
 
 - To determine the number of instructions in the "main" section, you can either count each instruction individually or use an alternative method: subtract the address of the first instruction in the subsequent section from the address of the first instruction in the "main" section. Then, divide the result by 4, as each instruction occupies 4 bytes in a byte-addressable memory system.
+
+![Step 1](./Lab1/10.png)
+
+-No of instructions in the main function comes out to be (0x101C0 - 0x10184)/4 = 0x3C/4 = 0xF = 15 instructions
