@@ -49,15 +49,15 @@ Also to check whether sum1ton.o has been created or not type the following comma
 ls -ltr sum1ton.o
 ```
 
-![Step 1](./Lab1/5.png)
+![Step 1](./Lab2/5.png)
 
 **Step 2:** To generate the assembly code of the c program written type the following command in a new terminal window
 ```bash
 riscv64-unknown-elf-objdump -d sum1ton.o
 ```
-![Step 1](./Lab1/4.png)
+![Step 1](./Lab2/4.png)
 
-![Step 1](./Lab1/6.png)
+![Step 1](./Lab2/6.png)
 It will give a bunch of assembly language code
 
 **Step 3:** Use pipe less command with the command used in step 2 as shown below which allows us to scroll through the output interactively.
@@ -67,12 +67,12 @@ riscv64-unknown-elf-objdump -d sum1ton.o | less
 ```
 The assembly version of the C program is displayed. Type /main to navigate to the section of the code related to the main function (int main()).
 
-![Step 1](./Lab1/7.png)
-![Step 1](./Lab1/8.png)
+![Step 1](./Lab2/7.png)
+![Step 1](./Lab2/8.png)
 
 - To determine the number of instructions in the "main" section, you can either count each instruction individually or use an alternative method: subtract the address of the first instruction in the subsequent section from the address of the first instruction in the "main" section. Then, divide the result by 4, as each instruction occupies 4 bytes in a byte-addressable memory system.
 
-![Step 1](./Lab1/10.jpg)
+![Step 1](./Lab2/10.jpg)
 
 - No of instructions in the main function comes out to be (0x101C0 - 0x10184)/4 = 0x3C/4 = 0xF = 15 instructions
 
@@ -82,7 +82,8 @@ The assembly version of the C program is displayed. Type /main to navigate to th
 ```bash
 riscv64-unknown-elf-gcc -Ofast -mabi=lp64-march=rv64i -o sum1ton.o  sum1ton.c
 ```
-![Step 1](./Lab1/11.jpg)
+![Step 1](./Lab2/9.png)
+![Step 1](./Lab2/11.jpg)
 
 - Generate the assembly code for the file and observe that the number of bytes utilized decreases from 15 to 12.
 
