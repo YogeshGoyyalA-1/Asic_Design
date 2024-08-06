@@ -2,7 +2,7 @@
 
 ## GitHub Repository: Yogesh Goyal, IMT2021542
 
-This repository contains all the documentation, snapshots, and code files related to the experiments conducted during the lab sessions for the ASIC Design Class
+This repository contains all the documentation and snapshots related to the experiments conducted during the lab sessions for the ASIC Design Class
 
 ---
 
@@ -10,7 +10,6 @@ This repository contains all the documentation, snapshots, and code files relate
 
 - **Documentation:** Detailed explanations and observations for each experiment.
 - **Snapshots:** Visual aids showing the procedures and steps involved in the experiments.
-- **Code Files:** Source code for the experiments performed.
 
 ---
 
