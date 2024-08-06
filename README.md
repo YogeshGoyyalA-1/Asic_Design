@@ -59,3 +59,12 @@ riscv64-unknown-elf-objdump -d sum1ton.o
 
 ![Step 1](./Lab1/6.png)
 It will give a bunch of assembly language code
+
+**Step 3:** Use pipe less command with the command used in step 2 as shown below which allows us to scroll through the output interactively.
+
+```bash
+riscv64-unknown-elf-objdump -d sum1ton.o | less
+```
+The assembly version of the C program is displayed. Type /main to navigate to the section of the code related to the main function (int main()).
+
+![Step 1](./Lab1/7.png)
