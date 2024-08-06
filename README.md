@@ -56,4 +56,6 @@ ls -ltr sum1ton.o
 riscv64-unknown-elf-objdump -d sum1ton.o
 ```
 ![Step 1](./Lab1/4.png)
+
+![Step 1](./Lab1/6.png)
 It will give a bunch of assembly language code
