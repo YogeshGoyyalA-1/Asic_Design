@@ -16,5 +16,11 @@ This repository contains all the documentation, snapshots, and code files relate
 
 ## Labs
 <details>
-<summary><strong>Laboratory 1:</strong> Develop a C program to calculate the sum of n natural numbers, compile it using the GCC compiler, and confirm the program's output after execution.</summary>
+<summary><strong>Laboratory 1:</strong> Create a C program to find the sum of `n` natural numbers, compile it using the GCC compiler, and verify the output after execution.</summary>
+
+### Step-by-Step Procedure:
+
+**Step 1:** Create a new `sum1ton.c` file in the specified directory (ASIC Class) in a Linux environment.
+![Step 1](./Lab1/1.png)
+
 
