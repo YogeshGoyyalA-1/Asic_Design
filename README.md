@@ -51,3 +51,9 @@ ls -ltr sum1ton.o
 
 ![Step 1](./Lab1/5.png)
 
+**Step 2:** To generate the assembly code of the c program written type the following command in a new terminal window
+```bash
+riscv64-unknown-elf-objdump -d sum1ton.o
+```
+![Step 1](./Lab1/4.png)
+It will give a bunch of assembly language code
