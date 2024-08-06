@@ -20,7 +20,7 @@ This repository contains all the documentation, snapshots, and code files relate
 
 ### Step-by-Step Procedure:
 
-**Step 1:** Create a new `sum1ton.c` file in the specified directory (ASIC Class) in a Linux environment.
+**Step 1:** Create a new `sum1ton.c` file in the specified directory (asic_flow) in a Linux environment.
 ![Step 1](./Lab1/1.png)
 
 
