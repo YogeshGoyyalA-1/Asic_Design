@@ -74,4 +74,4 @@ The assembly version of the C program is displayed. Type /main to navigate to th
 
 ![Step 1](./Lab1/10.jpg)
 
--No of instructions in the main function comes out to be (0x101C0 - 0x10184)/4 = 0x3C/4 = 0xF = 15 instructions
+- No of instructions in the main function comes out to be (0x101C0 - 0x10184)/4 = 0x3C/4 = 0xF = 15 instructions
