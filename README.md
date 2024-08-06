@@ -26,7 +26,7 @@ This repository contains all the documentation, snapshots, and code files relate
 Save your C program
 ![2.png](./Lab1/2.png)
 
-**Step 1:** Compile the source code `sum1ton.c` using gcc compiler(gcc sum1ton.c) which will generate an executable a.out file. Run the executable in terminal window to view the output.
+**Step 2:** Compile the source code `sum1ton.c` using gcc compiler(gcc sum1ton.c) which will generate an executable a.out file. Run the executable in terminal window to view the output.
 ![3.png](./Lab1/3.png)
 
 
