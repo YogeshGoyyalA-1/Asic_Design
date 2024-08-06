@@ -16,5 +16,5 @@ This repository contains all the documentation, snapshots, and code files relate
 
 ## Labs
 <details>
-<summary><strong>Laboratory 1:</strong> Create a C program to find the sum of n natural numbers, compile it using gcc compiler. Verify the output of the C program after execution.</summary>
+<summary><strong>Laboratory 1:</strong> Develop a C program to calculate the sum of n natural numbers, compile it using the GCC compiler, and confirm the program's output after execution.</summary>
 
