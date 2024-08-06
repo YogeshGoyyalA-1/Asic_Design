@@ -75,3 +75,17 @@ The assembly version of the C program is displayed. Type /main to navigate to th
 ![Step 1](./Lab1/10.jpg)
 
 - No of instructions in the main function comes out to be (0x101C0 - 0x10184)/4 = 0x3C/4 = 0xF = 15 instructions
+
+# **Compilation using Ofast flag**
+
+**Step 4:** Repeat Step1 and instead of O1 flag use Ofast Flag and follow all the steps after that in the similar manner
+```bash
+riscv64-unknown-elf-gcc -Ofast -mabi=lp64-march=rv64i -o sum1ton.o  sum1ton.c
+```
+![Step 1](./Lab1/11.jpg)
+
+- Generate the assembly code for the file and observe that the number of bytes utilized decreases from 15 to 12.
+
+**Observation** 
+- **O1**: Provides moderate optimizations, balancing performance and compilation time, and adheres strictly to standards.
+- **Ofast**: Applies aggressive optimizations for maximum performance, but might break some programs as it may not follow all standards.
