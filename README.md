@@ -38,7 +38,7 @@ Save your C program
 
 ### Step-by-Step Procedure:
 
-##**Compilation using O1 flag**
+# **Compilation using O1 flag**
 
 **Step 1:** Compile `sum1ton.c` using RISCV Compiler using the command given below
 ```bash
