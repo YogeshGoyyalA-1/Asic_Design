@@ -44,6 +44,10 @@ Save your C program
 ```bash
 riscv64-unknown-elf-gcc -O1 -mabi=lp64-march=rv64i -o sum1ton.o  sum1ton.c
 ```
+Also to check whether sum1ton.o has been created or not type the following command
+```bash
+ls -ltr sum1ton.o
+```
 
 ![Step 1](./Lab1/5.png)
 
