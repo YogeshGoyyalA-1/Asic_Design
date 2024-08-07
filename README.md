@@ -111,7 +111,7 @@ riscv64-unknown-elf-gcc -Ofast -mabi=lp64-march=rv64i -o sum1ton.o  sum1ton.c
 riscv64-unknown-elf-gcc -O1 -mabi=lp64-march=rv64i -o sum1ton.o  sum1ton.c
 ```
 **Step 2:** Now we have compiled our program using RISCV compiler and we need to run in order to get the output 
-similar to the ./a.out we do using gcc compiler. To do that Use Spike Simulator and type the following command 
+similar to the ./a.out we do using gcc compiler. To do that use Spike Simulator and type the following command 
 given below
 
 ```bash
@@ -119,3 +119,6 @@ spike pk sum1ton.o
 ```
 
 ![Step 1](./Lab3/1.png)
+
+**Observation** 
+- We have verified that output is same using the gcc and the riscv compiler
