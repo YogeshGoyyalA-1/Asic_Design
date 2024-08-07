@@ -151,3 +151,13 @@ reg 0 a2
 
 **Observation**
 - Notably, the lui a2, 0x1 instruction changes the a2 register's value from `0x0000000000000000` to `0x0000000000001000`.
+
+Next, we will manually debug the instruction addi sp, sp, -16, which reduces the stack pointer (sp) by 16. To do this run all the instructions till 100b8 by using the following command
+```bash
+until pc 0 100b8
+```
+To check stack pointer's Value type the following command 
+```bash
+reg 0 sp
+```
+![Step 1](./Lab3/6.png)
