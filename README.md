@@ -167,6 +167,7 @@ To check stack pointer's Value type the following command
 reg 0 sp
 ```
 ![Step 1](./Lab3/4.png)
+![Step 1](./Lab3/5.jpeg) ![Step 1](./Lab3/6.jpeg)
 
 **Observation**
 - In the assembly code, it's evident that the stack pointer's value is being decreased by `0x10` in hexadecimal notation. This hexadecimal value translates to a reduction of 16 in decimal notation. Thus, the stack pointer is effectively being reduced by `16` units in decimal form.
