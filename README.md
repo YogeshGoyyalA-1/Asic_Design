@@ -106,6 +106,8 @@ riscv64-unknown-elf-gcc -Ofast -mabi=lp64-march=rv64i -o sum1ton.o  sum1ton.c
 
 ### Step-by-Step Procedure:
 
+# **Compilation**
+
 **Step 1:** Compile `sum1ton.c` using RISCV Compiler using the command given below
 ```bash
 riscv64-unknown-elf-gcc -O1 -mabi=lp64-march=rv64i -o sum1ton.o  sum1ton.c
@@ -122,3 +124,5 @@ spike pk sum1ton.o
 
 **Observation** 
 - We have verified that output is same using the gcc and the riscv compiler
+
+# **Debugging**
