@@ -34,7 +34,7 @@ This repository contains all the documentation and snapshots related to the expe
 </details>
 
 <details>
-<summary><strong>Laboratory 2:</strong> Compile the C program developed in Laboratory 1 using the RISCV compiler.</summary>
+<summary><strong>Laboratory 2:</strong> Compile the C program written in Laboratory 1 using the RISCV compiler.</summary>
 
 ### Step-by-Step Procedure:
 
