@@ -44,6 +44,15 @@ This repository contains all the documentation and snapshots related to the expe
 ```bash
 riscv64-unknown-elf-gcc -O1 -mabi=lp64-march=rv64i -o sum1ton.o  sum1ton.c
 ```
+
+- `riscv64-unknown-elf-gcc`: The compiler for RISC-V 64-bit target.
+- `O1`: Applies moderate optimizations for a good balance between performance and compilation time.
+- `mabi=lp64`: Specifies the ABI (Application Binary Interface) as LP64, meaning "Long and Pointer are 64-bit."
+- `march=rv64i`: Sets the architecture to RISC-V 64-bit with the RV64I instruction set.
+- `o sum1ton.o`: Outputs the compiled code to a file named sum1ton.o.
+- `sum1ton.c`: The source file to be compiled.
+
+
 - Also to check whether sum1ton.o has been created or not type the following command
 ```bash
 ls -ltr sum1ton.o
