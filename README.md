@@ -142,3 +142,4 @@ We will let the Spike debugger run until it reaches the 100b0 instruction within
 ```bash
 until pc 0 100b0
 ```
+![Step 1](./Lab3/3.png)
