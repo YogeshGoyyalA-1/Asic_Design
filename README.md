@@ -150,4 +150,4 @@ reg 0 a2
 ![Step 1](./Lab3/3.png)
 
 **Observation**
-- Notably, the lui a2, 0x1 instruction changes the a2 register's value from 0x0000000000000000 to 0x0000000000001000.
+- Notably, the lui a2, 0x1 instruction changes the a2 register's value from `0x0000000000000000` to `0x0000000000001000`.
