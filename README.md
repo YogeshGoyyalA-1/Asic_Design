@@ -126,3 +126,12 @@ spike pk sum1ton.o
 - We have verified that output is same using the gcc and the riscv compiler
 
 # **Debugging**
+
+## Debugging the Assembly Code
+
+To debug the assembly code of your compiled C program using the Spike simulator, follow these steps:
+
+**Step 1:** Run the following command given below
+```bash
+spike -d pk sum1ton.o
+```
