@@ -137,7 +137,7 @@ To debug the assembly code of your compiled C program using the Spike simulator,
 ```bash
 spike -d pk sum1ton.o
 ```
-We will let the Spike debugger run until it reaches the 100b0 instruction within the main function by running the command given below. From there, we will proceed with manual debugging, checking the a2 register before and after execution. Notably, the lui a2, 0x1 instruction changes the a2 register's value from 0x0000000000000000 to 0x0000000000001000. To move on to next instruction press Enter
+We will let the Spike debugger run until it reaches the 100b0 instruction within the main function by running the command given below. From there, we will proceed with manual debugging, checking the a2 register before and after execution.To move on to next instruction press Enter
 
 ```bash
 until pc 0 100b0
@@ -148,3 +148,6 @@ reg 0 a2
 ```
 
 ![Step 1](./Lab3/3.png)
+
+**Observation**
+- Notably, the lui a2, 0x1 instruction changes the a2 register's value from 0x0000000000000000 to 0x0000000000001000.
