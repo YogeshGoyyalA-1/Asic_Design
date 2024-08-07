@@ -137,6 +137,12 @@ To debug the assembly code of your compiled C program using the Spike simulator,
 ```bash
 spike -d pk sum1ton.o
 ```
+
+- `spike`: The Spike RISC-V simulator.
+- `d`: Starts the simulator in debug mode.
+- `pk`: Proxy kernel, a small environment that provides minimal OS services.
+- `sum1ton.o`: The compiled object file of your C program.
+
 We will let the Spike debugger run until it reaches the 100b0 instruction within the main function by running the command given below. From there, we will proceed with manual debugging, checking the a2 register before and after execution.To move on to next instruction press Enter
 
 ```bash
