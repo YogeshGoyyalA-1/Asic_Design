@@ -100,3 +100,8 @@ riscv64-unknown-elf-gcc -Ofast -mabi=lp64-march=rv64i -o sum1ton.o  sum1ton.c
 - **O1**: Provides moderate optimizations, balancing performance and compilation time, and adheres strictly to standards.
 - **Ofast**: Applies aggressive optimizations for maximum performance, but might break some programs as it may not follow all standards.
 </details>
+
+<details>
+<summary><strong>Laboratory 3:</strong> Perfoming Spike Simulation and Debugging</summary>
+
+### Step-by-Step Procedure:
