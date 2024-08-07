@@ -167,6 +167,11 @@ To check stack pointer's Value type the following command
 reg 0 sp
 ```
 ![Step 1](./Lab3/4.png)
+<p align="center">
+  <img src="./Lab3/5.jpeg" alt="Image 1" width="45%" />
+  <img src="./Lab3/6.jpeg" alt="Image 2" width="45%" />
+</p>
+
 ![Step 1](./Lab3/5.jpeg) ![Step 1](./Lab3/6.jpeg)
 
 **Observation**
