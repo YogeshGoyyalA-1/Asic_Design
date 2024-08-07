@@ -129,6 +129,8 @@ spike pk sum1ton.o
 
 ## Debugging the Assembly Code
 
+![Step 1](./Lab3/2.png)
+
 To debug the assembly code of your compiled C program using the Spike simulator, follow these steps:
 
 **Step 1:** Run the following command given below
