@@ -160,4 +160,4 @@ To check stack pointer's Value type the following command
 ```bash
 reg 0 sp
 ```
-![Step 1](./Lab3/6.png)
+![Step 1](./Lab3/4.png)
