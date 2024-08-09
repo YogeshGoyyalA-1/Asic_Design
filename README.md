@@ -191,7 +191,7 @@ reg 0 sp
 - This format encompasses arithmetic and logical operations.
 - Suitable for operations involving three registers.
 - The R-type format includes fields for two source registers, one destination register, a function code, and an opcode.
-  - **Examples:** ADD, SUB, OR, XOR,AND etc.
+  - **Examples:** ADD, SUB, OR, XOR, AND etc.
   - **Format:**
     ```
     funct7 (7 bits): Function code for more instruction details.
@@ -203,7 +203,7 @@ reg 0 sp
     ```
 
 ## I Type
-- I-type instructions handle operations involving an immediate value and one or two registers.
+- I stand for immediate which means that operations use Registers and Immediate value for their execution and are not related with memory location
 - Commonly used for arithmetic with immediate values, load operations, and certain branch instructions.
 - The I-type format includes fields for a source register, destination register, an immediate value, a function code, and an opcode.
   - **Format:**
