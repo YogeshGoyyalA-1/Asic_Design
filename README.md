@@ -282,8 +282,9 @@ BEQ 10, r0, 15
 LW r3, r1, 2
 SLL r5, r1, r1
 ```
-
+```
 **ADD r0, r1, r2**
+```
 - Opcode for ADD = 0110011
 - rd = r0 = 00000
 - rs1 = r1 = 00001
@@ -292,7 +293,7 @@ SLL r5, r1, r1
 - func7 = 0000000
 - Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00010_00001_000_00000_0110011`
-
+```
 **SUB r2, r0, r1**
 - Opcode for SUB = 0110011
 - rd = r2 = 00010
@@ -302,7 +303,7 @@ SLL r5, r1, r1
 - func7 = 0100000
 - Instruction Type- R Type
 - **32-bit Instruction:** `0100000_00001_00000_000_00010_0110011`
-
+```
 **AND r1, r0, r2**
 - Opcode for AND = 0110011
 - rd = r1 = 00001
