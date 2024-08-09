@@ -184,14 +184,14 @@ reg 0 sp
 # RISC-V Instruction Formats
 
 
-**RISC-V has six different instruction formats.**
+**RISC-V architecture employs a variety of instruction formats to accommodate different types of operations. The six main formats are R-Type, I-Type, S-Type, B-Type, U-Type, and J-Type, each tailored for specific purposes like arithmetic, logical operations, immediate values, branching, memory access, and jumps. Below is a brief description of each format and its usage:**
 
 ## R Type
 - 'R' signifies register.
 - This format encompasses arithmetic and logical operations.
 - Suitable for operations involving three registers.
 - The R-type format includes fields for two source registers, one destination register, a function code, and an opcode.
-  - **Examples:** ADD, SUB, OR, XOR, etc.
+  - **Examples:** ADD, SUB, OR, XOR,AND etc.
   - **Format:**
     ```
     funct7 (7 bits): Function code for more instruction details.
@@ -199,7 +199,7 @@ reg 0 sp
     rs1 (5 bits): First source register.
     funct3 (3 bits): Function code for basic instruction details.
     rd (5 bits): Destination register.
-    opcode (7 bits): Base operation code for R-type instructions (0110011 for integer operations).
+    opcode (7 bits): Base operation code for R-type instructions.
     ```
 
 ## I Type
