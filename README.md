@@ -349,7 +349,7 @@ SLL r5, r1, r1
 - Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00100_00001_010_00000_0110011`
 ```
-7. ADDI r2, r2, 5**
+7. ADDI r2, r2, 5
 ```
 - Opcode for ADDI = 0010011
 - rd = r2 = 00010
@@ -385,20 +385,20 @@ SLL r5, r1, r1
 - Opcode for BNE = 1100011
 - rs1 = r0 = 00000
 - rs2 = r0 = 00000
-- imm = 000000 001010
+- imm[12:1] = 20 = 000000010100
 - func3 = 001
 - Instruction Type- B Type
-- **32-bit Instruction:** `0000000_00000_00000_001_01010_1100011`
+- **32-bit Instruction:** `0_000001_00000_00000_001_0100_0_1100011`
 ```
 11. BEQ r0, r0, 15
 ```
 - Opcode for BEQ = 1100011
 - rs1 = r0 = 00000
 - rs2 = r0 = 00000
-- imm = 000000 001111
+- Imm[12:1] = 15 = 000000001111
 - func3 = 000
 - Instruction Type- B Type
-- **32-bit Instruction:** `0000000_00000_00000_000_01111_1100011`
+- **32-bit Instruction:** `0_000000_00000_00000_000_1111_0_1100011`
 ```
 12. LW r3, r1, 2
 ```
