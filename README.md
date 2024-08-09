@@ -179,7 +179,10 @@ reg 0 sp
 <details>
 <summary><strong>Laboratory 4:</strong> Identifying Different RISC-V Instructions.</summary>
 
+![Step 1](./Lab4/1.png)
+
 # RISC-V Instruction Formats
+
 
 **RISC-V has six different instruction formats.**
 
