@@ -283,7 +283,7 @@ LW r3, r1, 2
 SLL r5, r1, r1
 ```
 ```
-**ADD r0, r1, r2**
+##ADD r0, r1, r2
 ```
 - Opcode for ADD = 0110011
 - rd = r0 = 00000
