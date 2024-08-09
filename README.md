@@ -216,7 +216,7 @@ reg 0 sp
     ```
 
 ## S Type
-- S-type instructions are used for store operations, storing data from a register to memory.
+- S stands for Store, meaning it stores register values into memory.
 - The S-type format includes fields for two source registers, an immediate value for the memory offset, a function code, and an opcode.
   - **Format:**
     ```
