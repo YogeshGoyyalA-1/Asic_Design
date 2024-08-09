@@ -408,7 +408,7 @@ LW r3, r1, 2
 - imm = 000000000010
 - func3 = 010
 - Instruction Type- I Type
-- *32-bit Instruction:** `000000000010_00001_010_00011_0000011`
+- **32-bit Instruction:** `000000000010_00001_010_00011_0000011`
 ```
 SLL r5, r1, r1
 ```
