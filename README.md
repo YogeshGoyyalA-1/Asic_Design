@@ -187,7 +187,7 @@ reg 0 sp
 **RISC-V architecture employs a variety of instruction formats to accommodate different types of operations. The six main formats are R-Type, I-Type, S-Type, B-Type, U-Type, and J-Type, each tailored for specific purposes like arithmetic, logical operations, immediate values, branching, memory access, and jumps. Below is a brief description of each format and its usage**
 
 ## R Type
-- 'R' signifies register.
+- 'R' stands for register which means that operations are carried on the Registers and not on memory location
 - This format encompasses arithmetic and logical operations.
 - Suitable for operations involving three registers.
 - The R-type format includes fields for two source registers, one destination register, a function code, and an opcode.
