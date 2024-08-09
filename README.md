@@ -275,7 +275,7 @@ reg 0 sp
 - rs2 = r2 = 00010
 - func3 = 000
 - func7 = 0000000
--Instruction Type- R Type
+- Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00010_00001_000_00000_0110011`
 
 **SUB r2, r0, r1**
@@ -285,7 +285,7 @@ reg 0 sp
 - rs2 = r1 = 00001
 - func3 = 000
 - func7 = 0100000
--Instruction Type- R Type
+- Instruction Type- R Type
 - **32-bit Instruction:** `0100000_00001_00000_000_00010_0110011`
 
 **AND r1, r0, r2**
@@ -295,7 +295,7 @@ reg 0 sp
 - rs2 = r2 = 00010
 - func3 = 111
 - func7 = 0000000
--Instruction Type- R Type
+- Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00010_00000_111_00001_0110011`
 
 **OR r8, r1, r5**
@@ -305,7 +305,7 @@ reg 0 sp
 - rs2 = r5 = 00101
 - func3 = 110
 - func7 = 0000000
--Instruction Type- R Type
+- Instruction Type- R Type
 - **R Type 32-bit Instruction:** `0000000_00101_00001_110_01000_0110011`
 
 **XOR r8, r0, r4**
@@ -315,7 +315,7 @@ reg 0 sp
 - rs2 = r4 = 00100
 - func3 = 100
 - func7 = 0000000
--Instruction Type- R Type
+- Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00100_00000_100_01000_0110011`
 
 **SLT r0, r1, r4**
@@ -325,7 +325,7 @@ reg 0 sp
 - rs2 = r4 = 00100
 - func3 = 010
 - func7 = 0000000
--Instruction Type- R Type
+- Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00100_00001_010_00000_0110011`
 
 **ADDI r2, r2, 5**
@@ -334,7 +334,7 @@ reg 0 sp
 - rs1 = r2 = 00010
 - imm = 000000000101
 - func3 = 000
--Instruction Type- I Type
+- Instruction Type- I Type
 - **I Type 32-bit Instruction:** `000000000101_00010_000_00010_0010011`
 
 **SW r2, r0, 4**
@@ -343,7 +343,7 @@ reg 0 sp
 - rs2 = r2 = 00010
 - imm = 0000000 0100
 - func3 = 010
--Instruction Type- S Type
+- Instruction Type- S Type
 - **32-bit Instruction:** `0000000_00010_00000_010_00100_0100011`
 
 **SRL r6, r1, r1**
@@ -353,7 +353,7 @@ reg 0 sp
 - rs2 = r1 = 00001
 - func3 = 101
 - func7 = 0000000
--Instruction Type- R Type
+- Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00001_00001_101_00110_0110011`
 
 **BNE r0, r0, 20**
@@ -362,7 +362,7 @@ reg 0 sp
 - rs2 = r0 = 00000
 - imm = 000000 001010
 - func3 = 001
--Instruction Type- B Type
+- Instruction Type- B Type
 - **32-bit Instruction:** `0000000_00000_00000_001_01010_1100011`
 
 **BEQ r0, r0, 15**
@@ -371,7 +371,7 @@ reg 0 sp
 - rs2 = r0 = 00000
 - imm = 000000 001111
 - func3 = 000
--Instruction Type- B Type
+- Instruction Type- B Type
 - **32-bit Instruction:** `0000000_00000_00000_000_01111_1100011`
 
 **LW r3, r1, 2**
@@ -380,7 +380,7 @@ reg 0 sp
 - rs1 = r1 = 00001
 - imm = 000000000010
 - func3 = 010
--Instruction Type- I Type
+- Instruction Type- I Type
 - *32-bit Instruction:** `000000000010_00001_010_00011_0000011`
 
 **SLL r5, r1, r1**
@@ -390,7 +390,7 @@ reg 0 sp
 - rs2 = r1 = 00001
 - func3 = 001
 - func7 = 0000000
--Instruction Type- R Type
+- Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00001_00001_001_00101_0110011`
 
 | Instruction | Type | 32-bit Representation                      | Hexadecimal Notation  |
