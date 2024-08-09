@@ -266,7 +266,22 @@ reg 0 sp
     opcode (7 bits): Operation code for J-type instructions.
     ```
 
-## Decoding RISC-V Instructions
+## Analyzing and Decoding each Instruction given to us
+```
+ADD r0, r1, r2
+SUB r2, r0, r1
+AND r1, r0, r2
+OR r8, r1, r5
+XOR r8, r0, r4
+SLT r0, r1, r4
+ADDI r2, r2, 5
+SW r2, r0, 4
+SRL r6, r1, r1
+BNE r0, r0, 20
+BEQ 10, r0, 15
+LW r3, r1, 2
+SLL r5, r1, r1
+```
 
 **ADD r0, r1, r2**
 - Opcode for ADD = 0110011
