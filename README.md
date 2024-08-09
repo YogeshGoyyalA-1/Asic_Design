@@ -283,7 +283,7 @@ LW r3, r1, 2
 SLL r5, r1, r1
 ```
 ```
-##ADD r0, r1, r2
+ADD r0, r1, r2
 ```
 - Opcode for ADD = 0110011
 - rd = r0 = 00000
@@ -294,7 +294,8 @@ SLL r5, r1, r1
 - Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00010_00001_000_00000_0110011`
 ```
-**SUB r2, r0, r1**
+SUB r2, r0, r1
+```
 - Opcode for SUB = 0110011
 - rd = r2 = 00010
 - rs1 = r0 = 00000
@@ -304,7 +305,8 @@ SLL r5, r1, r1
 - Instruction Type- R Type
 - **32-bit Instruction:** `0100000_00001_00000_000_00010_0110011`
 ```
-**AND r1, r0, r2**
+AND r1, r0, r2
+```
 - Opcode for AND = 0110011
 - rd = r1 = 00001
 - rs1 = r0 = 00000
@@ -313,8 +315,9 @@ SLL r5, r1, r1
 - func7 = 0000000
 - Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00010_00000_111_00001_0110011`
-
-**OR r8, r1, r5**
+```
+OR r8, r1, r5
+```
 - Opcode for OR = 0110011
 - rd = r8 = 01000
 - rs1 = r1 = 00001
@@ -323,8 +326,9 @@ SLL r5, r1, r1
 - func7 = 0000000
 - Instruction Type- R Type
 - **R Type 32-bit Instruction:** `0000000_00101_00001_110_01000_0110011`
-
-**XOR r8, r0, r4**
+```
+XOR r8, r0, r4
+```
 - Opcode for XOR = 0110011
 - rd = r8 = 01000
 - rs1 = r0 = 00000
@@ -333,8 +337,9 @@ SLL r5, r1, r1
 - func7 = 0000000
 - Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00100_00000_100_01000_0110011`
-
-**SLT r0, r1, r4**
+```
+SLT r0, r1, r4
+```
 - Opcode for SLT = 0110011
 - rd = r0 = 00000
 - rs1 = r1 = 00001
@@ -343,8 +348,9 @@ SLL r5, r1, r1
 - func7 = 0000000
 - Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00100_00001_010_00000_0110011`
-
-**ADDI r2, r2, 5**
+```
+ADDI r2, r2, 5**
+```
 - Opcode for ADDI = 0010011
 - rd = r2 = 00010
 - rs1 = r2 = 00010
@@ -352,8 +358,9 @@ SLL r5, r1, r1
 - func3 = 000
 - Instruction Type- I Type
 - **I Type 32-bit Instruction:** `000000000101_00010_000_00010_0010011`
-
-**SW r2, r0, 4**
+```
+SW r2, r0, 4
+```
 - Opcode for SW = 0100011
 - rs1 = r0 = 00000
 - rs2 = r2 = 00010
@@ -361,8 +368,9 @@ SLL r5, r1, r1
 - func3 = 010
 - Instruction Type- S Type
 - **32-bit Instruction:** `0000000_00010_00000_010_00100_0100011`
-
-**SRL r6, r1, r1**
+```
+SRL r6, r1, r1
+```
 - Opcode for SRL = 0110011
 - rd = r6 = 00110
 - rs1 = r1 = 00001
@@ -371,8 +379,9 @@ SLL r5, r1, r1
 - func7 = 0000000
 - Instruction Type- R Type
 - **32-bit Instruction:** `0000000_00001_00001_101_00110_0110011`
-
-**BNE r0, r0, 20**
+```
+BNE r0, r0, 20
+```
 - Opcode for BNE = 1100011
 - rs1 = r0 = 00000
 - rs2 = r0 = 00000
@@ -380,8 +389,9 @@ SLL r5, r1, r1
 - func3 = 001
 - Instruction Type- B Type
 - **32-bit Instruction:** `0000000_00000_00000_001_01010_1100011`
-
-**BEQ r0, r0, 15**
+```
+BEQ r0, r0, 15
+```
 - Opcode for BEQ = 1100011
 - rs1 = r0 = 00000
 - rs2 = r0 = 00000
@@ -389,8 +399,9 @@ SLL r5, r1, r1
 - func3 = 000
 - Instruction Type- B Type
 - **32-bit Instruction:** `0000000_00000_00000_000_01111_1100011`
-
-**LW r3, r1, 2**
+```
+LW r3, r1, 2
+```
 - Opcode for LW = 0000011
 - rd = r3 = 00011
 - rs1 = r1 = 00001
@@ -398,8 +409,9 @@ SLL r5, r1, r1
 - func3 = 010
 - Instruction Type- I Type
 - *32-bit Instruction:** `000000000010_00001_010_00011_0000011`
-
-**SLL r5, r1, r1**
+```
+SLL r5, r1, r1
+```
 - Opcode for SLL = 0110011
 - rd = r5 = 00101
 - rs1 = r1 = 00001
