@@ -173,3 +173,206 @@ reg 0 sp
 
 **Observation**
 - In the assembly code, it's evident that the stack pointer's value is being decreased by `0x10` in hexadecimal notation. This hexadecimal value translates to a reduction of 16 in decimal notation. Thus, the stack pointer is effectively being reduced by `16` units in decimal form.
+
+</details>
+
+<details>
+<summary><strong>Laboratory 4:</strong> Identifying Different RISC-V Instructions.</summary>
+
+# RISC-V Instruction Formats
+
+**RISC-V has six different instruction formats.**
+
+## R Type
+- 'R' signifies register.
+- This format encompasses arithmetic and logical operations.
+- Suitable for operations involving three registers.
+- The R-type format includes fields for two source registers, one destination register, a function code, and an opcode.
+  - **Examples:** ADD, SUB, OR, XOR, etc.
+  - **Format:**
+    ```
+    funct7 (7 bits): Function code for more instruction details.
+    rs2 (5 bits): Second source register.
+    rs1 (5 bits): First source register.
+    funct3 (3 bits): Function code for basic instruction details.
+    rd (5 bits): Destination register.
+    opcode (7 bits): Base operation code for R-type instructions (0110011 for integer operations).
+    ```
+
+## I Type
+- I-type instructions handle operations involving an immediate value and one or two registers.
+- Commonly used for arithmetic with immediate values, load operations, and certain branch instructions.
+- The I-type format includes fields for a source register, destination register, an immediate value, a function code, and an opcode.
+  - **Format:**
+    ```
+    immediate (12 bits): Immediate value for operations.
+    rs1 (5 bits): Source register.
+    funct3 (3 bits): Function code for instruction details.
+    rd (5 bits): Destination register.
+    opcode (7 bits): Base operation code for I-type instructions.
+    ```
+
+## S Type
+- S-type instructions are used for store operations, storing data from a register to memory.
+- The S-type format includes fields for two source registers, an immediate value for the memory offset, a function code, and an opcode.
+  - **Format:**
+    ```
+    imm[11:5] (7 bits): Upper 7 bits of the immediate value.
+    rs2 (5 bits): Second source register (data to be stored).
+    rs1 (5 bits): First source register (base address register).
+    funct3 (3 bits): Function code for instruction details.
+    imm[4:0] (5 bits): Lower 5 bits of the immediate value.
+    opcode (7 bits): Base operation code for S-type instructions.
+    ```
+
+## B Type
+- B-type instructions manage conditional branch operations, altering the flow of execution based on comparisons between two registers.
+- The B-type format includes fields for two source registers, an immediate value for the branch offset, a function code, and an opcode.
+  - **Format:**
+    ```
+    imm[12] (1 bit): The 12th bit of the immediate value.
+    imm[10:5] (6 bits): The 10th to 5th bits of the immediate value.
+    rs2 (5 bits): Second source register.
+    rs1 (5 bits): First source register.
+    funct3 (3 bits): Function code for instruction details.
+    imm[4:1] (4 bits): The 4th to 1st bits of the immediate value.
+    imm[11] (1 bit): The 11th bit of the immediate value.
+    opcode (7 bits): Base operation code for B-type instructions.
+    ```
+
+## U Type
+- U-type instructions deal with large immediate values, typically for loading upper immediate values or computing addresses.
+- The U-type format includes fields for a destination register, a large immediate value, and an opcode.
+  - **Format:**
+    ```
+    immediate[31:12] (20 bits): The upper 20 bits of the immediate value.
+    rd (5 bits): Destination register.
+    opcode (7 bits): Base operation code for U-type instructions.
+    ```
+
+## J Type
+- J-type instructions handle jump operations, allowing for altering the program control flow by jumping to a specific address.
+- These are used for unconditional jumps, such as calling functions or implementing loops.
+  - **Format:**
+    ```
+    imm[20] (1 bit): The 20th bit of the immediate value.
+    imm[10:1] (10 bits): The 10th to 1st bits of the immediate value.
+    imm[11] (1 bit): The 11th bit of the immediate value.
+    imm[19:12] (8 bits): The 19th to 12th bits of the immediate value.
+    rd (5 bits): Destination register where the return address is stored.
+    opcode (7 bits): Operation code for J-type instructions.
+    ```
+
+## Decoding RISC-V Instructions
+
+**ADD r0, r1, r2**
+- Opcode for ADD = 0110011
+- rd = r0 = 00000
+- rs1 = r1 = 00001
+- rs2 = r2 = 00010
+- func3 = 000
+- func7 = 0000000
+- **R Type 32-bit Instruction:** `0000000_00010_00001_000_00000_0110011`
+
+**SUB r2, r0, r1**
+- Opcode for SUB = 0110011
+- rd = r2 = 00010
+- rs1 = r0 = 00000
+- rs2 = r1 = 00001
+- func3 = 000
+- func7 = 0100000
+- **R Type 32-bit Instruction:** `0100000_00001_00000_000_00010_0110011`
+
+**AND r1, r0, r2**
+- Opcode for AND = 0110011
+- rd = r1 = 00001
+- rs1 = r0 = 00000
+- rs2 = r2 = 00010
+- func3 = 111
+- func7 = 0000000
+- **R Type 32-bit Instruction:** `0000000_00010_00000_111_00001_0110011`
+
+**OR r8, r1, r5**
+- Opcode for OR = 0110011
+- rd = r8 = 01000
+- rs1 = r1 = 00001
+- rs2 = r5 = 00101
+- func3 = 110
+- func7 = 0000000
+- **R Type 32-bit Instruction:** `0000000_00101_00001_110_01000_0110011`
+
+**XOR r8, r0, r4**
+- Opcode for XOR = 0110011
+- rd = r8 = 01000
+- rs1 = r0 = 00000
+- rs2 = r4 = 00100
+- func3 = 100
+- func7 = 0000000
+- **R Type 32-bit Instruction:** `0000000_00100_00000_100_01000_0110011`
+
+**SLT r0, r1, r4**
+- Opcode for SLT = 0110011
+- rd = r0 = 00000
+- rs1 = r1 = 00001
+- rs2 = r4 = 00100
+- func3 = 010
+- func7 = 0000000
+- **R Type 32-bit Instruction:** `0000000_00100_00001_010_00000_0110011`
+
+**ADDI r2, r2, 5**
+- Opcode for ADDI = 0010011
+- rd = r2 = 00010
+- rs1 = r2 = 00010
+- imm = 000000000101
+- func3 = 000
+- **I Type 32-bit Instruction:** `000000000101_00010_000_00010_0010011`
+
+**SW r2, r0, 4**
+- Opcode for SW = 0100011
+- rs1 = r0 = 00000
+- rs2 = r2 = 00010
+- imm = 0000000 0100
+- func3 = 010
+- **S Type 32-bit Instruction:** `0000000_00010_00000_010_00100_0100011`
+
+**SRL r6, r1, r1**
+- Opcode for SRL = 0110011
+- rd = r6 = 00110
+- rs1 = r1 = 00001
+- rs2 = r1 = 00001
+- func3 = 101
+- func7 = 0000000
+- **R Type 32-bit Instruction:** `0000000_00001_00001_101_00110_0110011`
+
+**BNE r0, r0, 20**
+- Opcode for BNE = 1100011
+- rs1 = r0 = 00000
+- rs2 = r0 = 00000
+- imm = 000000 001010
+- func3 = 001
+- **B Type 32-bit Instruction:** `0000000_00000_00000_001_01010_1100011`
+
+**BEQ r0, r0, 15**
+- Opcode for BEQ = 1100011
+- rs1 = r0 = 00000
+- rs2 = r0 = 00000
+- imm = 000000 001111
+- func3 = 000
+- **B Type 32-bit Instruction:** `0000000_00000_00000_000_01111_1100011`
+
+**LW r3, r1, 2**
+- Opcode for LW = 0000011
+- rd = r3 = 00011
+- rs1 = r1 = 00001
+- imm = 000000000010
+- func3 = 010
+- **I Type 32-bit Instruction:** `000000000010_00001_010_00011_0000011`
+
+**SLL r5, r1, r1**
+- Opcode for SLL = 0110011
+- rd = r5 = 00101
+- rs1 = r1 = 00001
+- rs2 = r1 = 00001
+- func3 = 001
+- func7 = 0000000
+- **R Type 32-bit Instruction:** `0000000_00001_00001_001_00101_0110011`
