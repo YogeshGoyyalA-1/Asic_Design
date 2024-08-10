@@ -437,3 +437,18 @@ SLL r5, r1, r1
 | LW r3, r1, 2   | I    | 000000000010_00001_010_00011_0000011      | 0x0020A183            |
 | SLL r5, r1, r1 | R    | 0000000_00001_00001_001_00101_0110011     | 0x001092B3            |
 
+</details>
+
+<details>
+<summary><strong>Laboratory 4:</strong> Execute the RISC-V ISA in the Reference Verilog Code and Get the Output Waveform.</summary>
+
+## **Functional Simulation**
+
+**NOTE**: Here we have used Verilog code and testbench of RISC-V from the GitHub repository [iiitb_rv32i](https://github.com/iiitb-rv32i).
+
+1. To compile the Verilog code, use the following command:
+   ```bash
+   iverilog -o iiitb_rv32i iiitb_rv32i.v iiitb_rv32i_tb.v
+   ```
+
+
