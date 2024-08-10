@@ -444,7 +444,8 @@ SLL r5, r1, r1
 
 ## **Functional Simulation**
 
-**NOTE**: Here we have used Verilog code and testbench of RISC-V from the GitHub repository [iiitb_rv32i](https://github.com/iiitb-rv32i).
+*NOTE:* Here we have used Verilog code and the testbench of RISC-V from the GitHub repository [iiitb_rv32i](https://github.com/iiitb-rv32i).
+
 
 1. To compile the Verilog code, use the following command:
    ```bash
