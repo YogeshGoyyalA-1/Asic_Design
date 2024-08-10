@@ -452,4 +452,14 @@ SLL r5, r1, r1
    iverilog -o iiitb_rv32i iiitb_rv32i.v iiitb_rv32i_tb.v
    ```
 
+2. Run this command to execute the test bench and generate a .vcd file:
+     ```bash
+    vvp iiitb_rv32i_tb
+   ```
+3. View the Test Bench in GTKWave:
+
+```bash
+    gtkwave iiitb_rv32i.vcd
+   ```
+
 
