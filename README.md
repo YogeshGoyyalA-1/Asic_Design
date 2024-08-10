@@ -458,8 +458,8 @@ SLL r5, r1, r1
    ```
 3. View the Test Bench in GTKWave:
 
-```bash
-gtkwave iiitb_rv32i.vcd
-```
+    ```bash
+    gtkwave iiitb_rv32i.vcd
+    ```
 
 
