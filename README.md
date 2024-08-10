@@ -442,6 +442,42 @@ SLL r5, r1, r1
 <details>
 <summary><strong>Laboratory 5:</strong> Execute the RISC-V ISA in the Reference Verilog Code and Get the Output Waveform.</summary>
 
+### Differences between Standard RISC-V ISA and Hardcoded ISA
+
+| Operation           | Standard RISC-V ISA | Hardcoded ISA   |
+|---------------------|---------------------|-----------------|
+| ADD R6, R2, R1      | 32'h00110333         | 32'h02208300    |
+| SUB R7, R1, R2      | 32'h402083b3         | 32'h02209380    |
+| AND R8, R1, R3      | 32'h0030f433         | 32'h0230a400    |
+| OR R9, R2, R5       | 32'h005164b3         | 32'h02513480    |
+| XOR R10, R1, R4     | 32'h0040c533         | 32'h0240c500    |
+| SLT R1, R2, R4      | 32'h0045a0b3         | 32'h02415580    |
+| ADDI R12, R4, 5     | 32'h004120b3         | 32'h00520600    |
+| BEQ R0, R0, 15      | 32'h00000f63         | 32'h00f00002    |
+| SW R3, R1, 2        | 32'h0030a123         | 32'h00209181    |
+| LW R13, R1, 2       | 32'h0020a683         | 32'h00208681    |
+| SRL R16, R14, R2    | 32'h0030a123         | 32'h00271803    |
+| SLL R15, R1, R2     | 32'h002097b3         | 32'h00208783    |
+
+### Custom Instructions provided in previous task
+
+| Instruction    | Type | 32-bit Representation                | Hexadecimal Notation |
+|----------------|------|--------------------------------------|----------------------|
+| ADD r0, r1, r2 | R    | 0000000_00010_00001_000_00000_0110011 | 0x00208033           |
+| SUB r2, r0, r1 | R    | 0100000_00001_00000_000_00010_0110011 | 0x40100133           |
+| AND r1, r0, r2 | R    | 0000000_00010_00000_111_00001_0110011 | 0x002070B3           |
+| OR r8, r1, r5  | R    | 0000000_00101_00001_110_01000_0110011 | 0x0050E433           |
+| XOR r8, r0, r4 | R    | 0000000_00100_00000_100_01000_0110011 | 0x00404433           |
+| SLT r0, r1, r4 | R    | 0000000_00100_00001_010_00000_0110011 | 0x0040A033           |
+| ADDI r2, r2, 5 | I    | 000000000101_00010_000_00010_0010011  | 0x00510113           |
+| SW r2, r0, 4   | S    | 0000000_00010_00000_010_00100_0100011 | 0x00202223           |
+| SRL r6, r1, r1 | R    | 0000000_00001_00001_101_00110_0110011 | 0x0010D333           |
+| BNE r0, r0, 20 | B    | 0_000001_00000_00000_001_0100_0_1100011 | 0x02001463           |
+| BEQ r0, r0, 15 | B    | 0_000000_00000_00000_000_1111_0_1100011 | 0x00000F63           |
+| LW r3, r1, 2   | I    | 000000000010_00001_010_00011_0000011  | 0x0020A183           |
+| SLL r5, r1, r1 | R    | 0000000_00001_00001_001_00101_0110011 | 0x001092B3           |
+
+
 ## **Functional Simulation**
 
 *NOTE:* Here we have used Verilog code and the testbench of RISC-V from the GitHub repository [iiitb_rv32i](https://github.com/iiitb-rv32i).
