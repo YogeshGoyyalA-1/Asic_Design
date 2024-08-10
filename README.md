@@ -440,7 +440,7 @@ SLL r5, r1, r1
 </details>
 
 <details>
-<summary><strong>Laboratory 4:</strong> Execute the RISC-V ISA in the Reference Verilog Code and Get the Output Waveform.</summary>
+<summary><strong>Laboratory 5:</strong> Execute the RISC-V ISA in the Reference Verilog Code and Get the Output Waveform.</summary>
 
 ## **Functional Simulation**
 
