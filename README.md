@@ -503,7 +503,7 @@ SLL r5, r1, r1
 
 3. Run this command to execute the test bench and generate a .vcd file:
      ```bash
-    vvp iiitb_rv32i_tb
+    vvp iiitb_rv32i
    ```
 4. View the Test Bench in GTKWave:
 
