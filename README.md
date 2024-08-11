@@ -517,5 +517,8 @@ SLL r5, r1, r1
 The output waveform illustrates the execution of instructions within a 5-stage pipelined architecture.
 
 
-
-
+Outputs
+```
+1. ADD R6, R2, R1
+```
+![Step 1](./Lab5/3.png)
