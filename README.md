@@ -522,3 +522,52 @@ Outputs
 1. ADD R6, R2, R1
 ```
 ![Step 1](./Lab5/3.png)
+
+```
+2. SUB R7, R1, R2
+```
+![Step 1](./Lab5/4.png)
+
+```
+3. AND R8, R1, R3
+```
+![Step 1](./Lab5/5.png)
+
+```
+4. OR R9, R2, R5
+```
+![Step 1](./Lab5/6.png)
+
+```
+5. XOR R10, R1, R4
+```
+![Step 1](./Lab5/7.png)
+
+```
+6. SLT R1, R2, R4
+```
+![Step 1](./Lab5/8.png)
+
+```
+7. ADDI R12, R4, 5
+```
+![Step 1](./Lab5/9.png)
+
+```
+8. BEQ R0, R0, 15
+```
+![Step 1](./Lab5/10.png)
+
+```
+9. SW R3, R1, 2
+```
+![Step 1](./Lab5/11.png)
+
+
+```
+10. LW R13, R1, 2
+```
+![Step 1](./Lab5/12.png)
+
+
+```
