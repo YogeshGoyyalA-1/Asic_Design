@@ -487,7 +487,7 @@ SLL r5, r1, r1
 
 ## **Functional Simulation**
 
-*NOTE:* Here we have used Verilog code and the testbench of RISC-V from the GitHub repository [iiitb_rv32i](https://github.com/vinayrayapati/rv32i/blob/main/iiitb_rv32i.v).
+*NOTE:* Here we have used Verilog code and the testbench of RISC-V from the GitHub repository [iiitb_rv32i](https://github.com/vinayrayapati/rv32i/tree/main).
 
 1. Clone the Repository and change the directory as follows
     ```bash
