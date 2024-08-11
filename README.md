@@ -492,7 +492,7 @@ SLL r5, r1, r1
 1. Clone the Repository and change the directory as follows
     ```bash
    git clone https://github.com/vinayrayapati/iiitb_rv32i
-    cd iiitb_rv32i  
+    cd rv32i  
    ```
 
 
