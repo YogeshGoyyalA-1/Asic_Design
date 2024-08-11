@@ -568,4 +568,4 @@ Outputs
 ```
 ![Step 1](./Lab5/12.png)
 
-Observation
+** Observation:- We observe a variation between bit pattern of RISCV code and hardcoded ISA.
