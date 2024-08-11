@@ -489,20 +489,31 @@ SLL r5, r1, r1
 
 *NOTE:* Here we have used Verilog code and the testbench of RISC-V from the GitHub repository [iiitb_rv32i](https://github.com/iiitb-rv32i).
 
+1. Clone the Repository and change the directory as follows
+    ```bash
+   git clone https://github.com/vinayrayapati/iiitb_rv32i
+    cd iiitb_rv32i  
+   ```
 
-1. To compile the Verilog code, use the following command:
+
+2. To compile the Verilog code, use the following command:
    ```bash
    iverilog -o iiitb_rv32i iiitb_rv32i.v iiitb_rv32i_tb.v
    ```
 
-2. Run this command to execute the test bench and generate a .vcd file:
+3. Run this command to execute the test bench and generate a .vcd file:
      ```bash
     vvp iiitb_rv32i_tb
    ```
-3. View the Test Bench in GTKWave:
+4. View the Test Bench in GTKWave:
 
     ```bash
     gtkwave iiitb_rv32i.vcd
     ```
+
+###Output Waveform
+The output waveform illustrates the execution of instructions within a 5-stage pipelined architecture.
+
+
 
 
