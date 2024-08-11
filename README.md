@@ -568,6 +568,4 @@ Outputs
 ```
 ![Step 1](./Lab5/12.png)
 
-```
-```
 Observation
