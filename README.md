@@ -567,6 +567,7 @@ Outputs
 10. LW R13, R1, 2
 ```
 ![Step 1](./Lab5/12.png)
+
 ```
 
 ** Observation
