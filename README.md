@@ -445,7 +445,7 @@ SLL r5, r1, r1
 ---
 ##### As illustrated in the figure below, all the instructions in the provided Verilog file are hardcoded. This means that, instead of adhering to the standard RISC-V bit patterns, the designer has implemented custom bit patterns for each instruction.
 
-<img src="./Lab5/1.png" alt="description" width="500"/>
+<img src="./Lab5/13.png" alt="description" width="500"/>
 
 
 
@@ -510,6 +510,8 @@ SLL r5, r1, r1
     ```bash
     gtkwave iiitb_rv32i.vcd
     ```
+![Step 1](./Lab5/1.png)
+![Step 1](./Lab5/2.png)
 
 ### Output Waveform
 The output waveform illustrates the execution of instructions within a 5-stage pipelined architecture.
