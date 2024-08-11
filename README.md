@@ -511,7 +511,7 @@ SLL r5, r1, r1
     gtkwave iiitb_rv32i.vcd
     ```
 
-###Output Waveform
+### Output Waveform
 The output waveform illustrates the execution of instructions within a 5-stage pipelined architecture.
 
 
