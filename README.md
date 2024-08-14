@@ -574,6 +574,7 @@ Outputs
 <details>
 <summary><strong>Laboratory 6:</strong> Finding Two's Complement of a 4 bit Number</summary>
 
+# Twosify: Two Compliment of a number
 ### Understanding Two's Complement
 
 Two's complement is a mathematical operation on binary numbers, often used to represent signed integers in computing. To find the two's complement of a binary number:
@@ -604,7 +605,7 @@ gcc twosify.c
 
 **Step 1:** Compile `twosify.c` using the RISCV Compiler with the command below:
 ```bash
-riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o twosify.o twosify.c
+riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o twosify.o twosify.c
 ```
 ![Step 2](./Lab6/4.png)
 **Step 2:** After compiling the program using the RISCV compiler, run it to obtain the output. Similar to how you would use ./a.out with the GCC compiler, use the Spike Simulator with the following command:
@@ -614,4 +615,4 @@ spike pk twosify.o
 ```
 ![Step 2](./Lab6/5.png)
 
-**Observation**:- We can the output that is the two's compliment of number `3` is verified and coming the same using gcc and the riscv compiler.
+**Observation**:- We can observe the output that is the two's compliment of number `3` is verified and coming the same using gcc and the riscv compiler.
