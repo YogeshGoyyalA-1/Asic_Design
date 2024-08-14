@@ -616,3 +616,5 @@ spike pk twosify.o
 ![Step 2](./Lab6/5.png)
 
 **Observation**:- We can observe the output that is the two's compliment of number `3` is verified and coming the same using gcc and the riscv compiler.
+
+`[here](./Lab6/twosify.c)`
