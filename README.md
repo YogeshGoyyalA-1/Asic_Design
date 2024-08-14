@@ -572,7 +572,7 @@ Outputs
 </details>
 
 <details>
-<summary><strong>Laboratory 3:</strong> Finding Two's Complement of a 4 bit Number</summary>
+<summary><strong>Laboratory 6:</strong> Finding Two's Complement of a 4 bit Number</summary>
 
 ### Understanding Two's Complement
 
