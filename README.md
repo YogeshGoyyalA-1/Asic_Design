@@ -588,7 +588,7 @@ Two's complement is a mathematical operation on binary numbers, often used to re
 
 ## Compilation using gcc
 
-**Step 1:** Create a new `twosify.c` file in the specified directory (asic_flow) in a Linux environment using gedit editor and save your c program. You can find the c program here `Lab6/twosify.c
+**Step 1:** Create a new `twosify.c` file in the specified directory (asic_flow) in a Linux environment using gedit editor and save your c program. You can find the c program here `Lab6/twosify.c`
 ![Step 1](./Lab6/1.png)
 
 **Step 2:** Compile the c program using the gcc compiler using the command below
