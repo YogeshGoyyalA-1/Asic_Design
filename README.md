@@ -569,3 +569,49 @@ Outputs
 ![Step 1](./Lab5/12.png)
 
 **Observation**:- We observe a variation between bit pattern of RISCV code and hardcoded ISA.
+</details>
+
+<details>
+<summary><strong>Laboratory 3:</strong> Finding Two's Complement of a 4 bit Number</summary>
+
+### Understanding Two's Complement
+
+Two's complement is a mathematical operation on binary numbers, often used to represent signed integers in computing. To find the two's complement of a binary number:
+
+1. **Invert all the bits** (change 0 to 1 and 1 to 0).
+2. **Add 1** to the least significant bit (LSB) of the inverted number.
+
+### Step-by-Step Procedure:
+
+# **Calculation of Two's Complement**
+
+## Compilation using gcc
+
+**Step 1:** Create a new `twosify.c` file in the specified directory (asic_flow) in a Linux environment using gedit editor and save your c program. You can find the c program here 
+![Step 1](./Lab6/1.png)
+
+**Step 2:** Compile the c program using the gcc compiler using the command below
+```bash
+gcc twosify.c
+```
+**Step 3:** Now the run the executable file (a.out) using the following command
+```bash
+./a.out
+```
+![Step 1](./Lab6/2.png)
+
+## Compliation using RISCV Compiler
+
+**Step 1:** Compile `twosify.c` using the RISCV Compiler with the command below:
+```bash
+riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o twosify.o twosify.c
+```
+![Step 2](./Lab6/4.png)
+**Step 2:** After compiling the program using the RISCV compiler, run it to obtain the output. Similar to how you would use ./a.out with the GCC compiler, use the Spike Simulator with the following command:
+
+```bash
+spike pk twosify.o
+```
+![Step 2](./Lab6/5.png)
+
+**Observation**:- We can the output that is the two's compliment of number `3` is verified and coming the same using gcc and the riscv compiler.
