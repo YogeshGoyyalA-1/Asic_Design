@@ -574,7 +574,7 @@ Outputs
 <details>
 <summary><strong>Laboratory 6:</strong> Finding Two's Complement of a 4 bit Number</summary>
 
-# Twosify: Two Compliment of a number
+# Twosify: Two's Compliment of a number
 ### Understanding Two's Complement
 
 Two's complement is a mathematical operation on binary numbers, often used to represent signed integers in computing. To find the two's complement of a binary number:
