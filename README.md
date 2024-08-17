@@ -641,3 +641,12 @@ $quot[31:0] = $val1[31:0] / $val2[31:0];
 $out[31:0]  = $sel[1] ? ($sel[0] ? $quot[31:0] : $prod[31:0])
                       : ($sel[0] ? $diff[31:0] : $sum[31:0]);
 ```
+Description: 
+In this code snippet, two random 4-bit values, `$rand1[3:0]` and `$rand2[3:0]`, are assigned to the 32-bit variables `$val1[31:0]` and `$val2[31:0]`, respectively. The calculator then performs four arithmetic operations on these values:
+
+The result of one of these operations is selected by a multiplexer (MUX), controlled by the selection bits `$sel[1:0]`. The MUX determines which operation's output is assigned to `$out[31:0]`.
+
+
+![Step 2](./Lab7/1.png)
+
+**Observation**:- The following screenshot shows the implementation of the combinational circuit using the code above on the Makerchip platform. It also displays the generated block diagram and the simulation waveform, providing insight into the circuit's operation.
