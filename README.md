@@ -616,3 +616,28 @@ spike pk twosify.o
 ![Step 2](./Lab6/5.png)
 
 **Observation**:- We can observe the output that is the two's compliment of number `3` is verified and coming the same using gcc and the riscv compiler.
+</details>
+
+<details>
+<summary><strong>Laboratory 7:</strong> Digital Logic with TL-Verilog using Makerchip </summary>
+
+## Combinational Calculator Implementation in TL-Verilog
+
+**Introduction to TL-Verilog and Makerchip:**
+Makerchip supports the Transaction-Level Verilog (TL-Verilog) standard, which represents a significant advancement by removing the need for the legacy features of traditional Verilog and introducing a more streamlined syntax. TL-Verilog enhances design efficiency by adding powerful constructs for pipelines and transactions, making it easier to develop complex digital circuits.
+
+**Calculator Overview:**
+In this section, we demonstrate a basic combinational calculator implemented using TL-Verilog on the Makerchip platform. The calculator performs four fundamental arithmetic operations: addition, subtraction, multiplication, and division.
+
+```tl-verilog
+$val1[31:0] = $rand1[3:0];
+$val2[31:0] = $rand2[3:0];
+
+$sum[31:0]  = $val1[31:0] + $val2[31:0];
+$diff[31:0] = $val1[31:0] - $val2[31:0];
+$prod[31:0] = $val1[31:0] * $val2[31:0];
+$quot[31:0] = $val1[31:0] / $val2[31:0];
+
+$out[31:0]  = $sel[1] ? ($sel[0] ? $quot[31:0] : $prod[31:0])
+                      : ($sel[0] ? $diff[31:0] : $sum[31:0]);
+```
