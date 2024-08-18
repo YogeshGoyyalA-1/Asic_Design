@@ -621,10 +621,67 @@ spike pk twosify.o
 <details>
 <summary><strong>Laboratory 7:</strong> Digital Logic with TL-Verilog using Makerchip </summary>
 
-## Combinational Calculator Implementation in TL-Verilog
+## Combinational Circuits in TL-Verilog
 
 **Introduction to TL-Verilog and Makerchip:**
 Makerchip supports the Transaction-Level Verilog (TL-Verilog) standard, which represents a significant advancement by removing the need for the legacy features of traditional Verilog and introducing a more streamlined syntax. TL-Verilog enhances design efficiency by adding powerful constructs for pipelines and transactions, making it easier to develop complex digital circuits.
+
+
+1. **Inverter**
+Code is given below
+```tl-verilog
+   	$out = ! $in;
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/1.png)
+
+1. **Inverter**
+Code is given below
+```tl-verilog
+   	$out = ! $in;
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/1.png)
+
+1. **Inverter**
+Code is given below
+```tl-verilog
+   	$out = ! $in;
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/2.png)
+
+2. **2-Input And Gate(&&)**
+Code is given below
+```tl-verilog
+   	$out = $in1 && $in2;
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/3.png)
+
+3. **2-Input OR Gate**
+Code is given below
+```tl-verilog
+   	$out = $in1 || $in2;
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/4.png)
+
+4. **2-Input XOR Gate**
+Code is given below
+```tl-verilog
+   	$out = $in1 ^ $in2;
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/1.png)
+
+## Combinational Calculator Implementation in TL-Verilog
 
 **Calculator Overview:**
 In this section, we demonstrate a basic combinational calculator implemented using TL-Verilog on the Makerchip platform. The calculator performs four fundamental arithmetic operations: addition, subtraction, multiplication, and division.
@@ -647,6 +704,6 @@ In this code snippet, two random 4-bit values, `$rand1[3:0]` and `$rand2[3:0]`, 
 The result of one of these operations is selected by a multiplexer (MUX), controlled by the selection bits `$sel[1:0]`. The MUX determines which operation's output is assigned to `$out[31:0]`.
 
 
-![Step 2](./Lab7/1.png)
+![Step 2](./Lab7/8.png)
 
 **Observation**:- The following screenshot shows the implementation of the combinational circuit using the code above on the Makerchip platform. It also displays the generated block diagram and the simulation waveform, providing insight into the circuit's operation.
