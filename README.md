@@ -645,7 +645,7 @@ The generated block diagram and waveforms are as shown
 
 ![Step 2](./Lab7/1.png)
 
-1. **Inverter**
+1. ## Inverter
 Code is given below
 ```tl-verilog
 $out = ! $in;
