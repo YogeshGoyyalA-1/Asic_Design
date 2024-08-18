@@ -716,4 +716,4 @@ The result of one of these operations is selected by a multiplexer (MUX), contro
 The generated block diagram and waveforms are as shown
 ![Step 2](./Lab7/8.png)
 
-# **Observation**:- The following screenshot shows the implementation of the combinational circuit using the code above on the Makerchip platform. It also displays the generated block diagram and the simulation waveform, providing insight into the circuit's operation.
+### **Observation**:- The following screenshot shows the implementation of the combinational circuit using the code above on the Makerchip platform. It also displays the generated block diagram and the simulation waveform, providing insight into the circuit's operation.
