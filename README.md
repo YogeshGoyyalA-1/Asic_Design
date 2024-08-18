@@ -747,3 +747,27 @@ $cnt[31:0] = $reset ? 0 : (>>1$cnt + 1);
 The generated block diagram and waveforms are as shown
 
 ![Step 2](./Lab7/12.png)
+
+### 2. Sequential Calculator
+- Works the same way as combinational calculator but mimics real scenario in which the result of the previous operation is considered as one of the operand for the next operation. Upon reset the result becomes zero.
+
+
+Code is given below
+```tl-verilog
+$reset = *reset;
+   
+$val1[31:0] = >>1$out;
+$val2[31:0] = $rand[3:0];
+   
+$sum[31:0] =  $val1[31:0] +  $val2[31:0];
+$diff[31:0] =  $val1[31:0] -  $val2[31:0];
+$prod[31:0] =  $val1[31:0] *  $val2[31:0];
+$quot[31:0] =  $val1[31:0] /  $val2[31:0];
+   
+   
+$out[31:0] = $reset ? 32'h0 : ($choose[1] ? ($choose[0] ? $quot : $prod):($choose[0] ? $diff : $sum));
+
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/13.png)
