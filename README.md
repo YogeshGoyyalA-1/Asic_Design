@@ -627,24 +627,6 @@ spike pk twosify.o
 Makerchip supports the Transaction-Level Verilog (TL-Verilog) standard, which represents a significant advancement by removing the need for the legacy features of traditional Verilog and introducing a more streamlined syntax. TL-Verilog enhances design efficiency by adding powerful constructs for pipelines and transactions, making it easier to develop complex digital circuits.
 
 
-1. **Inverter**
-Code is given below
-```tl-verilog
-$out = ! $in;
-```
-The generated block diagram and waveforms are as shown
-
-![Step 2](./Lab7/1.png)
-
-1. **Inverter**
-Code is given below
-```tl-verilog
-$out = ! $in;
-```
-The generated block diagram and waveforms are as shown
-
-![Step 2](./Lab7/1.png)
-
 1. ## Inverter
 Code is given below
 ```tl-verilog
@@ -652,34 +634,35 @@ $out = ! $in;
 ```
 The generated block diagram and waveforms are as shown
 
-![Step 2](./Lab7/2.png)
+![Step 2](./Lab7/1.png)
 
-2. **2-Input And Gate(&&)**
+
+2. ## 2-Input And Gate(&&)
 Code is given below
 ```tl-verilog
 $out = $in1 && $in2;
 ```
 The generated block diagram and waveforms are as shown
 
-![Step 2](./Lab7/3.png)
+![Step 2](./Lab7/2.png)
 
-3. **2-Input OR Gate**
+3. ## 2-Input OR Gate
 Code is given below
 ```tl-verilog
 $out = $in1 || $in2;
 ```
 The generated block diagram and waveforms are as shown
 
-![Step 2](./Lab7/4.png)
+![Step 2](./Lab7/3.png)
 
-4. **2-Input XOR Gate**
+4. ## 2-Input XOR Gate
 Code is given below
 ```tl-verilog
    	$out = $in1 ^ $in2;
 ```
 The generated block diagram and waveforms are as shown
 
-![Step 2](./Lab7/1.png)
+![Step 2](./Lab7/4.png)
 
 ## Combinational Calculator Implementation in TL-Verilog
 
