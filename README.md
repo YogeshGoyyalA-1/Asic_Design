@@ -664,7 +664,34 @@ The generated block diagram and waveforms are as shown
 
 ![Step 2](./Lab7/4.png)
 
-## Combinational Calculator Implementation in TL-Verilog
+### 5. Arithmetic Operation on Vectors
+Code is given below
+```tl-verilog
+$out[4:0] = $in1[3:0] + $in2[3:0];
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/5.png)
+
+### 6. 2:1 MUX
+Code is given below
+```tl-verilog
+$out = $sel ? $in1 : $in0;
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/6.png)
+
+### 7. 2:1 MUX Using Vectors
+Code is given below
+```tl-verilog
+$out[7:0] = $sel ? $in1[7:0] : $in0[7:0];
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/7.png)
+
+### 8. Combinational Calculator Implementation in TL-Verilog
 
 **Calculator Overview:**
 In this section, we demonstrate a basic combinational calculator implemented using TL-Verilog on the Makerchip platform. The calculator performs four fundamental arithmetic operations: addition, subtraction, multiplication, and division.
@@ -686,7 +713,7 @@ In this code snippet, two random 4-bit values, `$rand1[3:0]` and `$rand2[3:0]`, 
 
 The result of one of these operations is selected by a multiplexer (MUX), controlled by the selection bits `$sel[1:0]`. The MUX determines which operation's output is assigned to `$out[31:0]`.
 
-
+The generated block diagram and waveforms are as shown
 ![Step 2](./Lab7/8.png)
 
-**Observation**:- The following screenshot shows the implementation of the combinational circuit using the code above on the Makerchip platform. It also displays the generated block diagram and the simulation waveform, providing insight into the circuit's operation.
+# **Observation**:- The following screenshot shows the implementation of the combinational circuit using the code above on the Makerchip platform. It also displays the generated block diagram and the simulation waveform, providing insight into the circuit's operation.
