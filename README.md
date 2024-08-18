@@ -775,3 +775,23 @@ The generated block diagram and waveforms are as shown
 ## Pipelined Logic
 
 In Transaction-Level Verilog (TL-Verilog), pipelined logic is elegantly expressed through the use of pipeline constructs that inherently represent the flow of data across different stages of a digital design. Each pipeline stage in TL-Verilog corresponds to a clock cycle, where operations are performed on data as it progresses through the pipeline. This approach allows for clear and concise modeling of sequential logic, where each stage automatically handles the propagation of state and values to the next cycle. By leveraging TL-Verilog's pipeline notation, designers can easily describe complex, multi-stage operations with a focus on the transaction flow, simplifying the design and verification process while enhancing readability and maintainability.
+
+### 2. To produce the Pipeline Design
+- To produce the given block Diagram logic shown below. 4 error conditions in the pipeline and aggregrating them to result in a single error indication.
+![Step 2](./Lab7/14.png)
+
+Code is given below
+```tl-verilog
+$reset = *reset;
+$clk_yog = *clk;
+|comp
+  @1
+    $err1 = $bad_input || $illegal_op;
+  @3
+    $err2 = $over_flow || $err1;
+  @6
+    $err3 = $div_by_zero || $err2;
+```
+The generated block diagram and waveforms are as shown and can be compared with the one which had to be produced and can verify it is the same
+
+![Step 2](./Lab7/15.png)
