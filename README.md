@@ -748,7 +748,7 @@ The generated block diagram and waveforms are as shown
 
 ![Step 2](./Lab7/12.png)
 
-### 2. Sequential Calculator
+### 3. Sequential Calculator
 - Works the same way as combinational calculator but mimics real scenario in which the result of the previous operation is considered as one of the operand for the next operation. Upon reset the result becomes zero.
 
 
