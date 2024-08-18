@@ -734,3 +734,16 @@ $num[31:0] = $reset ? 1 : (>>1$num + >>2$num);
 The generated block diagram and waveforms are as shown
 
 ![Step 2](./Lab7/10.png)
+
+### 2. Free Running Counter
+- Next Value increments by 1 of the previous value
+![Step 2](./Lab7/11.png)
+
+Code is given below
+```tl-verilog
+$reset = *reset;
+$cnt[31:0] = $reset ? 0 : (>>1$cnt + 1);
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/12.png)
