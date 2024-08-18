@@ -719,3 +719,18 @@ The generated block diagram and waveforms are as shown
 #### **Observation**:- The following screenshot shows the implementation of the combinational circuit using the code above on the Makerchip platform. It also displays the generated block diagram and the simulation waveform, providing insight into the circuit's operation.
 
 ## Sequential Circuits in TL-Verilog
+
+A sequential circuit is a type of digital circuit that uses memory components to retain data, enabling it to generate outputs based on both the current inputs and the circuit's prior state. This distinguishes it from combinational circuits, where the output is solely determined by the present inputs without any regard to past activity. Sequential circuits rely on feedback loops and storage elements like flip-flops or registers to keep track of their internal state over time. This internal state, combined with the present input, influences the circuit's behavior, allowing it to perform tasks that require a history of previous inputs or operations, such as counting, storing data, or sequencing events.
+
+### 1. Fibbonacci Series
+- Next Value is the sum of previous two values
+![Step 2](./Lab7/9.png)
+
+Code is given below
+```tl-verilog
+$reset = *reset;
+$num[31:0] = $reset ? 1 : (>>1$num + >>2$num);
+```
+The generated block diagram and waveforms are as shown
+
+![Step 2](./Lab7/10.png)
