@@ -795,3 +795,13 @@ $clk_yog = *clk;
 The generated block diagram and waveforms are as shown and can be compared with the one which had to be produced and can verify it is the same
 
 ![Step 2](./Lab7/15.png)
+
+### 2. 2 Cycle Calculator 
+- 
+![Step 2](./Lab7/16.png)
+
+Code is given below
+```tl-verilog
+
+```
+The generated block diagram and waveforms are as shown
