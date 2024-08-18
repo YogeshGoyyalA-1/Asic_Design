@@ -630,7 +630,7 @@ Makerchip supports the Transaction-Level Verilog (TL-Verilog) standard, which re
 1. **Inverter**
 Code is given below
 ```tl-verilog
-   	$out = ! $in;
+  $out = ! $in;
 ```
 The generated block diagram and waveforms are as shown
 
