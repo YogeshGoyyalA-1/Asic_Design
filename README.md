@@ -771,3 +771,5 @@ $out[31:0] = $reset ? 32'h0 : ($choose[1] ? ($choose[0] ? $quot : $prod):($choos
 The generated block diagram and waveforms are as shown
 
 ![Step 2](./Lab7/13.png)
+
+## Pipelined Logic
