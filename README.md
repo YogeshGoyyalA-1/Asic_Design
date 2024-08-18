@@ -630,7 +630,7 @@ Makerchip supports the Transaction-Level Verilog (TL-Verilog) standard, which re
 1. **Inverter**
 Code is given below
 ```tl-verilog
-  $out = ! $in;
+$out = ! $in;
 ```
 The generated block diagram and waveforms are as shown
 
@@ -639,7 +639,7 @@ The generated block diagram and waveforms are as shown
 1. **Inverter**
 Code is given below
 ```tl-verilog
-   	$out = ! $in;
+$out = ! $in;
 ```
 The generated block diagram and waveforms are as shown
 
@@ -648,7 +648,7 @@ The generated block diagram and waveforms are as shown
 1. **Inverter**
 Code is given below
 ```tl-verilog
-   	$out = ! $in;
+$out = ! $in;
 ```
 The generated block diagram and waveforms are as shown
 
@@ -657,7 +657,7 @@ The generated block diagram and waveforms are as shown
 2. **2-Input And Gate(&&)**
 Code is given below
 ```tl-verilog
-   	$out = $in1 && $in2;
+$out = $in1 && $in2;
 ```
 The generated block diagram and waveforms are as shown
 
@@ -666,7 +666,7 @@ The generated block diagram and waveforms are as shown
 3. **2-Input OR Gate**
 Code is given below
 ```tl-verilog
-   	$out = $in1 || $in2;
+$out = $in1 || $in2;
 ```
 The generated block diagram and waveforms are as shown
 
