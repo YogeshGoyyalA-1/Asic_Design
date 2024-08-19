@@ -798,7 +798,7 @@ The generated block diagram and waveforms are as shown and can be compared with 
 
 ### 2. 2 Cycle Calculator 
 - 
-![Step 2](./Lab7/16.png)
+<img src="./Lab7/16.png" alt="description" width="500"/>
 
 Code is given below
 ```tl-verilog
