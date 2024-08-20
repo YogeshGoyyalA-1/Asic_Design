@@ -802,6 +802,31 @@ The generated block diagram and waveforms are as shown and can be compared with 
 
 Code is given below
 ```tl-verilog
+|calc
+  @1
+    $reset = *reset;
+    $clk_yog = *clk;
+   
+    $val1[31:0] = >>2$out[31:0];
+    $val2[31:0] = $rand2[3:0];
+    $sel[1:0] = $rand3[1:0];
+   
+    $sum[31:0] = $val1[31:0] + $val2[31:0];
+    $diff[31:0] = $val1[31:0] - $val2[31:0];
+    $prod[31:0] = $val1[31:0] * $val2[31:0];
+    $quot[31:0] = $val1[31:0] / $val2[31:0];
+         
+    $count = $reset ? 0 : >>1$count + 1;
+         
+  @2
+    $valid = $count;
+    $inv_valid = !$valid;
+    $calc_reset = $reset | $inv_valid;
+    $out[31:0] = $calc_reset ? 32'b0 : ($op[1] ? ($op[0] ? $quot[31:0] : $prod[31:0])
+                                             : ($op[0] ? $diff[31:0] 
+                                                        : $sum[31:0]));
+
 
 ```
 The generated block diagram and waveforms are as shown
+![Step 2](./Lab7/17.png)
