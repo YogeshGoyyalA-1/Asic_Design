@@ -830,3 +830,6 @@ Code is given below
 ```
 The generated block diagram and waveforms are as shown
 ![Step 2](./Lab7/17.png)
+
+## Implementation of the RISC-V CPU Core
+This section will walk you through the different implementation steps followed to achieve the design of the complete RISC-V CPU core.
