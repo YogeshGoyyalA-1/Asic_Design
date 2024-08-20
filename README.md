@@ -836,7 +836,7 @@ The generated block diagram and waveforms are as shown
 <details>
 <summary><strong>Laboratory 8:</strong> Basic RISCV CPU Micro-architecture </summary>
 
-## Implementation of the RISC-V CPU Core
+# Implementation of the RISC-V CPU Core
 This section will walk you through the different implementation steps followed to achieve the design of the complete RISC-V CPU core. You can find the codes [here](https://github.com/YogeshGoyyalA-1/Asic_Design/tree/main/Lab4/codes).
 
 
