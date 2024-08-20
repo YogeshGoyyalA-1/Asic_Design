@@ -842,3 +842,7 @@ This section will walk you through the different implementation steps followed t
 
 Given below is the riscv block diagram
 ![Step 2](./Lab8/1.jpg)
+
+The design of a basic RISC-V CPU core involves several key logical blocks, which include the following components:
+
+## **1**:- Program Counter(PC) and next PC Logic
