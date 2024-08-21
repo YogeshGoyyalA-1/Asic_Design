@@ -890,3 +890,9 @@ Code is given below
 Generated block diagram and waveform for the instruction fetch cycle is shown below
 
 ![Step 2](./Lab8/5.png)
+
+
+### 2:- Instruction Decode
+In the decode stage, the goal is to extract detailed information from the instruction read during the fetch stage. This includes determining the instruction set, identifying any immediate values, and extracting register values.During Instruction Decode, every instruction is analyzed to identify its type, whether it includes immediate values, and the specific fields it contains. The opcode is mapped to the corresponding instruction, and the bit fields are interpreted according to the RISC-V ISA specifications.
+
+![Step 2](./Lab8/6.png)
