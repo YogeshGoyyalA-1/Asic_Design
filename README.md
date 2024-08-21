@@ -1242,4 +1242,9 @@ As we can see from the diagram, the final sum output of numbers from 1 to 9 , ie
 **Final Block Diagarm is as shown**
 ![Step 2](./Lab9/3.png)
 
+### CLK Waveform
+![Step 2](./Lab9/10.png)
+### Reset Waveform
+![Step 2](./Lab9/11.png)
+
 #### **Observation**:- A 5-stage pipeline design, using `clk_yog`, computes the sum of numbers from 1 to 9 across various stages. The stages include Instruction Fetch, Instruction Decode, Execute, Memory Access, and Write-back. The entire process takes 58 cycles to complete.
