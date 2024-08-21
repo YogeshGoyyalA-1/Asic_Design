@@ -1227,6 +1227,9 @@ When the following line of code as mentioned below is added on Makerchip, the si
 Here, in the instruction memory, register r10 has been used to store the sum value. The simulation passed message can be seen under the "Log" tab. We have used ">>5" (ahead by 5) operator, because instead of stopping the simulator immediately, we wait for a couple of more cycles so as to see a little bit more on the waveform.
 ![Step 2](./Lab9/4.png)
 
+![Step 2](./Lab9/9.png)
+- We can observe that values are are being incremented and final value is `2d` which is 45 in hex
+
 We can observe the simulation passed message
 ## The VIZ Graphic Visualizer
 As we can see from the diagram, the final sum output of numbers from 1 to 9 , ie equal to 45 has been stored in the register r10, and simultaneously written into memory address 16 (4 because of byte addressing).
