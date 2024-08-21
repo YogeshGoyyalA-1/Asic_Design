@@ -1053,3 +1053,24 @@ $result[31:0] = $is_addi ? $src1_value + $imm :
 ```
 Generated block diagram and waveform for the instruction Instruction Decode is shown below
 ![Step 2](./Lab8/10.png)
+
+### 6:- Register File Write
+
+This step is crucial for handling instructions that require storing the output in a destination register (rd). The ALU's result is written back to memory through the register_file_write port, with the register_file_write_enable signal determined by the validity of the destination register (`rd`). The register_file_write_index then assigns the value from the destination register (rd) to the appropriate memory location. Since the RISC-V architecture has a hardwired x0 register, which is always zero, an additional condition is implemented to prevent any write operations to the x0 register. After the ALU completes its operations on the register values, these results may need to be written back into the registers. This process ensures that no write occurs to x0, maintaining its constant value of zero.
+
+Block diagram of a 2-port Register File, with 2 Read and 1 Write per cycle:
+![Step 2](./Lab8/11.png)
+
+General Block Diagram of Register File and ALU:
+![Step 2](./Lab8/12.png)
+
+Code is given below
+
+```tl-verilog
+//REGISTER FILE WRITE
+$rf_wr_en = $rd_valid && $rd != 5'b0;
+$rf_wr_index[4:0] = $rd;
+$rf_wr_data[31:0] = $result;
+```
+Generated block diagram and waveform for the instruction Instruction Decode is shown below
+![Step 2](./Lab8/13.png)
