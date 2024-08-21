@@ -1075,7 +1075,7 @@ $rf_wr_data[31:0] = $result;
 Generated block diagram and waveform for the instruction Instruction Decode is shown below
 ![Step 2](./Lab8/13.png)
 
-### 7:- BrancH Instruction
+### 7:- Branch Instruction
 
 The final step involves adding support for branch instructions. In the RISC-V ISA, branches are conditional, meaning a specific branch is taken based on a certain condition. Additionally, the branch target PC must be calculated, and if the branch is taken, the PC will update to this new branch target when necessary.
 
