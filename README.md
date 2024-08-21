@@ -896,3 +896,90 @@ Generated block diagram and waveform for the instruction fetch cycle is shown be
 In the decode stage, the goal is to extract detailed information from the instruction read during the fetch stage. This includes determining the instruction set, identifying any immediate values, and extracting register values.During Instruction Decode, every instruction is analyzed to identify its type, whether it includes immediate values, and the specific fields it contains. The opcode is mapped to the corresponding instruction, and the bit fields are interpreted according to the RISC-V ISA specifications.
 
 ![Step 2](./Lab8/6.png)
+
+Code is given below
+
+```tl-verilog
+ //INSTRUCTION TYPES DECODE         
+@1
+  $is_u_instr = $instr[6:2] ==? 5'b0x101;
+         
+  $is_s_instr = $instr[6:2] ==? 5'b0100x;
+         
+  $is_r_instr = $instr[6:2] ==? 5'b01011 ||
+                       $instr[6:2] ==? 5'b011x0 ||
+                       $instr[6:2] ==? 5'b10100;
+         
+  $is_j_instr = $instr[6:2] ==? 5'b11011;
+         
+  $is_i_instr = $instr[6:2] ==? 5'b0000x ||
+                       $instr[6:2] ==? 5'b001x0 ||
+                       $instr[6:2] ==? 5'b11001;
+         
+  $is_b_instr = $instr[6:2] ==? 5'b11000;
+         
+  //INSTRUCTION IMMEDIATE DECODE
+  $imm[31:0] = $is_i_instr ? {{21{$instr[31]}}, $instr[30:20]} :
+                      $is_s_instr ? {{21{$instr[31]}}, $instr[30:25], $instr[11:7]} :
+                      $is_b_instr ? {{20{$instr[31]}}, $instr[7], $instr[30:25], $instr[11:8], 1'b0} :
+                      $is_u_instr ? {$instr[31:12], 12'b0} :
+                      $is_j_instr ? {{12{$instr[31]}}, $instr[19:12], $instr[20], $instr[30:21], 1'b0} :
+                                    32'b0;
+         
+         
+         
+         
+         
+  //INSTRUCTION FIELD DECODE
+  $rs2_valid = $is_r_instr || $is_s_instr || $is_b_instr;
+  ?$rs2_valid
+    $rs2[4:0] = $instr[24:20];
+            
+  $rs1_valid = $is_r_instr || $is_i_instr || $is_s_instr || $is_b_instr;
+  ?$rs1_valid
+    $rs1[4:0] = $instr[19:15];
+         
+  $funct3_valid = $is_r_instr || $is_i_instr || $is_s_instr || $is_b_instr;
+  ?$funct3_valid
+    $funct3[2:0] = $instr[14:12];
+            
+  $funct7_valid = $is_r_instr ;
+  ?$funct7_valid
+    $funct7[6:0] = $instr[31:25];
+  $rd_valid = $is_r_instr || $is_i_instr || $is_u_instr || $is_j_instr;
+  ?$rd_valid
+    $rd[4:0] = $instr[11:7];
+         
+         
+   //INSTRUCTION DECODE
+  $opcode[6:0] = $instr[6:0];
+         
+  $dec_bits [10:0] = {$funct7[5], $funct3, $opcode};
+  $is_beq = $dec_bits ==? 11'bx_000_1100011;
+  $is_bne = $dec_bits ==? 11'bx_001_1100011;
+  $is_blt = $dec_bits ==? 11'bx_100_1100011;
+  $is_bge = $dec_bits ==? 11'bx_101_1100011;
+  $is_bltu = $dec_bits ==? 11'bx_110_1100011;
+  $is_bgeu = $dec_bits ==? 11'bx_111_1100011;
+  $is_addi = $dec_bits ==? 11'bx_000_0010011;
+  $is_add = $dec_bits ==? 11'b0_000_0110011;
+         
+  `BOGUS_USE ($is_beq $is_bne $is_blt $is_bge $is_bltu $is_bgeu $is_addi $is_add)
+```
+### Instructions to be Decoded are as follows:- 
+![Step 2](./Lab8/7.png)
+ 
+Instruction Decoding happens in various stages
+- 1. INSTRUCTION TYPES DECODE :- In the Instruction Decode logic, each instruction is decoded to determine its type, any immediate values, and the specific field types. The opcode is converted into the corresponding instruction, with all bit values interpreted according to the RISC-V ISA. The decoding process begins by identifying the instruction type using 5 bits from `instr[6:2]`. The lower two bits (`instr[1:0]`) are always set to `11` for Base integer instructions. 
+
+- 2. INSTRUCTION IMMEDIATE DECODE :- The instruction sets have an immediate field. In order to decoder this field we use the following code:-
+
+- 3. INSTRUCTION FIELD DECODE AND INSTRUCTION DECODE :- Other instruction fields like funct7, rs2, rs1, funct3, rd and opcode are extracted from the 32-bit instruction based on the instruction type. We collect all the bit values of funct7, funct3, opcode, rs2, rs1 and rd into a single vector and then decode the type of instruction. At this point valid condtions need to be defined for fields like rs1, rs2, funct3 and funct7 because they are unique to only certain instruction types.
+
+Generated block diagram and waveform for the instruction Instruction Decode is shown below
+![Step 2](./Lab8/8.png)
+
+
+
+
+
