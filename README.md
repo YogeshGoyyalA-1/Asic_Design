@@ -1114,7 +1114,7 @@ Generated block diagram and waveform for the instruction Instruction Decode is s
 
 ### 5:- Arithmetic and logic Unit(ALU)
 
-The Arithmetic Logic Unit (ALU) is responsible for computing results based on the chosen operation. It processes the data from two registers provided by the register file, performs the corresponding arithmetic operation, and then writes the ALU's result back to memory via the register file's write port. Currently, the code supports only ADD and ADDI operations for executing the test code.
+The Arithmetic Logic Unit (ALU) is responsible for computing results based on the chosen operation. It processes the data from two registers provided by the register file, performs the corresponding arithmetic operation, and then writes the ALU's result back to memory via the register file's write port. Currently, the code supports only ADD and ADDI operations for executing the test code. All operations will be added at a later step.
 
 Code is given below
 
@@ -1220,7 +1220,9 @@ When the following line of code as mentioned below is added on Makerchip, the si
 ```tl-verilog
 *passed = |cpu/xreg[17]>>5$value == (1+2+3+4+5+6+7+8+9);
 ```
+
 ![Step 2](./Lab9/7.png)
+![Step 2](./Lab9/8.png)
 
 Here, in the instruction memory, register r10 has been used to store the sum value. The simulation passed message can be seen under the "Log" tab. We have used ">>5" (ahead by 5) operator, because instead of stopping the simulator immediately, we wait for a couple of more cycles so as to see a little bit more on the waveform.
 ![Step 2](./Lab9/4.png)
