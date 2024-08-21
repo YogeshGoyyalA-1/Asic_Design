@@ -1074,3 +1074,27 @@ $rf_wr_data[31:0] = $result;
 ```
 Generated block diagram and waveform for the instruction Instruction Decode is shown below
 ![Step 2](./Lab8/13.png)
+
+### 7:- BrancH Instruction
+
+The final step involves adding support for branch instructions. In the RISC-V ISA, branches are conditional, meaning a specific branch is taken based on a certain condition. Additionally, the branch target PC must be calculated, and if the branch is taken, the PC will update to this new branch target when necessary.
+
+
+Code is given below
+
+```tl-verilog
+//BRANCH INSTRUCTIONS 1
+$taken_branch = $is_beq ? ($src1_value == $src2_value):
+$is_bne ? ($src1_value != $src2_value):
+$is_blt ? (($src1_value < $src2_value) ^ ($src1_value[31] != $src2_value[31])):
+$is_bge ? (($src1_value >= $src2_value) ^ ($src1_value[31] != $src2_value[31])):
+$is_bltu ? ($src1_value < $src2_value):
+$is_bgeu ? ($src1_value >= $src2_value):
+                                    1'b0;
+`BOGUS_USE($taken_branch)
+         
+//BRANCH INSTRUCTIONS 2
+ $br_target_pc[31:0] = $pc +$imm;
+```
+Generated block diagram and waveform for the instruction Instruction Decode is shown below
+![Step 2](./Lab8/14.png)
