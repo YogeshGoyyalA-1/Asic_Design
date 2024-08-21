@@ -1100,54 +1100,5 @@ Generated block diagram and waveform for the instruction Instruction Decode is s
 ![Step 2](./Lab8/14.png)
 </details>
 
-<details>
-<summary><strong>Laboratory 9:</strong> Complete pipelined RISCV CPU Micro Architecture </summary>
 
-### Pipelining the RISC-V CPU Core
-The RISC-V core designed is divided into 5 pipeline stages. Pipelining in Makerchip is extremely simple. To define a pipeline use the following syntax:
-
-```tl-verilog
-|<pipeline_name>
-  @<pipeline_stage>
-    instruction1 in the current stage
-    instruction2 in the current stage
-    .
-    .
-  @<pipeline_stage>
-    instruction1 in the current stage
-    instruction2 in the current stage
-    .
-    .
- ```
- Staging in a pipeline is a physical attribute with no impact to behaviour. At this point support for register file bypass is provided. 
-
- ### Load/Store Instructions
- Load/store and jump support is added along with the following two extra lines of code to test load and store.
- ```tl-verilog
-m4_asm(SW, r0, r10, 10000)
-m4_asm(LW, r17, r0, 10000)
-```
-![Step 2](./Lab9/1.png)
-
-##  Testing the core with a Testbench
-Now that the implementation is complete, a simple testbench statement can be added to ensure whether the core is working correctly or not. The "passed" and "failed" signals are used to communicate with the Makerchip platform to control the simulation. It tells the platform whther the simulation passed without any errors, failed with a list of errors that can be inferred from the log files, and hence to stop the simulation, if failed.
-
-When the following line of code as mentioned below is added on Makerchip, the simulation will pass only if the value stored in r10 = sum of numbers from 1 to 9.
- ```tl-verilog
-*passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
-```
-Here, in the instruction memory, register r10 has been used to store the sum value. The simulation passed message can be seen under the "Log" tab. We have used ">>5" (ahead by 5) operator, because instead of stopping the simulator immediately, we wait for a couple of more cycles so as to see a little bit more on the waveform.
-![Step 2](./Lab9/4.png)
-
-We can observe the simulation passed message
-## The VIZ Graphic Visualizer
-As we can see from the diagram, the final sum output of numbers from 1 to 9 , ie equal to 45 has been stored in the register r10, and simultaneously written into memory address 16 (4 because of byte addressing).
-![Step 2](./Lab9/5.png)
-
-# Final RISC-V CPU Core Implementation
-- The snapshot of the final output can be seen below.
-![Step 2](./Lab9/2.png)
-
-**Final Block Diagarm is as shown**
-![Step 2](./Lab9/3.png)
 
