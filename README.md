@@ -981,5 +981,23 @@ Generated block diagram and waveform for the instruction Instruction Decode is s
 
 
 
+### 3:- Register File Read
 
+Most instructions, particularly arithmetic ones, operate on source registers, requiring a read from these registers. The CPU's register file supports two simultaneous reads for the source operands (rs1 and rs2) and one write per cycle to the destination register. Inputs `rs1` and `rs2` are fed into the register file, producing the corresponding register contents as outputs. Enable bits are set based on the validity of rs1 and rs2 conditions defined earlier. This setup, known as a 2-port register file, allows reading from two registers simultaneously. The read instructions are stored in registers and then sent to the ALU for processing.
 
+Code is given below
+
+```tl-verilog
+//REGISTER FILE READ
+$rf_wr_en = 1'b0;
+$rf_wr_index[4:0] = 5'b0;
+$rf_rd_en1 = $rs1_valid;
+$rf_rd_index1[4:0] = $rs1;
+$rf_rd_en2 = $rs2_valid;
+$rf_rd_index2[4:0] = $rs2;
+         
+$src1_value[31:0] = $rf_rd_data1;
+$src2_value[31:0] = $rf_rd_data2;
+```
+Generated block diagram and waveform for the instruction Instruction Decode is shown below
+![Step 2](./Lab8/9.png)
