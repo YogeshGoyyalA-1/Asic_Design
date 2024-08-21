@@ -1227,6 +1227,11 @@ When the following line of code as mentioned below is added on Makerchip, the si
 Here, in the instruction memory, register r10 has been used to store the sum value. The simulation passed message can be seen under the "Log" tab. We have used ">>5" (ahead by 5) operator, because instead of stopping the simulator immediately, we wait for a couple of more cycles so as to see a little bit more on the waveform.
 ![Step 2](./Lab9/4.png)
 
+### CLK Waveform
+![Step 2](./Lab9/10.png)
+### Reset Waveform
+![Step 2](./Lab9/11.png)
+
 ![Step 2](./Lab9/9.png)
 - We can observe that values are are being incremented and final value is `2d` which is 45 in hex
 
@@ -1242,9 +1247,6 @@ As we can see from the diagram, the final sum output of numbers from 1 to 9 , ie
 **Final Block Diagarm is as shown**
 ![Step 2](./Lab9/3.png)
 
-### CLK Waveform
-![Step 2](./Lab9/10.png)
-### Reset Waveform
-![Step 2](./Lab9/11.png)
+
 
 #### **Observation**:- A 5-stage pipeline design, using `clk_yog`, computes the sum of numbers from 1 to 9 across various stages. The stages include Instruction Fetch, Instruction Decode, Execute, Memory Access, and Write-back. The entire process takes 58 cycles to complete.
