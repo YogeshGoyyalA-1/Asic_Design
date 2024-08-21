@@ -850,6 +850,17 @@ The design of a basic RISC-V CPU core involves several key logical blocks, which
 The Program Counter (PC) is a register that stores the address of the next instruction to be executed, functioning as a pointer into the instruction memory. Since the memory is byte-addressable and each instruction is 32 bits long, the PC increments by 4 bytes after each instruction to point to the next one. Upon the initial execution, a reset signal sets the PC to 0, ensuring that the first instruction is fetched from the correct starting point. For branch instructions, an immediate value is added to the current PC, resulting in a new address given by the formula: `NextPC = Incremented PC + Offset value`. Generally, the PC advances by 4 to fetch the next sequential instruction, but it resets to zero if a reset signal is triggered. The accompanying diagram illustrates how the PC functions, showing its progression through instructions and its behavior during resets and branch operations.
 
 ![Step 2](./Lab8/2.png)
+Code is given below
+```tl-verilog
+$reset = *reset;
+$clk_yog = *clk;
+$reset = *reset;
+
+|cpu
+  @0
+    $reset = *reset;
+    $pc[31:0] = >>1$reset ? 32'b0 : >>1$pc + 32'd4;
+```
 
 Generated block diagram and waveform for the pc counter is shown below
 
