@@ -831,6 +831,42 @@ Code is given below
 The generated block diagram and waveforms are as shown
 ![Step 2](./Lab7/17.png)
 
+## Validity
+When generating a waveform, results are obtained for each clock cycle, and while there may be no compilation errors, logical errors can still slip through, making them difficult to detect by merely analyzing the waveforms. Additionally, some "don't care" conditions might be irrelevant to the design and should be ignored. The concept of validity is introduced to address these issues. The global clock continuously drives operations, even when they are unnecessary, leading to excessive power consumption. In physical circuits, clocks are powered by voltage or current sources, consuming energy with every cycle. In complex systems, failing to bypass unnecessary operations can lead to substantial power waste. To optimize power efficiency, the clock signal is disabled during unneeded cycles through a technique called clock gating. Validity is crucial for implementing clock gating, ensuring that only the necessary operations are executed.
+
+Code is given below
+```tl-verilog
+|calc
+  @1
+    $reset = *reset;
+    $clk_yog = *clk;
+            
+    ?$vaild      
+      @1
+        $aa_seq[31:0] = $aa[3:0] * $aa;
+        $bb_seq[31:0] = $bb[3:0] * $bb;;
+      
+      @2
+        $cc_seq[31:0] = $aa_seq + $bb_seq;;
+      
+      @3
+        $cc[31:0] = sqrt($cc_seq);
+            
+      @4
+         $total_distance[63:0] = 
+            $reset ? '0 :
+            $valid ? >>1$total_distance + $cc :
+                     >>1$total_distance;
+
+
+```
+
+
+The generated block diagram and waveforms are as shown
+![Step 2](./Lab7/18.png)
+
+
+
 </details>
 
 <details>
