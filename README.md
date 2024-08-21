@@ -900,7 +900,7 @@ $reset = *reset;
 ```
 
 Generated block diagram and waveform for the pc counter is shown below
-
+![Step 2](./Lab8/19.png)
 ![Step 2](./Lab8/3.png)
 
 ### 2:- Instruction Fetch
@@ -1037,6 +1037,7 @@ $src1_value[31:0] = $rf_rd_data1;
 $src2_value[31:0] = $rf_rd_data2;
 ```
 Generated block diagram and waveform for the instruction Instruction Decode is shown below
+![Step 2](./Lab8/20.png)
 ![Step 2](./Lab8/9.png)
 
 ### 5:- Arithmetic and logic Unit(ALU)
@@ -1052,6 +1053,7 @@ $result[31:0] = $is_addi ? $src1_value + $imm :
                 32'bx ;
 ```
 Generated block diagram and waveform for the instruction Instruction Decode is shown below
+![Step 2](./Lab8/21.png)
 ![Step 2](./Lab8/10.png)
 
 ### 6:- Register File Write
@@ -1062,6 +1064,7 @@ Block diagram of a 2-port Register File, with 2 Read and 1 Write per cycle:
 ![Step 2](./Lab8/11.png)
 
 General Block Diagram of Register File and ALU:
+
 ![Step 2](./Lab8/12.png)
 
 Code is given below
@@ -1073,6 +1076,7 @@ $rf_wr_index[4:0] = $rd;
 $rf_wr_data[31:0] = $result;
 ```
 Generated block diagram and waveform for the instruction Instruction Decode is shown below
+![Step 2](./Lab8/22.png)
 ![Step 2](./Lab8/13.png)
 
 ### 7:- Branch Instruction
