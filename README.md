@@ -892,7 +892,7 @@ Generated block diagram and waveform for the instruction fetch cycle is shown be
 ![Step 2](./Lab8/5.png)
 
 
-### 2:- Instruction Decode
+### 3:- Instruction Decode
 In the decode stage, the goal is to extract detailed information from the instruction read during the fetch stage. This includes determining the instruction set, identifying any immediate values, and extracting register values.During Instruction Decode, every instruction is analyzed to identify its type, whether it includes immediate values, and the specific fields it contains. The opcode is mapped to the corresponding instruction, and the bit fields are interpreted according to the RISC-V ISA specifications.
 
 ![Step 2](./Lab8/6.png)
@@ -981,7 +981,7 @@ Generated block diagram and waveform for the instruction Instruction Decode is s
 
 
 
-### 3:- Register File Read
+### 4:- Register File Read
 
 Most instructions, particularly arithmetic ones, operate on source registers, requiring a read from these registers. The CPU's register file supports two simultaneous reads for the source operands (rs1 and rs2) and one write per cycle to the destination register. Inputs `rs1` and `rs2` are fed into the register file, producing the corresponding register contents as outputs. Enable bits are set based on the validity of rs1 and rs2 conditions defined earlier. This setup, known as a 2-port register file, allows reading from two registers simultaneously. The read instructions are stored in registers and then sent to the ALU for processing.
 
@@ -1001,3 +1001,18 @@ $src2_value[31:0] = $rf_rd_data2;
 ```
 Generated block diagram and waveform for the instruction Instruction Decode is shown below
 ![Step 2](./Lab8/9.png)
+
+### 5:- Arithmetic and logic Unit(ALU)
+
+The Arithmetic Logic Unit (ALU) is responsible for computing results based on the chosen operation. It processes the data from two registers provided by the register file, performs the corresponding arithmetic operation, and then writes the ALU's result back to memory via the register file's write port. Currently, the code supports only ADD and ADDI operations for executing the test code.
+
+Code is given below
+
+```tl-verilog
+//ARITHMETIC AND LOGIC UNIT (ALU)
+$result[31:0] = $is_addi ? $src1_value + $imm :
+              $is_add ? $src1_value + $src2_value :
+                32'bx ;
+```
+Generated block diagram and waveform for the instruction Instruction Decode is shown below
+![Step 2](./Lab8/10.png)
