@@ -1,6 +1,6 @@
 \m4_TLV_version 1d: tl-x.org
 \SV
-   // This code can be found in: https://github.com/stevehoover/RISC-V_MYTH_Workshop
+   //  This code can be found in: https://github.com/stevehoover/RISC-V_MYTH_Workshop
    
    m4_include_lib(['https://raw.githubusercontent.com/BalaDhinesh/RISC-V_MYTH_Workshop/master/tlv_lib/risc-v_shell_lib.tlv'])
    
@@ -42,6 +42,12 @@
          $reset = *reset;
          $clk_yog = *clk;
          $pc[31:0] = $reset ? '0 : >>1$pc + 32'd4;
+         
+         $imem_rd_en = !$reset ? 1 : 0;
+         $imem_rd_addr[M4_IMEM_INDEX_CNT-1:0] = $pc[M4_IMEM_INDEX_CNT+1:2];
+
+      @1
+         $instr[31:0] = $imem_rd_data[31:0];
       // Note: Because of the magic we are using for visualisation, if visualisation is enabled below,
       //       be sure to avoid having unassigned signals (which you might be using for random inputs)
       //       other than those specifically expected in the labs. You'll get strange errors for these.

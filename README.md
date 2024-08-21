@@ -865,3 +865,28 @@ $reset = *reset;
 Generated block diagram and waveform for the pc counter is shown below
 
 ![Step 2](./Lab8/3.png)
+
+### 2:- Instruction Fetch
+
+The Instruction Fetch Unit (IFU) within a CPU is tasked with organizing program instructions to be fetched from memory and executed in the correct sequence, forming the core's control logic.The program counter identifies the address of the next instruction stored in the instruction memory. This instruction must be retrieved to proceed with processing and further calculations.In this context, the instruction memory is integrated into the program. Within the Instruction Fetch logic, instructions are retrieved from the instruction memory and then forwarded to the Decode logic for processing. The read address for the instruction memory is derived from the program counter, which outputs a 32-bit instruction (instr[31:0]).
+
+![Step 2](./Lab8/4.png)
+
+Code is given below
+```tl-verilog
+|cpu
+  @0
+    $reset = *reset;
+    $clk_yog = *clk;
+    $pc[31:0] = $reset ? '0 : >>1$pc + 32'd4;
+         
+    $imem_rd_en = !$reset ? 1 : 0;
+    $imem_rd_addr[M4_IMEM_INDEX_CNT-1:0] = $pc[M4_IMEM_INDEX_CNT+1:2];
+
+  @1
+    $instr[31:0] = $imem_rd_data[31:0];
+```
+
+Generated block diagram and waveform for the instruction fetch cycle is shown below
+
+![Step 2](./Lab8/5.png)
