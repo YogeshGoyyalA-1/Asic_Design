@@ -1218,7 +1218,7 @@ Now that the implementation is complete, a simple testbench statement can be add
 When the following line of code as mentioned below is added on Makerchip, the simulation will pass only if the value stored in r10 = sum of numbers from 1 to 9.
  
 ```tl-verilog
-*passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
+*passed = |cpu/xreg[17]>>5$value == (1+2+3+4+5+6+7+8+9);
 ```
 ![Step 2](./Lab9/7.png)
 
