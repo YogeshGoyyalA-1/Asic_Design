@@ -1127,7 +1127,7 @@ The RISC-V core designed is divided into 5 pipeline stages. Pipelining in Makerc
 m4_asm(SW, r0, r10, 10000)
 m4_asm(LW, r17, r0, 10000)
 ```
-![Step 2](./Lab8/1.png)
+![Step 2](./Lab9/1.png)
 
 ##  Testing the core with a Testbench
 Now that the implementation is complete, a simple testbench statement can be added to ensure whether the core is working correctly or not. The "passed" and "failed" signals are used to communicate with the Makerchip platform to control the simulation. It tells the platform whther the simulation passed without any errors, failed with a list of errors that can be inferred from the log files, and hence to stop the simulation, if failed.
@@ -1137,17 +1137,17 @@ When the following line of code as mentioned below is added on Makerchip, the si
 *passed = |cpu/xreg[10]>>5$value == (1+2+3+4+5+6+7+8+9);
 ```
 Here, in the instruction memory, register r10 has been used to store the sum value. The simulation passed message can be seen under the "Log" tab. We have used ">>5" (ahead by 5) operator, because instead of stopping the simulator immediately, we wait for a couple of more cycles so as to see a little bit more on the waveform.
-![Step 2](./Lab8/4.png)
+![Step 2](./Lab9/4.png)
 
 We can observe the simulation passed message
 ## The VIZ Graphic Visualizer
 As we can see from the diagram, the final sum output of numbers from 1 to 9 , ie equal to 45 has been stored in the register r10, and simultaneously written into memory address 16 (4 because of byte addressing).
-![Step 2](./Lab8/5.png)
+![Step 2](./Lab9/5.png)
 
 # Final RISC-V CPU Core Implementation
 - The snapshot of the final output can be seen below.
-![Step 2](./Lab8/2.png)
+![Step 2](./Lab9/2.png)
 
 **Final Block Diagarm is as shown**
-![Step 2](./Lab8/3.png)
+![Step 2](./Lab9/3.png)
 
