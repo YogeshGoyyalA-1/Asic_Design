@@ -1256,3 +1256,17 @@ As we can see from the diagram, the final sum output of numbers from 1 to 9 , ie
 
 ### Objective:
 Convert a TL-Verilog program to Verilog written in last Lab using SandPiper, create a testbench, simulate using iverilog, and visualize the results in GTKWave.
+### Step-by-Step Procedure:
+
+1. **Install Required Packages:**
+Begin by installing the necessary packages using pip:
+```bash
+pip3 install pyyaml click sandpiper-saas
+```
+2. **Clone the github repo:** 
+clone this repo containing VSDBabySoC design files and testbench.
+```bash
+git clone https://github.com/manili/VSDBabySoC.git
+```
+![Step 2](./Lab10/1.png)
+
