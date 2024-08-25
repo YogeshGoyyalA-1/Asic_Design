@@ -1271,7 +1271,8 @@ cd VSDBabySoc
 ```
 ![Step 2](./Lab10/1.png)
 
-3. **Replace the rvmyth.tlv file in the VSDBabySoC Directory in src/module with the rvmth.tlv given [here](https://github.com/YogeshGoyyalA-1/Asic_Design/tree/main/Lab10/codes). or replace the code with the code given below.
+3. **Replace the rvmyth.tlv file in the VSDBabySoC Directory:** 
+replace in src/module with the rvmth.tlv given [here](https://github.com/YogeshGoyyalA-1/Asic_Design/tree/main/Lab10/codes). or replace the code with the code given below.
 
 4. **Convert .tlv to .v using converter:**
 Now we have written the code in Tl-Verilog .tlv which is a high level language and we want to convert into low level verilog that is to translate .tlv definition of rvmyth into .v definition. To do so Run the following command as follows
