@@ -1250,3 +1250,9 @@ As we can see from the diagram, the final sum output of numbers from 1 to 9 , ie
 
 
 #### **Observation**:- A 5-stage pipeline design, using `clk_yog`, computes the sum of numbers from 1 to 9 across various stages. The stages include Instruction Fetch, Instruction Decode, Execute, Memory Access, and Write-back. The entire process takes 58 cycles to complete.
+</details>
+<details>
+<summary><strong>Laboratory 10:</strong> Converting TL-Verilog to Verilog and Simulating with a Testbench</summary>
+
+### Objective:
+Convert a TL-Verilog program to Verilog using SandPiper, create a testbench, simulate using iverilog, and visualize the results in GTKWave.
