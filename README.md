@@ -1275,7 +1275,7 @@ cd VSDBabySoc
 replace in src/module with the rvmth.tlv given [here](https://github.com/YogeshGoyyalA-1/Asic_Design/tree/main/Lab10/codes). or replace the code with the code given below.
 
 4. **Convert .tlv to .v using converter:**
-Now we have written the code in Tl-Verilog .tlv which is a high level language and we want to convert into low level verilog that is to translate .tlv definition of rvmyth into .v definition. To do so Run the following command as follows
+Now we have written the code in TL-Verilog .tlv which is a high level language and we want to convert into low level verilog that is to translate .tlv definition of rvmyth into .v definition. To do so Run the following command as follows
 
 ```bash
 sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
@@ -1290,7 +1290,7 @@ make pre_synth_sim
 The result of the simulation i.e the pre_synth_sim.vcd will be stored in the output directory
 ![Step 2](./Lab10/3.png)
 
-5 .**Final Steps before obtaining the waveforms
+5 .**Final Steps before obtaining the waveforms:**
 To compile and simulate vsdbabysoc design.
 
 ```bash
@@ -1324,7 +1324,7 @@ Our aim is to verify whether the waveform which we obtained by running the .tlv 
 
 **Observation** :- We can see the gradual increment in sum from 0 to 9 in the end the sum of numbers from 0 to 9 is 45 which is `Ox2D` in hexadecimal which is stored in the register 14
 
-### Waveforms from GTKwavr platform by running .v file after conversion
+### Waveforms from GTKwave platform by running .v file after conversion
 **Clk Waveform**
 ![Step 2](./Lab10/6.png)
 **Reset Waveform**
