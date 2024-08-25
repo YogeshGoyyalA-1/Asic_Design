@@ -1264,9 +1264,10 @@ Begin by installing the necessary packages using pip:
 pip3 install pyyaml click sandpiper-saas
 ```
 2. **Clone the github repo:** 
-clone this repo containing VSDBabySoC design files and testbench.
+clone this repo containing VSDBabySoC design files and testbench. Move into the VSDBabySoc directory
 ```bash
 git clone https://github.com/manili/VSDBabySoC.git
+cd VSDBabySoc
 ```
 ![Step 2](./Lab10/1.png)
 
