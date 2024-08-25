@@ -1255,4 +1255,4 @@ As we can see from the diagram, the final sum output of numbers from 1 to 9 , ie
 <summary><strong>Laboratory 10:</strong> Converting TL-Verilog to Verilog and Simulating with a Testbench</summary>
 
 ### Objective:
-Convert a TL-Verilog program to Verilog using SandPiper, create a testbench, simulate using iverilog, and visualize the results in GTKWave.
+Convert a TL-Verilog program to Verilog written in last Lab using SandPiper, create a testbench, simulate using iverilog, and visualize the results in GTKWave.
