@@ -1314,7 +1314,7 @@ gtkwave pre_synth_sim.vcd
 
 Our aim is to verify whether the waveform which we obtained by running the .tlv in makerchip and the waveforms obtained by converting .tlv to .v then simulating it on gtkwave are same or not. We will verify this with the help of below waveforms which includes the one obtained in the previous labs and the one which we obtained from gtkwave
 
-### Waveforms from Makerchip platform by running .tlv file
+### Waveforms from Makerchip platform IDE by running .tlv file for comparison
 **Clk Waveform**
 ![Step 2](./Lab10/10.png)
 **Reset Waveform**
