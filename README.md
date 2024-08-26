@@ -1251,3 +1251,87 @@ As we can see from the diagram, the final sum output of numbers from 1 to 9 , ie
 
 #### **Observation**:- A 5-stage pipeline design, using `clk_yog`, computes the sum of numbers from 1 to 9 across various stages. The stages include Instruction Fetch, Instruction Decode, Execute, Memory Access, and Write-back. The entire process takes 58 cycles to complete.
 </details>
+<details>
+<summary><strong>Laboratory 10:</strong> Converting TL-Verilog to Verilog and Simulating with a Testbench</summary>
+
+### Objective:
+The RISC-V processor was initially designed using TL-Verilog in the Makerchip IDE. To deploy this design on an FPGA, it must first be converted to standard Verilog. This conversion was achieved using the Sandpiper-SaaS compiler. Following the conversion, pre-synthesis simulations will be conducted using the GTKWave simulator to verify the design.
+### Step-by-Step Procedure:
+
+1. **Install Required Packages:**
+Begin by installing the necessary packages using pip:
+```bash
+pip3 install pyyaml click sandpiper-saas
+```
+2. **Clone the github repo:** 
+clone this repo containing VSDBabySoC design files and testbench. Move into the VSDBabySoc directory
+```bash
+git clone https://github.com/manili/VSDBabySoC.git
+cd VSDBabySoc
+```
+![Step 2](./Lab10/1.png)
+
+3. **Replace the rvmyth.tlv file in the VSDBabySoC Directory:** 
+replace in src/module with the rvmth.tlv given [here](https://github.com/YogeshGoyyalA-1/Asic_Design/tree/main/Lab10/codes). or replace the code with the code given below and also change the testbench according to our makerchip code.
+
+4. **Convert .tlv to .v using converter:**
+Now we have written the code in TL-Verilog .tlv which is a high level language and we want to convert into low level verilog that is to translate .tlv definition of rvmyth into .v definition. To do so Run the following command as follows
+
+```bash
+sandpiper-saas -i ./src/module/*.tlv -o rvmyth.v --bestsv --noline -p verilog --outdir ./src/module/
+```
+![Step 2](./Lab10/2.png)
+
+4. **Make the pre_synth_sim.vcd:**
+We will create the pre_synth_sim.vcd by running the following command
+```bash
+make pre_synth_sim
+```
+The result of the simulation i.e the pre_synth_sim.vcd will be stored in the output/pre_synth_sim directory
+![Step 2](./Lab10/3.png)
+
+5 .**Now to compile and simulate RISC-V design run the following code:**
+To compile and simulate vsdbabysoc design.
+
+```bash
+iverilog -o output/pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module
+cd output
+./pre_synth_sim.out
+```
+To generate pre_synth_sim.vcd file,which is our simulation waveform file.
+![Step 2](./Lab10/4.png)
+
+6. **To open the Simulation file in gtkwave tool:**
+To do so run the follwowing command 
+```bash
+gtkwave pre_synth_sim.vcd
+```
+![Step 2](./Lab10/5.png)
+### Waveform including
+- clk_yog: This is the clock input to the RISC-V core.
+- reset: This is the input reset signal to the RISC-V core.
+- OUT[9:0]: This is the 10-bit output [9:0] OUT port of the RISC-V core. This port comes from the RISC-V register #14, originally.
+
+Our aim is to verify whether the waveform which we obtained by running the .tlv in makerchip and the waveforms obtained by converting .tlv to .v then simulating it on gtkwave are same or not. We will verify this with the help of below waveforms which includes the one obtained in the previous labs and the one which we obtained from gtkwave
+
+### Waveforms from Makerchip platform by running .tlv file
+**Clk Waveform**
+![Step 2](./Lab10/10.png)
+**Reset Waveform**
+![Step 2](./Lab10/11.png)
+**Final Output**
+![Step 2](./Lab10/9.png)
+
+**Observation** :- We can see the gradual increment in sum from 0 to 9 in the end the sum of numbers from 0 to 9 is 45 which is `Ox2D` in hexadecimal which is stored in the register 14
+
+### Waveforms from GTKwave platform by running .v file after conversion
+**Clk Waveform**
+![Step 2](./Lab10/6.png)
+**Reset Waveform**
+![Step 2](./Lab10/7.png)
+**Final Output**
+![Step 2](./Lab10/8.png)
+
+**Observation** :- We can see the gradual increment in sum from 0 to 9 in out[9:0] in the end the sum of numbers from 0 to 9 is 45 which is `Ox2D` in hexadecimal
+
+## Observation:- We have verified our code for the processor works in the intended way as the output waveforms that we obtained from .tlv file and after conversion to low level .v file using gtkwave gives the same waveforms in both the cases as intended. 
