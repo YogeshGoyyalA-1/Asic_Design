@@ -1307,7 +1307,9 @@ To do so run the follwowing command
 gtkwave pre_synth_sim.vcd
 ```
 ![Step 2](./Lab10/5.png)
-### Waveform including
+### Pre-synthesis Simulation results:
+Signals to plot are the following:
+
 - clk_yog: This is the clock input to the RISC-V core.
 - reset: This is the input reset signal to the RISC-V core.
 - OUT[9:0]: This is the 10-bit output [9:0] OUT port of the RISC-V core. This port comes from the RISC-V register #14, originally.
