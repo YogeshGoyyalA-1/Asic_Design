@@ -1395,11 +1395,11 @@ In the below screenshot, the output of the sum 1 to 9 can be observed after simu
 
 ![Step 2](./Lab11/5.png)
 
-**VCO_IN** is the input clk reference signal to the PLL module.
-**CLK** is the output clk signal from the PLL module.
-**CLK_yog** is the clock used by the RISC-V CPU for the operations.
-**RV_TO_DAC** is the output wire connected to the `Xreg[14]` register of the register file,
-**OUT** is the analog signal coming out of the DAC unit.
-**reset** is the reset signal for the RISC-V CPU.
+* **VCO_IN** is the input clk reference signal to the PLL module.
+* **CLK** is the output clk signal from the PLL module.
+* **CLK_yog** is the clock used by the RISC-V CPU for the operations.
+* **RV_TO_DAC** is the output wire connected to the `Xreg[14]` register of the register file,
+* **OUT** is the analog signal coming out of the DAC unit.
+* **reset** is the reset signal for the RISC-V CPU.
 
 ### Observation:-
