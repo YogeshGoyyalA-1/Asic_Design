@@ -1340,7 +1340,7 @@ Our aim is to verify whether the waveform which we obtained by running the .tlv 
 </details>
 
 <details>
-<summary><strong>Laboratory 11:</strong>To generate waveform for DAC and PLL peripheral for Risc-V processor.<summary>
+<summary><strong>Laboratory 11:</strong>To generate waveform for DAC and PLL peripheral for Risc-V processor.</summary>
 
 ### BabySoC Simulation
 
