@@ -1402,4 +1402,4 @@ In the below screenshot, the output of the sum 1 to 9 can be observed after simu
 * **OUT** is the analog signal coming out of the DAC unit.
 * **reset** is the reset signal for the RISC-V CPU.
 
-### Observation:-
+### Observation:-The simulation successfully demonstrates the integration of DAC and PLL peripherals with the RISC-V processor, converting digital outputs to analog signals.
