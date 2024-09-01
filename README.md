@@ -1338,3 +1338,68 @@ Our aim is to verify whether the waveform which we obtained by running the .tlv 
 
 ### Observation:- We have verified our code for the processor works in the intended way as the output waveforms that we obtained from .tlv file and after conversion to low level .v file using gtkwave gives the same waveforms in both the cases as intended. 
 </details>
+
+<details>
+<summary><strong>Laboratory 11:</strong>To generate waveform for DAC and PLL peripheral for Risc-V processor.<summary>
+
+### BabySoC Simulation
+
+Developing and simulating the complete micro-architecture of a RISC-V CPU is a complex task. For this simulation, we'll focus on incorporating two key IP blocks: **PLL** and **DAC**.
+
+---
+
+#### **Phase-Locked Loop (PLL)**
+
+A Phase-Locked Loop (PLL) is an electronic system that aligns the phase and frequency of an output signal with a reference signal. It generally consists of three primary components:
+
+1. **Phase Detector:** Compares the phase of the reference signal with the output signal, generating an error signal based on their difference.
+2. **Loop Filter:** Smooths the error signal, reducing noise and improving the system's stability.
+3. **Voltage-Controlled Oscillator (VCO):** Adjusts its output frequency in response to the filtered error signal to minimize the phase difference.
+
+PLLs are widely used in applications such as clock generation, frequency synthesis, and data recovery in communication systems.
+
+#### **Digital-to-Analog Converter (DAC)**
+
+A Digital-to-Analog Converter (DAC) converts digital signals (typically binary) into analog signals (such as voltage or current). This conversion is essential in systems where digital data needs to be interpreted by analog devices or for outputs that need to be perceived by humans, such as in audio and video devices.
+
+DACs are commonly found in applications including audio playback, video display, and signal processing.
+
+---
+
+#### Files Required for BabySoC Simulation
+
+Please click [here](https://github.com/Subhasis-Sahu/BabySoC_Simulation/tree/main) to clone the reposoitory which has the necessary files we need to for simulation
+
+* **src/module:** Contains all RTL files and `testbench.v` needed to simulate the BabySoC design.
+* **src/include:** Houses RTL files referenced in the main RTL files within `src/module` via `include` directives.
+
+### To perform Funtional Simulation
+- After cloning the repository replace the rvymth.v file with your required rvymth.v. Also modify the vsdbabysoc.v file to point to our core clock. 
+- Follow the steps below to perform functional simulation
+```bash
+cd BabySoC_Simulation
+```
+```bash
+iverilog -o ./pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module/
+```
+```bash
+./pre_synth_sim.out
+```
+```
+gtkwave pre_synth_sim.vcd
+```
+
+![Step 2](./Lab11/4.png)
+
+In the below screenshot, the output of the sum 1 to 9 can be observed after simulation that is the gradual increment from 0x00 to 0x2D in hexadecimal
+
+![Step 2](./Lab11/5.png)
+
+**VCO_IN** is the input clk reference signal to the PLL module.
+**CLK** is the output clk signal from the PLL module.
+**CLK_yog** is the clock used by the RISC-V CPU for the operations.
+**RV_TO_DAC** is the output wire connected to the `Xreg[14]` register of the register file,
+**OUT** is the analog signal coming out of the DAC unit.
+**reset** is the reset signal for the RISC-V CPU.
+
+### Observation:-
