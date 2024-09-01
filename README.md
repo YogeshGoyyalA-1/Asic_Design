@@ -1341,6 +1341,8 @@ Our aim is to verify whether the waveform which we obtained by running the .tlv 
 
 <details>
 <summary><strong>Laboratory 11:</strong>To generate waveform for DAC and PLL peripheral for Risc-V processor.</summary>
+---
+
 VSDBabySoC is a small yet powerful RISCV-based SoC. The main purpose of designing such a small SoC is to test three open-source IP cores together for the first time and calibrate the analog part of it. VSDBabySoC contains one RVMYTH microprocessor, an 8x-PLL to generate a stable clock, and a 10-bit DAC to communicate with other analog devices.
 
 ![Step 2](./Lab11/6.png)
