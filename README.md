@@ -1427,3 +1427,14 @@ In digital circuit design, **register-transfer level** (RTL) is an abstraction t
 **Simulator**: A tool used to verify the design. In this workshop, we utilize the iverilog tool. Simulation involves generating models that replicate the behavior of the intended device (simulation models) and creating test models to validate the device (test benches). RTL Design: Consists of one or more Verilog files that implement the required design specifications and functionality for the circuit.
 
 **Test Bench**: The configuration used to provide stimulus (test vectors) to the design in order to verify its functionality.
+
+#### HOW SIMULATOR WORKS 
+**Simulator** looks for changes on input signals and based on that output is evaluated.
+![Step 2](./Lab12/1.png)
+
+**Design** may have 1 or more primary inputs and primary outputs but **TB** doesn't have.
+
+ #### SIMULATION FLOW
+![Step 2](./Lab12/2.png)
+**Simulator** continuously checks for changes in the input. If there is an input change, the output is evaluated; else the simulator will never evaluate the output.
+### 1.2. Labs using iverilog & gtkwave
