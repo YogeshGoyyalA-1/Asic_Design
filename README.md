@@ -1414,3 +1414,8 @@ In the below screenshot, the output of the sum 1 to 9 can be observed after simu
 * **reset** is the reset signal for the RISC-V CPU.
 
 ### Observation:-The simulation successfully demonstrates the integration of DAC and PLL peripherals with the RISC-V processor, converting digital outputs to analog signals.
+
+<details>
+<summary><strong>Laboratory 12:</strong>RTL design using Verilog with SKY130 Technology.</summary>
+
+---
