@@ -1563,6 +1563,6 @@ show
 ![Step 2](./Lab12/18.png)
 7. To write the result netlist to a file use the write_veriog command. This will output the netlist to a file in the current directory.
 ```
-write_verilog -noattr synth_result.v
+write_verilog -noattr good_mux_netlist.v
 ```
 ![Step 2](./Lab12/19.png)
