@@ -1566,3 +1566,5 @@ show
 write_verilog -noattr good_mux_netlist.v
 ```
 ![Step 2](./Lab12/19.png)
+
+## 2. Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles 
