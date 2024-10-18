@@ -1492,3 +1492,15 @@ Design file
 
 Testbench File
 ![Step 2](./Lab12/9.png)
+
+### 1.4. Introduction to Yosys & Logic Synthesis
+
+**Synthesizer** is a tool for converting the **RTL** to Netlist and here we are using the **Yosys** Synthesizer.
+#### Yosys SETUP
+
+![Step 2](./Lab12/11.png)
+
+#### Verifying the Synthesis
+![Step 2](./Lab12/12.png)
+
+**Note**:- The set of Primary inputs / primary outputs will remain the same between the RTL design and Synthesized netlist → Same Test bench can be used
