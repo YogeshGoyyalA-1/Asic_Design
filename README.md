@@ -1504,3 +1504,24 @@ Testbench File
 ![Step 2](./Lab12/12.png)
 
 **Note**:- The set of Primary inputs / primary outputs will remain the same between the RTL design and Synthesized netlist → Same Test bench can be used
+
+#### 1.5. Logic Synthesis
+
+RTL Design - behavioral representation in HDL form for the required specification.
+
+ **Synthesis** - RTL to Gate level translation.
+ The design is converted int gates and connections are made. This given outas a file called **netlist**.
+
+>_.lib file is a collection of logical modules which includes all basic logic gates. It may also contain different flavors of the same gate (2 input AND, 3 input AND – slow, medium and fast version)._
+
+#### Faster cells and Slower Cells
+
+A cell delay in the digital logic circuit depends on the load of the circuit which here is Capacitance.
+
+Faster the charging / discharging of the capacitance --> Lesser is the Cell Delay
+
+Inorder to charge/discharge the capacitance faster, we use wider transistors that can source more current. This will help us reduce the cell delay but at the same time, wider transistors consumer more power and area. Similarly, using narrower transistors help in reduced area and power but the circuit will have a higher cell delay. Hence, we have to compromise on area and power if we are to design a circuit with low cell delay.
+
+#### Constraints
+
+A Constraint is a guidance file given to a synthesizer inorder to enable an optimum implementation of the logic circuit by selecting the appropriate flavour of cells (fast or slow).
