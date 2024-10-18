@@ -1453,4 +1453,42 @@ git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 
 ![Step 2](./Lab12/4.png)
 
-### 1.2.
+### 1.3. Labs using iverilog & gtkwave
+
+### Simulation using iverilog simulator - 2:1 multiplexer rtl design
+
+#### VERILOG FILE OF A SIMPLE 2:1 MUX
+
+![Step 2](./Lab12/5.png)
+
+To compile the verilog and testbench file use the following commands which will generate an executable file and will dump the waveform to view it using the gtkwave
+
+```
+iverilog good_mux.v tb_good_mux.v
+```
+![Step 2](./Lab12/6.png)
+
+#### GTKWAVE Analysis
+
+To view the waveform using the gtkwave run the following commands
+
+```
+./a.out
+gtkwave tb_good_mux.vcd
+```
+
+We can view the waveform of a simple 2:1 mux which selects the input based on the select line
+![Step 2](./Lab12/7.png)
+
+#### Access Module Files
+To view the contents of the file run the following command
+```
+$ vim tb_good_mux.v -o good_mux.v 
+```
+![Step 2](./Lab12/8.png)
+
+Design file
+![Step 2](./Lab12/10.png)
+
+Testbench File
+![Step 2](./Lab12/9.png)
