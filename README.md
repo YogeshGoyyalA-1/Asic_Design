@@ -1536,7 +1536,7 @@ yosys
 
 2. load the sky130 standard library.
 ```
-read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 ![Step 2](./Lab12/14.png)
 3. Read the design files
@@ -1552,7 +1552,7 @@ synth -top good_mux
         
 5. Map to the standard library
 ```
-abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 ![Step 2](./Lab12/17.png)
 
