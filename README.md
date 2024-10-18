@@ -1434,7 +1434,7 @@ In digital circuit design, **register-transfer level** (RTL) is an abstraction t
 
 **Design** may have 1 or more primary inputs and primary outputs but **TB** doesn't have.
 
- #### SIMULATION FLOW
+#### SIMULATION FLOW
 ![Step 2](./Lab12/2.png)
 **Simulator** continuously checks for changes in the input. If there is an input change, the output is evaluated; else the simulator will never evaluate the output.
 ### 1.2. Introduction to LABS
