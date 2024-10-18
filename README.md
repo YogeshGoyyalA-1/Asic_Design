@@ -1525,3 +1525,44 @@ Inorder to charge/discharge the capacitance faster, we use wider transistors tha
 #### Constraints
 
 A Constraint is a guidance file given to a synthesizer inorder to enable an optimum implementation of the logic circuit by selecting the appropriate flavour of cells (fast or slow).
+
+**Yosys flow**
+1. start yosys.
+          
+```
+yosys
+```
+![Step 2](./Lab12/13.png)
+
+2. load the sky130 standard library.
+```
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+![Step 2](./Lab12/14.png)
+3. Read the design files
+```
+read_verilog good_mux.v
+```
+![Step 2](./Lab12/15.png)
+4. Synthesize the top level module
+```
+synth -top good_mux
+```
+![Step 2](./Lab12/16.png)
+        
+5. Map to the standard library
+```
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+![Step 2](./Lab12/17.png)
+
+6. Two view the result as a graphich use the show command.
+```
+show
+```
+![Step 2](./Lab12/18.png)
+7. To write the result netlist to a file use the write_veriog command. This will output the netlist to a file in the current directory.
+```
+write_verilog -noattr synth_result.v
+```
+![Step 2](./Lab12/19.png)
