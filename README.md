@@ -1437,4 +1437,20 @@ In digital circuit design, **register-transfer level** (RTL) is an abstraction t
  #### SIMULATION FLOW
 ![Step 2](./Lab12/2.png)
 **Simulator** continuously checks for changes in the input. If there is an input change, the output is evaluated; else the simulator will never evaluate the output.
-### 1.2. Labs using iverilog & gtkwave
+### 1.2. Introduction to LABS
+#### ENVIRONMENT SETUP
+
+```
+//create a directory
+mkdir VLSI 
+cd VLSI
+git clone https://github.com/kunalg123/vsdflow.git
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+```
+![Step 2](./Lab12/3.png)
+
+**sky130RTLDesignAndSynthesisWorkshop** Directory has: My_Lib - which contains all the necessary library files; where lib has the standard cell libraries to be used in synthesis and verilog_model with all standard cell verilog models for the standard cells present in the lib. Ther verilog_files folder contains all the experiments for lab sessions including both verilog code and test bench codes.
+
+![Step 2](./Lab12/4.png)
+
+### 1.2.
