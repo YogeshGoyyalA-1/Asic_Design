@@ -1607,3 +1607,5 @@ Timing, power, capacitance, leakage functionality etc characteristics for each p
 
 #### Various Flavours of AND Cell
 ![Step 2](./Lab12/26.png)
+
+### 2.2. Hierarchial synthesis vs Flat synthesis 
