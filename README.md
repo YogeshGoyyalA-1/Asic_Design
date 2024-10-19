@@ -1604,3 +1604,6 @@ Timing, power, capacitance, leakage functionality etc characteristics for each p
 ![Step 2](./Lab12/23.png)
 ![Step 2](./Lab12/24.png)
 ![Step 2](./Lab12/25.png)
+
+#### Various Flavours of AND Cell
+![Step 2](./Lab12/26.png)
