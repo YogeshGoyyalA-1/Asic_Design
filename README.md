@@ -1609,3 +1609,36 @@ Timing, power, capacitance, leakage functionality etc characteristics for each p
 ![Step 2](./Lab12/26.png)
 
 ### 2.2. Hierarchial synthesis vs Flat synthesis 
+
+#### Hierarchial synthesis  
+```
+_Opening the file used for this experiment
+vim multiple_modules.v
+_Invoke Yosys
+yosys
+_Read library 
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+_Read Design
+read_verilog multiple_modules.v
+_Synthesize Design
+synth -top multiple_modules
+_Generate Netlist
+abc -liberty ../lib/sky130_fd_sc_hd__t_025C_1v80.lib
+_Realizing Graphical Version of Logic for multiple modules
+show multiple_modules
+_Writing the netlist in a crisp manner 
+write_verilog -noattr multiple_modules_hier.v
+!vim multiple_modules_hier.v
+```
+![Step 2](./Lab12/27.png)
+
+**Multiple Modules:** - 2 SubModules
+**Staistics of Multiple Modules**
+
+![Step 2](./Lab12/28.png)
+**Realization of the Logic**
+![Step 2](./Lab12/29.png)
+**Map to the standard library**
+![Step 2](./Lab12/30.png)
+**Netlist file**
+![Step 2](./Lab12/31.png)
