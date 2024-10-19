@@ -1568,3 +1568,39 @@ write_verilog -noattr good_mux_netlist.v
 ![Step 2](./Lab12/19.png)
 
 ## 2. Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles 
+
+### 2.1. Introduction to timing labs
+navigate to the verilog_files directory then type these below commands
+```
+Command to open the libary file
+$ vim ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+To shut off the background colors/ syntax off:
+: syn off
+To enable the line numbers
+: se nu
+```
+
+#### Library file
+![Step 2](./Lab12/20.png)
+
+## The standard cell library
+ A standard cell library is a collection of characterized logic gates that can be used to implement digital circuits.
+
+![Step 2](./Lab12/21.png)
+
+#### Contents
+For a design to work, there are three important parameters that determines how the Silicon works: Process (Variations due to Fabrications), Voltage (Changes in the behavior of the circuit) and Temperature (Sensitivity of semiconductors). Libraries are characterized to model these variations. 
+
+![Step 2](./Lab12/22.png)
+
+### The .lib(liberty) File contents
+The timing data of standard cells is provided in the liberty format. Every .lib file will provide timing, power, noise, area information for a single corner ie process,voltage, temperature etc.
+1. Library\
+general information common to all cells in the library.
+2. Cell\
+specific information about each standard cell.
+3. Pin\
+Timing, power, capacitance, leakage functionality etc characteristics for each pin in each cell.
+![Step 2](./Lab12/23.png)
+![Step 2](./Lab12/24.png)
+![Step 2](./Lab12/25.png)
