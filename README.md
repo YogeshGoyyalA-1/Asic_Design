@@ -1630,6 +1630,7 @@ _Writing the netlist in a crisp manner
 write_verilog -noattr multiple_modules_hier.v
 !vim multiple_modules_hier.v
 ```
+When you do synth -top 'topmodulename' in yosys, it does an hierarchical synthesis. ie the different hierarchies between modules are preserved.
 ![Step 2](./Lab12/27.png)
 
 **Multiple Modules:** - 2 SubModules
