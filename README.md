@@ -1812,6 +1812,10 @@ show
 
  ##### No hardware requirements - No # of memories, memory bites, processes and cells. Number of cells inferred is 0.
 
+**_NetList File of Sub-module_**
+ 
+![Step 2](./Lab12/59.png)
+
 
  **_Realization of Logic_**
  
