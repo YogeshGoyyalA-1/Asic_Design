@@ -1831,10 +1831,11 @@ write_verilog -noattr mult_2.v
 ![Step 2](./Lab12/60.png)
 ![Step 2](./Lab12/61.png)
 
-**_Statistics _**
+**Statistics **
 
 ![Step 2](./Lab12/62.png)
 ![Step 2](./Lab12/63.png)
+ ##### No hardware requirements - No # of memories, memory bites, processes and cells. Number of cells inferred is 0.
  
  **_NetList File of Sub-module_**
  
