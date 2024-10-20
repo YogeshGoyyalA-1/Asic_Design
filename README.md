@@ -1727,3 +1727,7 @@ gtkwave tb_dff_asyncres.vcd
 
 **GTK WAVE OF ASYNCHRONOUS RESET**
 ![Step 2](./Lab12/42.png)
+**GTK WAVE OF ASYNCHRONOUS SET**
+![Step 2](./Lab12/43.png)
+**GTK WAVE OF SYNCHRONOUS RESET**
+![Step 2](./Lab12/44.png)
