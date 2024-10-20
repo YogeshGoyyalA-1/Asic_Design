@@ -1772,3 +1772,12 @@ Follow the same steps as given above just the file name changes to dff_async_set
 
 ![Step 2](./Lab12/51.png)
 **Note:**  We wrote a flop with active high set but the flop is having acting low set so the tool inserted the inverter so (!(!(set))) is just set so at the end we got a flop with active high set
+
+**Statistics of D FLipflop with Synchronous Reset**
+
+![Step 2](./Lab12/52.png)
+![Step 2](./Lab12/53.png)
+
+**Realization of Logic**
+
+![Step 2](./Lab12/54.png)
