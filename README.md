@@ -1826,6 +1826,8 @@ write_verilog -noattr mult_2.v
 
 ## (ii) mult_8.v
 
+follow the same steps but replace the file name with mult_8.v and the corresponding the top module name
+
 **_Expected Logic_**
 
 ![Step 2](./Lab12/60.png)
