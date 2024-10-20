@@ -1798,6 +1798,9 @@ _Generate Netlist
 abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 _Realizing Graphical Version of Logic for single modules
 show 
+_Writing the netlist in a crisp manner 
+write_verilog -noattr mult_2.v
+!vim mult_2.v
 ```
 ## (i) mult_2.v 
 
