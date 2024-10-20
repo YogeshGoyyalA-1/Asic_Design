@@ -1645,7 +1645,7 @@ When you do synth -top 'topmodulename' in yosys, it does an hierarchical synthes
 ![Step 2](./Lab12/31.png)
 
 #### Flat synthesis  
-
+Merges all hierarchical modules in the design into a single module to create a flat netlist
 ```
 _To flatten the netlist
 flatten
