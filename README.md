@@ -1823,3 +1823,28 @@ write_verilog -noattr mult_2.v
  **_Realization of Logic_**
  
 ![Step 2](./Lab12/58.png)
+
+## (ii) mult_8.v
+
+**_Expected Logic_**
+
+![Step 2](./Lab12/60.png)
+![Step 2](./Lab12/61.png)
+
+**_Statistics _**
+
+![Step 2](./Lab12/62.png)
+![Step 2](./Lab12/63.png)
+ 
+ **_NetList File of Sub-module_**
+ 
+![Step 2](./Lab12/64.png)
+
+ **_Realization of Logic_**
+ 
+![Step 2](./Lab12/65.png)
+
+</details>
+<details>
+<summary><strong>Day 3:</strong>Combinational and Sequential Optimizations .</summary>
+**Logic Circuits**
