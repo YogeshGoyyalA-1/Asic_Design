@@ -1759,3 +1759,5 @@ show
 **Realization of Logic**
 
 ![Step 2](./Lab12/48.png)
+
+**Note:**  We wrote a flop with active high reset but the flop is having acting low reset so the tool inserted the inverter so (!(!(reset))) is just reset so at the end we got a flop with active high reset
