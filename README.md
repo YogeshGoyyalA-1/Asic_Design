@@ -1661,3 +1661,21 @@ write_verilog -noattr multiple_modules_flat.v
  
 **Netlist file**
 ![Step 2](./Lab12/34.png)
+
+#### Module Level Synthesis
+This method is preferred when multiple instances of same module are used. The synthesis is carried out once and is replicate multiple times, and the multiple instances of the same module are stitched together in the top module. This method is helpful when making use of divide and conquer algorithm
+
+
+ ```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog multiple_modules.v
+4. synth -top sub_module1
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. show
+```
+![Step 2](./Lab12/35.png)
+
+**Realization of the Logic**
+
+![Step 2](./Lab12/36.png)
