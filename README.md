@@ -1692,3 +1692,20 @@ There are two types of D Flip-Flops being implemented: Rising-Edge D Flip Flop a
 
 
 Every flop element needs an initial state, else the combinational circuit will evaluate to a garbage value. In order to achieve this, there are control pins in the flop namely: Set and Reset which can either be Synchronous or Asynchronous. 
+
+#### _Asynchronous Reset/Set:_
+![Step 2](./Lab12/37.png)
+
+![Step 2](./Lab12/38.png)
+
+
+Here, always block gets evaluated when there is a change in the clock or change in the set/reset.The circuit is sensitive to positive edge of the clock. Upon the signal going low/high depending on reset or set control, singal q line goes changes respectively. Hence, it does not wait for the positive edge of the clock and happens irrespective of the clock_.
+
+#### _Synchronous Reset:_
+
+![Step 2](./Lab12/39.png)
+
+
+#### _Both Synchronous and Asynchronous Reset:_
+
+![Step 2](./Lab12/40.png)
