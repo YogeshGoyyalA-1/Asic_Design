@@ -1709,3 +1709,21 @@ Here, always block gets evaluated when there is a change in the clock or change 
 #### _Both Synchronous and Asynchronous Reset:_
 
 ![Step 2](./Lab12/40.png)
+
+#### FLIP FLOP SIMULATION
+
+```
+#Steps Followed for analysing Asynchronous behavior:
+//Load the design in iVerilog by giving the verilog and testbench file names
+$ iverilog dff_asyncres.v tb_dff_asyncres.v 
+//List so as to ensure that it has been added to the simulator
+$ ls
+//To dump the VCD file
+$ ./a.out
+//To load the VCD file in GTKwaveform
+$ gtkwave tb_dff_asyncres.vcd
+```
+![Step 2](./Lab12/41.png)
+
+**GTK WAVE OF ASYNCHRONOUS RESET**
+![Step 2](./Lab12/42.png)
