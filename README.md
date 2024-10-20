@@ -1643,3 +1643,21 @@ When you do synth -top 'topmodulename' in yosys, it does an hierarchical synthes
 ![Step 2](./Lab12/30.png)
 **Netlist file**
 ![Step 2](./Lab12/31.png)
+
+#### Flat synthesis  
+
+```
+_To flatten the netlist
+flatten
+_Writing the netlist in a crisp manner and to view it
+write_verilog -noattr multiple_modules_flat.v
+!vim multiple_modules_flat.v
+```
+![Step 2](./Lab12/32.png)
+**Realization of the Logic**
+
+![Step 2](./Lab12/33.png)
+  
+ 
+**Netlist file**
+![Step 2](./Lab12/34.png)
