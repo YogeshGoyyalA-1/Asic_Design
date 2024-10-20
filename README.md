@@ -1731,3 +1731,31 @@ gtkwave tb_dff_asyncres.vcd
 ![Step 2](./Lab12/43.png)
 **GTK WAVE OF SYNCHRONOUS RESET**
 ![Step 2](./Lab12/44.png)
+
+#### FLIP FLOP SYNTHESIS
+
+```
+_Invoke Yosys
+yosys
+_Read library 
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+_Read Design
+read_verilog dff_asyncres.v
+_Synthesize Design - this controls which module to synthesize
+synth -top dff_asyncres
+_There will be a separate flop library under a standard library, but here we point back to the same library and tool looks only for DFF instead of all cells
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+_Generate Netlist
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+_Realizing Graphical Version of Logic for single modules
+show 
+```
+![Step 2](./Lab12/45.png)
+**Statistics of D FLipflop with Asynchronous Reset**
+
+![Step 2](./Lab12/46.png)
+![Step 2](./Lab12/47.png)
+
+**Realization of Logic**
+
+![Step 2](./Lab12/48.png)
