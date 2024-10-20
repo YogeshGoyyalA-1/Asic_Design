@@ -1852,3 +1852,47 @@ follow the same steps but replace the file name with mult_8.v and the correspond
 <summary><strong>Day 3:</strong>Combinational and Sequential Optimizations .</summary>
 
 **Logic Circuits**
+
+Combinational circuits are defined as the time independent circuits which do not depends upon previous inputs to generate any output are termed as combinational circuits. Sequential circuits are those which are dependent on clock cycles and depends on present as well as past inputs to generate any output.
+
+### 3.1. Introduction to Logic Optimizations
+
+### Combinational Logic Optimization
+**Why do we need Combinational Logic Optimizations?**
+
+* Primarily to squeeze the logic to get the most optimized design.
+    * An optimized design results in comprehensive Area and Power saving.
+
+#### Types of Combinational Optimizations
+
+* Constant Propagation 
+	* Direct Optimization technique
+* Boolean Logic Optimization.
+	* Karnaugh map
+	* Quine Mckluskey
+
+#### CONSTANT PROPAGATION
+
+In Constant propagation techniques, inputs that are no way related or affecting the changes in the output are ignored/optimized to simplify the combination logic thereby saving area and power usage by those input pins.
+```
+Y =((AB)+ C)'
+If A = 0
+Y =((0)+ C)' = C'
+```
+#### BOOLEAN LOGIC OPTIMIZATION
+
+Boolean logic optimization is nothing simplifying a complex boolean expression into a simplified expression by utilizing the laws of boolean logic algebra.
+```
+assign y = a?(b?c:(c?a:0)):(!c)
+```
+above is simplified as
+```
+y = a'c' + a(bc + b'ca) 
+y = a'c' + abc + ab'c 
+y = a'c' + ac(b+b') 
+y = a'c' + ac
+y = a xnor c
+```
+### Sequential Logic Optimization
+
+#### Types of Sequential Optimizations
