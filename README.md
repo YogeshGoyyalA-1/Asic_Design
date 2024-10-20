@@ -1419,7 +1419,8 @@ In the below screenshot, the output of the sum 1 to 9 can be observed after simu
 <summary><strong>Laboratory 12:</strong>RTL design using Verilog with SKY130 Technology.</summary>
 
 ---
-## 1. Day 1 - Introduction to Verilog RTL design and Synthesis
+<details>
+<summary><strong>Day 1:</strong>Introduction to Verilog RTL design and Synthesis.</summary>
 ### 1.1. Introduction to open source simulator iverilog
 
 In digital circuit design, **register-transfer level** (RTL) is an abstraction that models a synchronous digital circuit by describing how data flows between hardware registers and how logic operations are applied to these signals. This RTL abstraction is used in HDL (Hardware Description Language) to create high-level models of a circuit, which can then be used to derive lower-level representations and, eventually, the actual hardware layout.
