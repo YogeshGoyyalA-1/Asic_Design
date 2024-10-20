@@ -1848,4 +1848,5 @@ write_verilog -noattr mult_2.v
 </details>
 <details>
 <summary><strong>Day 3:</strong>Combinational and Sequential Optimizations .</summary>
+
 **Logic Circuits**
