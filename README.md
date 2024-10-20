@@ -1421,6 +1421,7 @@ In the below screenshot, the output of the sum 1 to 9 can be observed after simu
 ---
 <details>
 <summary><strong>Day 1:</strong>Introduction to Verilog RTL design and Synthesis.</summary>
+
 ### 1.1. Introduction to open source simulator iverilog
 
 In digital circuit design, **register-transfer level** (RTL) is an abstraction that models a synchronous digital circuit by describing how data flows between hardware registers and how logic operations are applied to these signals. This RTL abstraction is used in HDL (Hardware Description Language) to create high-level models of a circuit, which can then be used to derive lower-level representations and, eventually, the actual hardware layout.
@@ -1567,8 +1568,9 @@ show
 write_verilog -noattr good_mux_netlist.v
 ```
 ![Step 2](./Lab12/19.png)
-
-## 2. Day 2 - Timing libs, hierarchical vs flat synthesis and efficient flop coding styles 
+</details>
+<details>
+<summary><strong>Day 2:</strong>Timing libs, hierarchical vs flat synthesis and efficient flop coding styles .</summary>
 
 ### 2.1. Introduction to timing labs
 navigate to the verilog_files directory then type these below commands
