@@ -1781,3 +1781,38 @@ Follow the same steps as given above just the file name changes to dff_async_set
 **Realization of Logic**
 
 ![Step 2](./Lab12/54.png)
+
+#### Interesting Optimizations
+```
+modules used are opened using the command
+vim mult_*.v -o
+_Invoke Yosys
+yosys
+_Read library 
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+_Read Design
+read_verilog mult_2.v
+_Synthesize Design - this controls which module to synthesize
+synth -top mul2
+_Generate Netlist
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+_Realizing Graphical Version of Logic for single modules
+show 
+```
+## (i) mult_2.v 
+
+**_Expected Logic_**
+
+![Step 2](./Lab12/55.png)
+
+**_Statistics & abc command return due to absence of standard cell library_**
+
+![Step 2](./Lab12/56.png)
+![Step 2](./Lab12/57.png)
+
+ ##### No hardware requirements - No # of memories, memory bites, processes and cells. Number of cells inferred is 0.
+
+
+ **_Realization of Logic_**
+ 
+![Step 2](./Lab12/58.png)
