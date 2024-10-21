@@ -2096,3 +2096,55 @@ gtkwave tb_bad_mux.vcd
 
 ![Step 2](Lab12/Day4/15.png)
 In this case there is a synthesis and simulation mismatch. While performing synthesis yosys has corrected the sensitivity list error.
+
+**Labs on Synthesis-Simulation mismatch for blocking statements**
+
+Verilog code:
+
+```
+module blocking_caveat (input a , input b , input  c, output reg d); 
+reg x;
+always @ (*)
+begin
+d = x & c;
+x = a | b;
+end
+endmodule
+```
+
+Simulation:
+
+```
+iverilog blocking_caveat.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+![Step 2](Lab12/Day4/16.png)
+![Step 2](Lab12/Day4/17.png)
+
+Netlist:
+
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib  
+read_verilog blocking_caveat.v
+synth -top blocking_caveat
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+show
+write_verilog -noattr blocking_caveat_net.v
+```
+![Step 2](Lab12/Day4/18.png)
+![Step 2](Lab12/Day4/19.png)
+![Step 2](Lab12/Day4/20.png)
+![Step 2](Lab12/Day4/21.png)
+
+GLS:
+
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+![Step 2](Lab12/Day4/22.png)
+
+In this case there is a synthesis and simulation mismatch. While performing synthesis yosys has corrected the latch error.
