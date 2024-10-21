@@ -1896,3 +1896,12 @@ y = a xnor c
 ### Sequential Logic Optimization
 
 #### Types of Sequential Optimizations
+
+* Basic Technique
+	* Sequential Constant Propagation
+* Advanced Technique
+	* State Optimization
+	* Retiming
+	* Sequential Logic cloning(Floorplan aware synthesis)
+	
+#### COMBINATIONAL LOGIC OPTIMIZATION  
