@@ -2141,6 +2141,59 @@ iverilog dff_const2.v tb_dff_const2.v
 ./a.out
 gtkwave tb_dff_const2.vcd
 ```
+![Step 2](Lab12/Day3/11.png)
+
+**Example 3:**
+
+Verilog code:
+
+```
+module dff_const3(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+endmodule
+```
+
+Run the below code for netlist:
+
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const3.v
+synth -top dff_const3
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+write_verilog -noattr dff_const3_net.v
+```
+
+![Step 2](Lab12/Day3/12.png)
+![Step 2](Lab12/Day3/13.png)
+![Step 2](Lab12/Day3/14.png)
+[Step 2](Lab12/Day3/15.png)
+
+GTKWave Output:
+
+```
+iverilog dff_const3.v tb_dff_const3.v
+./a.out
+gtkwave tb_dff_const3.vcd
+```
+![Step 2](Lab12/Day3/16.png)
+
 
 </details>
 <details>
