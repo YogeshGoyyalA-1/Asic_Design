@@ -1905,3 +1905,83 @@ y = a xnor c
 	* Sequential Logic cloning(Floorplan aware synthesis)
 	
 #### COMBINATIONAL LOGIC OPTIMIZATION  
+
+### Design infers 2 input AND Gate:
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog opt_check.v
+4. synth -top opt_check
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+###  opt_clean -purge/
+Removes unused or redundant logic in the design and purges any dangling wires or gates.
+![Step 2](./Lab12/66.png)
+![Step 2](./Lab12/67.png)
+
+![Step 2](./Lab12/68.png)
+![Step 2](./Lab12/69.png)
+### Realization of logic
+![Step 2](./Lab12/70.png)
+
+
+### Design infers 2 input OR Gate:
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog opt_check2.v
+4. synth -top opt_check2
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+
+![Step 2](./Lab12/71.png)
+![Step 2](./Lab12/opt_check_2_71.png.png)
+![Step 2](./Lab12/72.png)
+### Realization of logic
+
+![Step 2](./Lab12/73.png)
+
+
+
+### Design infers 3 input AND Gate:
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog opt_check3.v
+4. synth -top opt_check3
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+
+![Step 2](./Lab12/74.png)
+![Step 2](./Lab12/75.png)
+![Step 2](./Lab12/76.png)
+### Realization of logic
+![Step 2](./Lab12/77.png)
+
+### Design infers 2 input XNOR Gate (3 input Boolean Logic)
+
+```
+1. yosys
+2. read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+3. read_verilog opt_check4.v
+4. synth -top opt_check4
+5. abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+6. opt_clean -purge
+7. show
+```
+
+![Step 2](./Lab12/78.png)
+![Step 2](./Lab12/79.png)
+![Step 2](./Lab12/80.png)
+### Realization of logic
+![Step 2](./Lab12/81.png)
+
