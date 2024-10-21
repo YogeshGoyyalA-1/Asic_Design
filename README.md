@@ -2299,6 +2299,98 @@ gtkwave tb_dff_const5.vcd
 
 ![Step 2](Lab12/Day3/26.png)
 
+**Sequential Logic Optimizations for unused outputs**
+
+**Example 1:**
+
+Verilog code:
+
+```
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = count[0];
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+endmodule
+```
+
+Run the below code for netlist:
+
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog counter_opt.v
+synth -top counter_opt
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+write_verilog -noattr counter_opt_net.v
+```
+
+![Step 2](Lab12/Day3/27.png)
+![Step 2](Lab12/Day3/28.png)
+![Step 2](Lab12/Day3/29.png)
+![Step 2](Lab12/Day3/30.png)
+
+
+GTKWave Output:
+
+```
+iverilog counter_opt.v tb_counter_opt.v
+./a.out
+gtkwave tb_counter_opt.vcd
+```
+
+![Step 2](Lab12/Day3/31.png)
+
+Modified counter logic:
+
+Verilog code:
+
+```
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = {count[2:0]==3'b100};
+always @(posedge clk ,posedge reset)
+begin
+if(reset)
+	count <= 3'b000;
+else
+	count <= count + 1;
+end
+endmodule
+```
+Run the below code for netlist:
+
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog counter_opt.v
+synth -top counter_opt
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+write_verilog -noattr counter_opt_net.v
+```
+![Step 2](Lab12/Day3/32.png)
+![Step 2](Lab12/Day3/33.png)
+![Step 2](Lab12/Day3/34.png)
+![Step 2](Lab12/Day3/35.png)
+
+
+GTKWave Output:
+
+```
+iverilog counter_opt.v tb_counter_opt.v
+./a.out
+gtkwave tb_counter_opt.vcd
+```
+![Step 2](Lab12/Day3/36.png)
 
 </details>
 <details>
