@@ -2183,7 +2183,7 @@ write_verilog -noattr dff_const3_net.v
 ![Step 2](Lab12/Day3/12.png)
 ![Step 2](Lab12/Day3/13.png)
 ![Step 2](Lab12/Day3/14.png)
-[Step 2](Lab12/Day3/15.png)
+![Step 2](Lab12/Day3/15.png)
 
 GTKWave Output:
 
