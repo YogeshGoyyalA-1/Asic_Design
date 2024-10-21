@@ -1626,7 +1626,7 @@ read_verilog multiple_modules.v
 _Synthesize Design
 synth -top multiple_modules
 _Generate Netlist
-abc -liberty ../lib/sky130_fd_sc_hd__t_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 _Realizing Graphical Version of Logic for multiple modules
 show multiple_modules
 _Writing the netlist in a crisp manner 
