@@ -1917,7 +1917,7 @@ y = a xnor c
 6. opt_clean -purge
 7. show
 ```
-###  opt_clean -purge/
+###  opt_clean -purge
 Removes unused or redundant logic in the design and purges any dangling wires or gates.
 ![Step 2](./Lab12/66.png)
 ![Step 2](./Lab12/67.png)
