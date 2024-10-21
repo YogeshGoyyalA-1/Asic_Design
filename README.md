@@ -2194,6 +2194,111 @@ gtkwave tb_dff_const3.vcd
 ```
 ![Step 2](Lab12/Day3/16.png)
 
+**Example 4:**
+
+Verilog code:
+
+```
+module dff_const4(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b1;
+	end
+else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+endmodule
+```
+
+Run the below code for netlist:
+
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const4.v
+synth -top dff_const4
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+write_verilog -noattr dff_const4_net.v
+```
+![Step 2](Lab12/Day3/17.png)
+![Step 2](Lab12/Day3/18.png)
+![Step 2](Lab12/Day3/19.png)
+![Step 2](Lab12/Day3/20.png)
+
+ 
+GTKWave Output:
+
+```
+iverilog dff_const4.v tb_dff_const4.v
+./a.out
+gtkwave tb_dff_const4.vcd
+```
+
+![Step 2](Lab12/Day3/21.png)
+
+
+**Example 5:**
+
+Verilog code:
+
+```
+module dff_const5(input clk, input reset, output reg q);
+reg q1;
+always @(posedge clk, posedge reset)
+	begin
+		if(reset)
+		begin
+			q <= 1'b0;
+			q1 <= 1'b0;
+		end
+	else
+		begin
+			q1 <= 1'b1;
+			q <= q1;
+		end
+	end
+endmodule
+```
+
+Run the below code for netlist:
+
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const5.v
+synth -top dff_const5
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+write_verilog -noattr dff_const5_net.v
+```
+
+![Step 2](Lab12/Day3/22.png)
+![Step 2](Lab12/Day3/23.png)
+![Step 2](Lab12/Day3/24.png)
+![Step 2](Lab12/Day3/25.png)
+
+
+GTKWave Output:
+
+```
+iverilog dff_const5.v tb_dff_const5.v
+./a.out
+gtkwave tb_dff_const5.vcd
+```
+
+![Step 2](Lab12/Day3/26.png)
+
 
 </details>
 <details>
