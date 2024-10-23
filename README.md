@@ -2562,35 +2562,12 @@ In this case there is a synthesis and simulation mismatch. While performing synt
 ### To Synthesize RISC-V and compare output with functional simulations
 
 
-##### Post-Synthesis
+### Steps:
 
-Steps:
-1. Copy the src folder from your VSDBabySoC folder to your VLSI folder.
-2.  Go the required Directory:
-![Step 2](Lab13/1.png)
-There are two ways:
+Copy the src folder from your VSDBabySoC folder to your VLSI folder.
+![Step 2](Lab13_1/1.png)
 
-#### Method-1
-1. Now run these command in the VSDBabySOC folder to get output
-   
-
-```
-make post_synth_sim
-gtkwave output/post_synth_sim/post_synth_sim.vcd
-```
-
-![Step 2](Lab13/2.png)
-![Step 2](Lab13/3.png)
-
-Simulations:
-![Step 2](Lab13/4.png)
-![Step 2](Lab13/5.png)
-![Step 2](Lab13/6.png)
-![Step 2](Lab13/7.png)
-
-#### Method-2
-1. Using Yosys
-
+Synthesis:
 ```
 yosys
 read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -2598,39 +2575,48 @@ read_verilog clk_gate.v
 read_verilog rvmyth.v
 synth -top rvmyth
 abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-write_verilog -noattr rvmyth_net.v
-!gedit rvmyth_net.v
-exit
+write_verilog -noattr rvmyth.v
+!gedit rvmyth.v
 
 ```
-
-![Step 2](Lab13/17.png)
-
-**Realisation:**
-
-![Step 2](Lab13/8.jpeg)
-![Step 2](Lab13/9.jpeg)
-![Step 2](Lab13/10.jpeg)
-![Step 2](Lab13/11.jpeg)
-
-**Netlist:**
-
-![Step 2](Lab13/12.png)
-![Step 2](Lab13/13.png)
-
-##### Pre-Synthesis
-
-**Steps:**
+![Step 2](Lab13_1/2.png)
+![Step 2](Lab13_1/3.png)
+![Step 2](Lab13_1/4.png)
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -lib ../lib/avsddac.lib
+read_liberty -lib ../lib/avsdpll.lib  
+read_verilog vsdbabysoc.v
+read_verilog rvmyth.v
+read_verilog clk_gate.v 
+synth -top vsdbabysoc
+dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+show
+write_verilog -noattr vsdbabysoc.synth.v
+```
+![Step 2](Lab13_1/5.png)
+![Step 2](Lab13_1/6.png)
+![Step 2](Lab13_1/7.png)
+![Step 2](Lab13_1/13.png)
+### Generate GTKWave simulations:
+```
+iverilog ../../my_lib/verilog_model/primitives.v ../../my_lib/verilog_model/sky130_fd_sc_hd.v rvmyth.v testbench.v vsdbabysoc.v avsddac.v avsdpll.v clk_gate.v
+./a.out
+gtkwave dump.vcd
+```
+![Step 2](Lab13_1/8.png)
+![Step 2](Lab13_1/9.png)
+### Functional Simulations
 
 ```
-cd ~
 cd VSDBabySoC
 iverilog -o ./pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module/
 ./pre_synth_sim.out
 gtkwave pre_synth_sim.vcd
 ```
-![Step 2](Lab13/14.png)
-![Step 2](Lab13/15.png)
-![Step 2](Lab13/16.png)
-
-It can be observed that the waveforms before (pre_synth_sim) and after (post_synth_sim) Yosys synthesis are the same.
+![Step 2](Lab13_1/10.png)
+![Step 2](Lab13_1/11.png)
+### As we can see comparing both the outputs are same hence verifying our results.
+![Step 2](Lab13_1/12.png)
