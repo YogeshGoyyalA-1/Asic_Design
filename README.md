@@ -2555,3 +2555,79 @@ gtkwave tb_blocking_caveat.vcd
 ![Step 2](Lab12/Day4/22.png)
 
 In this case there is a synthesis and simulation mismatch. While performing synthesis yosys has corrected the latch error.
+</details>
+<details>
+<summary><strong>Lab 13:</strong>Synthesize RISC-V and compare output with functional simulations .</summary
+### To Synthesize RISC-V and compare output with functional simulations
+
+
+##### Post-Synthesis
+
+Steps:
+1. Copy the src folder from your VSDBabySoC folder to your VLSI folder.
+2.  Go the required Directory:
+
+There are two ways:
+
+#### Method-1
+1. Now run these command in the VSDBabySOC folder to get output
+   
+
+```
+make post_synth_sim
+gtkwave output/post_synth_sim/post_synth_sim.vcd
+```
+
+![Step 2](Lab13/2.png)
+![Step 2](Lab13/3.png)
+
+Simulations:
+![Step 2](Lab13/4.png)
+![Step 2](Lab13/5.png)
+![Step 2](Lab13/6.png)
+![Step 2](Lab13/7.png)
+
+#### Method-2
+1. Using Yosys
+
+```
+yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog clk_gate.v
+read_verilog rvmyth.v
+synth -top rvmyth
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+write_verilog -noattr rvmyth_net.v
+!gedit rvmyth_net.v
+exit
+
+```
+
+
+
+**Realisation:**
+
+![Step 2](Lab13/8.png)
+![Step 2](Lab13/9.png)
+![Step 2](Lab13/10.png)
+![Step 2](Lab13/11.png)
+
+**Netlist:**
+
+![Step 2](Lab13/12.png)
+![Step 2](Lab13/13.png)
+
+##### Pre-Synthesis
+
+**Steps:**
+
+```
+cd ~
+cd VSDBabySoC
+iverilog -o ./pre_synth_sim.out -DPRE_SYNTH_SIM src/module/testbench.v -I src/include -I src/module/
+./pre_synth_sim.out
+gtkwave pre_synth_sim.vcd
+```
+![Step 2](Lab13/14.png)
+![Step 2](Lab13/15.png)
+![Step 2](Lab13/16.png)
