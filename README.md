@@ -2598,7 +2598,9 @@ write_verilog -noattr vsdbabysoc.synth.v
 ```
 <img width="1439" alt="5" src="https://github.com/user-attachments/assets/4d515091-d326-404d-9013-d942fd55b7d1">
 <img width="1438" alt="6" src="https://github.com/user-attachments/assets/56a0a831-7475-48f4-b361-6253311542c0">
+
 ![Step 2](Lab13_1/13.png)
+
 ### Generate GTKWave simulations:
 ```
 iverilog ../../my_lib/verilog_model/primitives.v ../../my_lib/verilog_model/sky130_fd_sc_hd.v rvmyth.v testbench.v vsdbabysoc.v avsddac.v avsdpll.v clk_gate.v
