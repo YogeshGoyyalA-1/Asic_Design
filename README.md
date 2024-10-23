@@ -2608,10 +2608,10 @@ exit
 
 **Realisation:**
 
-![Step 2](Lab13/8.png)
-![Step 2](Lab13/9.png)
-![Step 2](Lab13/10.png)
-![Step 2](Lab13/11.png)
+![Step 2](Lab13/8.jpeg)
+![Step 2](Lab13/9.jpeg)
+![Step 2](Lab13/10.jpeg)
+![Step 2](Lab13/11.jpeg)
 
 **Netlist:**
 
