@@ -2632,3 +2632,5 @@ gtkwave pre_synth_sim.vcd
 ![Step 2](Lab13/14.png)
 ![Step 2](Lab13/15.png)
 ![Step 2](Lab13/16.png)
+
+It can be observed that the waveforms before (pre_synth_sim) and after (post_synth_sim) Yosys synthesis are the same.
