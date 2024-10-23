@@ -2556,6 +2556,7 @@ gtkwave tb_blocking_caveat.vcd
 
 In this case there is a synthesis and simulation mismatch. While performing synthesis yosys has corrected the latch error.
 </details>
+</details>
 <details>
 <summary><strong>Lab 13:</strong>Synthesize RISC-V and compare output with functional simulations .</summary
 ### To Synthesize RISC-V and compare output with functional simulations
