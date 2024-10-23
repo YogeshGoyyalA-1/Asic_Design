@@ -2598,7 +2598,6 @@ write_verilog -noattr vsdbabysoc.synth.v
 ```
 ![Step 2](Lab13_1/5.png)
 ![Step 2](Lab13_1/6.png)
-![Step 2](Lab13_1/7.png)
 ![Step 2](Lab13_1/13.png)
 ### Generate GTKWave simulations:
 ```
