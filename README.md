@@ -2567,7 +2567,7 @@ In this case there is a synthesis and simulation mismatch. While performing synt
 Steps:
 1. Copy the src folder from your VSDBabySoC folder to your VLSI folder.
 2.  Go the required Directory:
-
+![Step 2](Lab13/1.png)
 There are two ways:
 
 #### Method-1
