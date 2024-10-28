@@ -2666,7 +2666,7 @@ report_checks -path_delay min_max -format full_clock_expanded -digits 4
 ```
 
 The below is the snapshot:
-![Step 2](Lab14/1.jpeg)
+![Step 2](Lab14/5.jpg)
 
 
 Setup Time:
