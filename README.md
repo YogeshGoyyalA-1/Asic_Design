@@ -2621,3 +2621,58 @@ gtkwave pre_synth_sim.vcd
 ![Step 2](Lab13_1/11.png)
 ### As we can see comparing both the outputs are same hence verifying our results.
 ![Step 2](Lab13_1/12.png)
+
+</details>
+<details>
+<summary><strong>Lab 14:</strong>Post Synthesis Static Timing Analysis using OpenSTA .</summary
+
+The contents of VSDBabySoc/src/sdc/vsdbabysoc_synthesis.sdc:
+
+```
+set PERIOD 10.60
+
+set_units -time ns
+create_clock [get_pins {pll/CLK}] -name clk -period $PERIOD
+set_clock_uncertainty -setup  [expr $PERIOD * 0.05] [get_clocks clk]
+set_input_delay -min 0 [get_ports ENb_CP] -clock [get_clocks "clk"]
+set_input_delay -min 0 [get_ports ENb_VCO] -clock [get_clocks "clk"]
+set_input_delay -min 0 [get_ports REF] -clock [get_clocks "clk"]
+set_input_delay -min 0 [get_ports VCO_IN] -clock [get_clocks "clk"]
+set_input_delay -min 0 [get_ports VREFH] -clock [get_clocks "clk"]
+set_clock_transition [expr $PERIOD * 0.05] [get_clocks clk]
+set_clock_uncertainty -hold [expr $PERIOD * 0.08] [get_clocks clk]
+set_input_transition [expr $PERIOD * 0.08] [get_ports ENb_CP]
+set_input_transition [expr $PERIOD * 0.08] [get_ports ENb_VCO]
+set_input_transition [expr $PERIOD * 0.08] [get_ports REF]
+set_input_transition [expr $PERIOD * 0.08] [get_ports VCO_IN]
+set_input_transition [expr $PERIOD * 0.08] [get_ports VREFH]
+```
+
+Now, run the below commands:
+
+```
+cd VSDBabySoC/src
+sta
+read_liberty -min ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -min ./lib/avsdpll.lib
+read_liberty -min ./lib/avsddac.lib
+read_liberty -max ./lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -max ./lib/avsdpll.lib
+read_liberty -max ./lib/avsddac.lib
+read_verilog ../output/synth/vsdbabysoc.synth.v
+link_design vsdbabysoc
+read_sdc ./sdc/vsdbabysoc_synthesis.sdc
+report_checks -path_delay min_max -format full_clock_expanded -digits 4
+```
+
+The below is the snapshot:
+![Step 2](Lab14/1.jpg)
+
+
+Setup Time:
+
+![Step 2](Lab14/2.jpeg)
+
+Hold Time:
+
+![Step 2](Lab14/3.jpeg)
