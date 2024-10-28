@@ -2626,7 +2626,7 @@ gtkwave pre_synth_sim.vcd
 <details>
 <summary><strong>Lab 14:</strong>Post Synthesis Static Timing Analysis using OpenSTA .</summary
 
-The contents of VSDBabySoc/src/sdc/vsdbabysoc_synthesis.sdc:
+### The contents of VSDBabySoc/src/sdc/vsdbabysoc_synthesis.sdc:
 
 ```
 set PERIOD 10.60
