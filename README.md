@@ -2735,6 +2735,8 @@ source sta_across_pvt.tcl
 
 
 Output:
-
+![Step 2](Lab15/3.png)
 
 Graphs:
+![Step 2](Lab15/4.png)
+![Step 2](Lab15/5.png)
