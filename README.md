@@ -2740,3 +2740,12 @@ Output:
 Graphs:
 ![Step 2](Lab15/4.png)
 ![Step 2](Lab15/5.png)
+
+</details>
+<details>
+<summary><strong>Lab 16:</strong>Advanced Physical Design using OpenLane using Sky130.</summary
+#### Day-1: Inception of open-source EDA, OpenLane and Sky130 PDK
+
+**QFN-48 Package:** A Quad Flat No-leads (QFN) 48 package is a leadless IC package with 48 connection pads around the perimeter. It offers good thermal and electrical performance in a compact form, making it ideal for high-density applications.
+
+![image](https://github.com/user-attachments/assets/2237a9ef-dc38-444f-97a5-ceb4e983c8f0)
