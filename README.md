@@ -3002,8 +3002,10 @@ package require openlane 0.9
 prep -design picorv32a
 run_synthesis
 run_floorplan
-```![Screenshot from 2024-11-13 01-37-58](https://github.com/user-attachments/assets/a84090ea-8e05-40c2-a7e6-2eabee581ca3)
-![Screenshot from 2024-11-13 01-38-06](https://github.com/user-attachments/assets/eb5a9a82-383a-44b9-86c4-e9a55268630e)
+```
+![Screenshot from 2024-11-13 01-37-58](https://github.com/user-attachments/assets/744ab448-04a2-4a82-986b-0035b0521da9)
+![Screenshot from 2024-11-13 01-38-06](https://github.com/user-attachments/assets/ef0527f5-a0a9-4052-ae78-dc7c424a37ac)
+
 
 Now, run the below commands in a new terminal:
 
