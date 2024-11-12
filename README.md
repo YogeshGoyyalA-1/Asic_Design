@@ -2859,7 +2859,7 @@ run_synthesis
 To view the netlist:
 
 ```
-cd designs/picorv32a/runs/09-11_06-33/results/synthesis/
+cd designs/picorv32a/runs/12-11_20-05/results/synthesis/
 gedit picorv32a.synthesis.v
 ```
 
@@ -2989,3 +2989,132 @@ Aspect Ratio =  Height
 **Pin Placement**: Pin placement (I/O planning) is crucial for functionality and reliability. Strategic pin assignment minimizes signal degradation, preserves data integrity, and helps manage heat dissipation. Proper positioning of power and ground pins supports thermal management and enhances signal strength, contributing to overall system stability and manufacturability.
 
 Floorplaning using OpenLANE:
+Run the following commands:
+
+```
+cd Desktop/work/tools/openlane_working_dir/openlane
+docker
+```
+
+```
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+run_synthesis
+run_floorplan
+```![Screenshot from 2024-11-13 01-37-58](https://github.com/user-attachments/assets/a84090ea-8e05-40c2-a7e6-2eabee581ca3)
+![Screenshot from 2024-11-13 01-38-06](https://github.com/user-attachments/assets/eb5a9a82-383a-44b9-86c4-e9a55268630e)
+
+Now, run the below commands in a new terminal:
+
+```
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/12-11_20-05/results/floorplan
+gedit picorv32a.floorplan.def
+```
+
+![Screenshot from 2024-11-13 01-40-51](https://github.com/user-attachments/assets/6a9cbc24-5c5f-47f2-a6e2-9b5b02bf0cca)
+
+ccording to floorplan definition:
+
+1000 Unit Distance = 1 Micron  
+
+Die width in unit distance = 660685−0 = 660685 
+
+Die height in unit distance = 671405−0 = 671405  
+
+Distance in microns = Value in Unit Distance/1000  
+
+​Die width in microns = 660685/1000 = 660.685 Microns  
+
+Die height in microns = 671405/1000 = 671.405 Microns  
+
+Area of die in microns = 660.685 × 671.405 = 443587.212425 Square Microns
+
+To view the floorplan in magic. Open a new terminal and run the below commands:
+
+```
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/12-11_20-05/results/floorplan/
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
+```
+![Screenshot from 2024-11-13 02-01-15](https://github.com/user-attachments/assets/afe37313-b772-49d6-8230-5447da0c1634)
+
+Decap and Tap Cells:
+
+![Screenshot from 2024-11-13 02-12-23](https://github.com/user-attachments/assets/8afc56d7-d470-4002-a25c-b01692e85ae2)
+
+
+Unplaces standard cells at origin:
+
+![Screenshot from 2024-11-13 02-13-18](https://github.com/user-attachments/assets/4d5a05de-7d3e-4b81-9979-f5ca5a00e993)
+
+
+Command to run placement:
+
+```
+run_placement
+```
+![Screenshot from 2024-11-13 02-17-02](https://github.com/user-attachments/assets/f3482500-6cfb-4fed-a174-768e5f948313)
+o view the placement in magic:
+
+```
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/placement/
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
+![Screenshot from 2024-11-13 02-20-30](https://github.com/user-attachments/assets/bc1d1f87-9fbd-4769-95b1-1f592fc0a89d)
+
+
+![Screenshot from 2024-11-13 02-20-48](https://github.com/user-attachments/assets/e54e8dcc-cd51-463a-a5bc-7d0b217e53cb)
+
+
+**Cell design and Characterization Flow**
+
+Library is a place where we get information about every cell. It has differents cells with different size, functionality,threshold voltages. There is a typical cell design flow steps.
+
+Inputs : PDKS(process design kit) : DRC & LVS, SPICE Models, library & user-defined specs.
+Design Steps :Circuit design, Layout design (Art of layout Euler's path and stick diagram), Extraction of parasitics, Characterization (timing, noise, power).
+Outputs: CDL (circuit description language), LEF, GDSII, extracted SPICE netlist (.cir), timing, noise and power .lib files
+
+**Standard Cell Characterization Flow**
+
+A typical standard cell characterization flow that is followed in the industry includes the following steps:
+
+- Read in the models and tech files
+- Read extracted spice Netlist
+- Recognise behavior of the cells
+- Read the subcircuits
+- Attach power sources
+- Apply stimulus to characterization setup
+- Provide neccesary output capacitance loads
+- Provide neccesary simulation commands
+- Now all these 8 steps are fed in together as a configuration file to a characterization software called GUNA. This software generates timing, noise, power models. These .libs are classified as Timing characterization, power characterization and noise characterization.
+
+**Timing parameters**
+
+| Timing definition | Value |
+|---|---|
+| slew_low_rise_thr | 20% value |
+| slew_high_rise_thr | 80% value |
+| slew_low_fall_thr | 20% value |
+| slew_high_fall_thr | 80% value |
+| in_rise_thr | 50% value |
+| in_fall_thr | 50% value |
+| out_rise_thr | 50% value |
+| out_fall_thr | 50% value |
+
+**Propagation Delay**: It refers to the time it takes for a change in an input signal to reach 50% of its final value to produce a corresponding change in the output signal to reach 50% of its final value of a digital circuit.
+
+```
+rise delay =  time(out_fall_thr) - time(in_rise_thr)
+```
+
+**Transistion time**: The time it takes the signal to move between states is the transition time , where the time is measured between 10% and 90% or 20% to 80% of the signal levels.
+
+```
+Fall transition time: time(slew_high_fall_thr) - time(slew_low_fall_thr)
+Rise transition time: time(slew_high_rise_thr) - time(slew_low_rise_thr)
+```
+
+#### Day-3: Design library cell using Magic Layout and ngspice characterization
+
+
+
