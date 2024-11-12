@@ -3032,7 +3032,8 @@ Die height in microns = 671405/1000 = 671.405 Microns
 
 Area of die in microns = 660.685 × 671.405 = 443587.212425 Square Microns
 
-To view the floorplan in magic. Open a new terminal and run the below commands:
+To view the floorplan in magic. 
+Open a new terminal and run the below commands:
 
 ```
 cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/12-11_20-05/results/floorplan/
@@ -3056,10 +3057,10 @@ Command to run placement:
 run_placement
 ```
 ![Screenshot from 2024-11-13 02-17-02](https://github.com/user-attachments/assets/f3482500-6cfb-4fed-a174-768e5f948313)
-o view the placement in magic:
+To view the placement in magic:
 
 ```
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/placement/
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/12-11_20-05/results/placement/
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
 ```
 ![Screenshot from 2024-11-13 02-20-30](https://github.com/user-attachments/assets/bc1d1f87-9fbd-4769-95b1-1f592fc0a89d)
