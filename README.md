@@ -2854,4 +2854,138 @@ prep -design picorv32a
 run_synthesis
 
 ```
+![1](https://github.com/user-attachments/assets/d8ff7ebc-02e7-42ec-aaa3-f908660e3787)
 
+To view the netlist:
+
+```
+cd designs/picorv32a/runs/09-11_06-33/results/synthesis/
+gedit picorv32a.synthesis.v
+```
+
+![2](https://github.com/user-attachments/assets/eeeb2b95-2b20-4e50-b9ae-ed67b65f18f1)
+
+Netlist code:
+
+![3](https://github.com/user-attachments/assets/8e709d5e-0839-4f95-b9c5-d19315907aeb)
+
+
+To view the yosys report:
+
+```
+cd ../..
+cd reports/synthesis
+gedit 1-yosys_4.stat.rpt
+```
+
+![4](https://github.com/user-attachments/assets/8eb0fed8-3bac-416c-90a4-0ab87a4d2a4a)
+
+![5](https://github.com/user-attachments/assets/d5aa9361-2157-4360-807a-c5dfc5c918fa)
+
+Report:
+
+```
+28. Printing statistics.
+
+=== picorv32a ===
+
+   Number of wires:              14596
+   Number of wire bits:          14978
+   Number of public wires:        1565
+   Number of public wire bits:    1947
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              14876
+     sky130_fd_sc_hd__a2111o_2       1
+     sky130_fd_sc_hd__a211o_2       35
+     sky130_fd_sc_hd__a211oi_2      60
+     sky130_fd_sc_hd__a21bo_2      149
+     sky130_fd_sc_hd__a21boi_2       8
+     sky130_fd_sc_hd__a21o_2        57
+     sky130_fd_sc_hd__a21oi_2      244
+     sky130_fd_sc_hd__a221o_2       86
+     sky130_fd_sc_hd__a22o_2      1013
+     sky130_fd_sc_hd__a2bb2o_2    1748
+     sky130_fd_sc_hd__a2bb2oi_2     81
+     sky130_fd_sc_hd__a311o_2        2
+     sky130_fd_sc_hd__a31o_2        49
+     sky130_fd_sc_hd__a31oi_2        7
+     sky130_fd_sc_hd__a32o_2        46
+     sky130_fd_sc_hd__a41o_2         1
+     sky130_fd_sc_hd__and2_2       157
+     sky130_fd_sc_hd__and3_2        58
+     sky130_fd_sc_hd__and4_2       345
+     sky130_fd_sc_hd__and4b_2        1
+     sky130_fd_sc_hd__buf_1       1656
+     sky130_fd_sc_hd__buf_2          8
+     sky130_fd_sc_hd__conb_1        42
+     sky130_fd_sc_hd__dfxtp_2     1613
+     sky130_fd_sc_hd__inv_2       1615
+     sky130_fd_sc_hd__mux2_1      1224
+     sky130_fd_sc_hd__mux2_2         2
+     sky130_fd_sc_hd__mux4_1       221
+     sky130_fd_sc_hd__nand2_2       78
+     sky130_fd_sc_hd__nor2_2       524
+     sky130_fd_sc_hd__nor2b_2        1
+     sky130_fd_sc_hd__nor3_2        42
+     sky130_fd_sc_hd__nor4_2         1
+     sky130_fd_sc_hd__o2111a_2       2
+     sky130_fd_sc_hd__o211a_2       69
+     sky130_fd_sc_hd__o211ai_2       6
+     sky130_fd_sc_hd__o21a_2        54
+     sky130_fd_sc_hd__o21ai_2      141
+     sky130_fd_sc_hd__o21ba_2      209
+     sky130_fd_sc_hd__o21bai_2       1
+     sky130_fd_sc_hd__o221a_2      204
+     sky130_fd_sc_hd__o221ai_2       7
+     sky130_fd_sc_hd__o22a_2      1312
+     sky130_fd_sc_hd__o22ai_2       59
+     sky130_fd_sc_hd__o2bb2a_2     119
+     sky130_fd_sc_hd__o2bb2ai_2     92
+     sky130_fd_sc_hd__o311a_2        8
+     sky130_fd_sc_hd__o31a_2        19
+     sky130_fd_sc_hd__o31ai_2        1
+     sky130_fd_sc_hd__o32a_2       109
+     sky130_fd_sc_hd__o41a_2         2
+     sky130_fd_sc_hd__or2_2       1088
+     sky130_fd_sc_hd__or2b_2        25
+     sky130_fd_sc_hd__or3_2         68
+     sky130_fd_sc_hd__or3b_2         5
+     sky130_fd_sc_hd__or4_2         93
+     sky130_fd_sc_hd__or4b_2         6
+     sky130_fd_sc_hd__or4bb_2        2
+
+   Chip area for module '\picorv32a': 147712.918400
+```
+
+```
+Flop ratio = Number of D Flip flops = 1613  = 0.1084
+             ______________________   _____
+             Total Number of cells    14876
+```
+
+#### Day-2: Good floorplan vs bad floorplan and introduction to library cells
+
+**Utilization Factor and Aspect Ratio**: In IC floor planning, utilization factor and aspect ratio are key parameters. The utilization factor is the ratio of the area occupied by the netlist to the total core area. While a perfect utilization of 1 (100%) is ideal, practical designs target a factor of 0.5 to 0.6 to allow space for buffer zones, routing channels, and future adjustments. The aspect ratio, defined as height divided by width, indicates the chip’s shape; an aspect ratio of 1 denotes a square, while other values result in a rectangular layout. The aspect ratio is chosen based on functional, packaging, and manufacturing needs.
+
+```
+Utilisation Factor =  Area occupied by netlist
+                     __________________________
+                         Total area of core
+                         
+
+Aspect Ratio =  Height
+               ________
+                Width
+```
+
+**Pre-placed cells** : Pre-placed cells are essential functional blocks, such as memory, custom processors, and analog circuits, positioned manually in fixed locations. These blocks are crucial for the chip’s performance and remain fixed during placement and routing to preserve their functionality and layout integrity.
+
+**Decoupling Capacitors** : Decoupling capacitors are placed near logic circuits to stabilize power supply voltages during transient events. Acting as local energy reserves, they help reduce voltage fluctuations, crosstalk, and electromagnetic interference (EMI), ensuring reliable power delivery to sensitive circuits.
+
+**Power Planning**: A robust power planning strategy includes creating a power and ground mesh to distribute VDD and VSS evenly across the chip. This setup ensures stable power delivery, minimizes voltage drops, and improves overall efficiency. Multiple power and ground points reduce the risk of instability and voltage drop issues, supporting the design’s power needs effectively.
+
+**Pin Placement**: Pin placement (I/O planning) is crucial for functionality and reliability. Strategic pin assignment minimizes signal degradation, preserves data integrity, and helps manage heat dissipation. Proper positioning of power and ground pins supports thermal management and enhances signal strength, contributing to overall system stability and manufacturability.
+
+Floorplaning using OpenLANE:
