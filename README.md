@@ -3830,6 +3830,9 @@ gen_pdn
 ```
 Screenshots of power distribution network run
 ![Screenshot from 2024-11-14 02-42-47](https://github.com/user-attachments/assets/98e5cb7c-bd45-4d22-88ed-9e8639d6767a)
+![Screenshot from 2024-11-14 03-06-01](https://github.com/user-attachments/assets/cc39bcb4-3ff2-4cc7-b07a-32707589a6b1)
+
+![Screenshot from 2024-11-14 03-07-10](https://github.com/user-attachments/assets/220a8921-d765-4109-8940-b1ffaea9d94e)
 
 ## 2. Perfrom detailed routing using TritonRoute and explore the routed layout.
 Command to perform routing
@@ -3843,6 +3846,9 @@ Screenshots of routing run
 ![Screenshot from 2024-11-14 02-55-27](https://github.com/user-attachments/assets/efb06e8c-1667-4c32-98cc-b69b6c9d89d4)
 ![Screenshot from 2024-11-14 02-55-31](https://github.com/user-attachments/assets/476c90a7-2090-4ad0-8573-020bc47d822b)
 ![Screenshot from 2024-11-14 02-58-51](https://github.com/user-attachments/assets/a45eb81f-6480-49a3-97f0-736caab8c57f)
+
+![Screenshot from 2024-11-14 03-07-18](https://github.com/user-attachments/assets/38101479-b345-4601-90af-ddb5811d8de1)
+
 
 ## 3. Post-Route parasitic extraction using SPEF extractor.
 Commands for SPEF extraction using external tool
