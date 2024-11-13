@@ -3703,5 +3703,70 @@ Clock net shielding prevents glitches by isolating the clock network, using shie
 
 ![image](https://github.com/user-attachments/assets/bf85dd84-dc29-4962-877a-ce4f535bab2c)
 
+w to insert this updated netlist to PnR flow and we can use write_verilog and overwrite the synthesis netlist but before that we are going to make a copy of the old old netlist:
 
+Run the following commands:
+
+```
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_08-51/results/synthesis/
+ls
+cp picorv32a.synthesis.v picorv32a.synthesis_old.v
+ls
+```
+
+Commands to write verilog:
+
+```
+write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_08-51/results/synthesis/picorv32a.synthesis.v
+exit
+```
+Verified that the netlist is overwritten
+
+![Screenshot from 2024-11-13 18-46-39](https://github.com/user-attachments/assets/6114fd42-47e6-4d90-9f10-ac0392e303b4)
+
+Now, run the following commands:
+
+```
+cd Desktop/work/tools/openlane_working_dir/openlane
+docker
+./flow.tcl -interactive
+prep -design picorv32a -tag 13-11_19-30 -overwrite
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+set ::env(SYNTH_SIZING) 1
+run_synthesis
+init_floorplan
+place_io
+tap_decap_or
+run_placement
+run_cts
+```
+![Screenshot from 2024-11-14 02-13-13](https://github.com/user-attachments/assets/0258d410-9131-43fb-ac74-535a9c9f740c)
+![Screenshot from 2024-11-14 02-14-50](https://github.com/user-attachments/assets/2d1428d2-1518-4f8c-88c8-3c53733ba7ef)
+
+*Setup timing analysis using real clocks**
+
+A real clock in timing analysis accounts for practical factors like clock skew and clock jitter. Clock skew is the difference in arrival times of the clock signal at different parts of the circuit due to physical delays, which affects setup and hold timing margins. Clock jitter is the variability in the clock period caused by power, temperature, and noise fluctuations, leading to uncertainty in clock edge timing. Both factors are crucial for accurate timing analysis, ensuring the design performs reliably in real-world conditions.
+
+![image](https://github.com/user-attachments/assets/3526c927-e1a9-445a-9dae-22bc7e0446c7)
+
+![image](https://github.com/user-attachments/assets/0c766405-5f9b-4700-a4cd-6fd19e9ea6cc)
+
+Now, enter the following commands for Post-CTS OpenROAD timing analysis:
+
+```
+openroad
+read_lef /openLANE_flow/designs/picorv32a/runs/13-11_19-30/tmp/merged.lef
+read_def /openLANE_flow/designs/picorv32a/runs/13-11_19-30/results/cts/picorv32a.cts.def
+write_db pico_cts.db
+read_db pico_cts.db
+read_verilog /openLANE_flow/designs/picorv32a/runs/13-11_19-30/results/synthesis/picorv32a.synthesis_cts.v
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+link_design picorv32a
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+set_propagated_clock [all_clocks]
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+exit
+```
 
