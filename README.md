@@ -3374,3 +3374,114 @@ drc why
 
 #### Day-4: Pre-layout timing analysis and importance of good clock tree
 
+Commands to extract `tracks.info` file:
+
+```
+cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+cd ../../pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/
+less tracks.info
+```
+
+![Screenshot from 2024-11-13 19-21-04](https://github.com/user-attachments/assets/5e21d136-3e5e-4f4d-ae1e-423ae0fd3abf)
+
+Commands for tkcon window to set grid as tracks of locali layer
+
+```
+grid 0.46um 0.34um 0.23um 0.17um
+```
+![Screenshot from 2024-11-13 23-14-47](https://github.com/user-attachments/assets/8df56d41-b269-40a4-affe-2921c1808c10)
+
+The grids show where the routing for the local-interconnet layer can only happen, the distance of the grid lines are the required pitch of the wire. Below, we can see that the guidelines are satisfied:
+
+
+![rename](https://github.com/user-attachments/assets/c7530fd6-bfdd-442d-b67d-b1258e839fa0)
+
+Now, save it by giving a custon mae
+
+```
+save sky130_yoginv.mag
+```
+![Screenshot from 2024-11-13 23-17-26](https://github.com/user-attachments/assets/bf97acad-2040-433d-9e71-c133369d52eb)
+
+Now, open it by using the following commands:
+
+```
+magic -T sky130A.tech sky130_yoginv.mag &
+```
+![Screenshot from 2024-11-13 23-19-23](https://github.com/user-attachments/assets/805d40ae-e8d5-4866-8193-39691d601d37)
+
+Now, type the following command in tkcon window:
+
+```
+lef write
+```
+![Screenshot from 2024-11-13 23-20-00](https://github.com/user-attachments/assets/9d8516aa-04e3-472b-a4df-793ee234b685)
+![Screenshot from 2024-11-13 23-20-53](https://github.com/user-attachments/assets/80114258-6bb3-47de-9069-2c3363330baa)
+
+
+
+Modify config.tcl:
+
+```
+# Design
+set ::env(DESIGN_NAME) "picorv32a"
+
+set ::env(VERILOG_FILES) "./designs/picorv32a/src/picorv32a.v"
+set ::env(SDC_FILE) "./designs/picorv32a/src/picorv32a.sdc"
+
+set ::env(CLOCK_PERIOD) "5.000"
+set ::env(CLOCK_PORT) "clk"
+
+set ::env(CLOCK_NET) $::env(CLOCK_PORT)
+
+set ::env(LIB_SYNTH) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib"
+set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib"
+set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
+
+set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
+
+set filename $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/$::env(PDK)_$::env(STD_CELL_LIBRARY)_config.tcl
+if { [file exists $filename] == 1 } {
+  source $filename
+}
+```
+
+Now, run openlane flow synthesis:
+
+```
+cd Desktop/work/tools/openlane_working_dir/openlane
+docker
+```
+
+```
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+run_synthesis
+```
+
+![Screenshot from 2024-11-13 23-47-52](https://github.com/user-attachments/assets/4eeae2a9-512e-40ae-8f34-0e196a5e61dc)
+
+
+![Screenshot from 2024-11-13 23-48-59](https://github.com/user-attachments/assets/e2abdcd9-458f-4377-b09f-c6a8e45e57f0)
+
+
+
+![Screenshot from 2024-11-13 23-53-50](https://github.com/user-attachments/assets/0abed726-0495-46f7-9909-ecb42986c752)
+
+![Screenshot from 2024-11-13 23-53-57](https://github.com/user-attachments/assets/704ec89d-d136-4f8c-8a1b-ce2fcae5399e)
+
+![Screenshot from 2024-11-13 23-54-01](https://github.com/user-attachments/assets/1092e98f-9dc3-4cac-b0e2-ebd5080915c2)
+
+**Delay Tables**
+
+Delay plays a crucial role in cell timing, impacted by input transition and output load. Cells of the same type can have different delays depending on wire length due to resistance and capacitance variations. To manage this, "delay tables" are created, using 2D arrays with input slew and load capacitance for each buffer size as timing models. Algorithms compute buffer delays from these tables, interpolating where exact data isn’t available to estimate delays accurately, preserving signal integrity across varying load conditions.
+
+![image](https://github.com/user-attachments/assets/095a59e1-158c-4870-88e3-b73cb3a3692c)
+
+
+
+
