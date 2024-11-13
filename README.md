@@ -3483,5 +3483,75 @@ Delay plays a crucial role in cell timing, impacted by input transition and outp
 ![image](https://github.com/user-attachments/assets/095a59e1-158c-4870-88e3-b73cb3a3692c)
 
 
+Fixing slack:
 
+```
+./flow.tcl -interactive
+package require openlane 0.9
+prep -design picorv32a -tag 13-11_19-30 -overwrite
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+echo $::env(SYNTH_STRATEGY)
+set ::env(SYNTH_STRATEGY) "DELAY 3"
+echo $::env(SYNTH_BUFFERING
+echo $::env(SYNTH_SIZING)
+set ::env(SYNTH_SIZING) 1
+echo $::env(SYNTH_DRIVING_CELL)
+run_synthesis
+```
+
+![Screenshot from 2024-11-14 00-41-34](https://github.com/user-attachments/assets/264eae0b-bfba-457a-93e9-69381a223f0d)
+![Screenshot from 2024-11-14 00-41-38](https://github.com/user-attachments/assets/40f998d2-1f9a-4534-937e-c3baf0e613d3)
+![Screenshot from 2024-11-14 00-41-45](https://github.com/user-attachments/assets/faec13c7-5262-44bc-be23-0a979e57021a)
+
+
+Now, run floorplan
+
+```
+run_floorplan
+```
+![Screenshot from 2024-11-14 00-42-53](https://github.com/user-attachments/assets/96b77928-4e35-4c97-9172-462172fe0605)
+
+
+
+
+
+Since we are facing unexpected un-explainable error while using run_floorplan command, we can instead use the following set of commands available based on information from `Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl` and also based on Floorplan Commands section in `Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md`
+
+```
+init_floorplan
+place_io
+tap_decap_or
+```
+
+Now, do placement
+
+```
+run_placement
+```
+![Screenshot from 2024-11-14 00-43-38](https://github.com/user-attachments/assets/95c18e91-b93f-40d9-a605-bb6bfcf7f33c)
+
+![Screenshot from 2024-11-14 00-44-36](https://github.com/user-attachments/assets/7a64e98f-42e3-4dbf-8845-808043a5484d)
+
+
+
+Now, open a new terminal and run the below commands to load placement def in magic
+
+```
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/13-11_08-51/results/placement/
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+
+```
+
+Custom inverter inserted in placement def
+
+![Screenshot from 2024-11-14 01-08-50](https://github.com/user-attachments/assets/29d3b9bb-fb7f-489f-82a8-0964030f80bc)
+
+
+Now, select the cell and type `expand` in tkcon window to view internal layers of cells
+
+![Screenshot from 2024-11-14 01-11-39](https://github.com/user-attachments/assets/51071e1d-e676-4dcf-bb09-ef56e9a4ff68)
+
+
+**Timing analysis with ideal clocks using openSTA**
 
