@@ -1,4 +1,4 @@
-# ASIC Design Class Repository
+![Screenshot from 2024-11-13 17-35-40](https://github.com/user-attachments/assets/3665d0f5-1a06-43c2-a33a-f44a81e36589)# ASIC Design Class Repository
 
 ## GitHub Repository: Yogesh Goyal, IMT2021542
 
@@ -3225,4 +3225,128 @@ Inverter layout:
 
 Identify NMOS:
 
+![Screenshot from 2024-11-13 17-34-34](https://github.com/user-attachments/assets/b4953fc0-acff-4d6b-967a-cd77e0d5620c)
+
+
+Identify PMOS:
+![nmos](https://github.com/user-attachments/assets/99440174-8ce8-4b4d-acf4-b23c9214a9b0)
+
+
+Output Y:
+![Screenshot from 2024-11-13 17-35-40](https://github.com/user-attachments/assets/e74b9579-55e2-4848-846d-4029651f96ce)
+
+
+
+PMOS source connected to VDD:
+![Screenshot from 2024-11-13 17-37-14](https://github.com/user-attachments/assets/102c94a3-4b07-45d6-b58a-a47f3d1ab3d5)
+
+
+
+NMOS source connected to VSS:
+
+![Screenshot from 2024-11-13 17-37-29](https://github.com/user-attachments/assets/358aa97d-0a31-4158-b112-6e66277467f5)
+
+
+Spice extraction of inverter in Magic. Run these in the tkcon window:
+
+```
+# Check current directory
+pwd
+extract all
+ext2spice cthresh 0 rthresh 0
+ext2spice
+```
+
+![Screenshot from 2024-11-13 17-38-48](https://github.com/user-attachments/assets/80067d47-e719-4310-9619-7a18c141715e)
+
+
+To view the spice file:
+
+![Screenshot from 2024-11-13 17-40-28](https://github.com/user-attachments/assets/af9c5c2c-d88a-45dd-a8d7-91215984e46b)
+![Screenshot from 2024-11-13 17-40-44](https://github.com/user-attachments/assets/d24dbc85-079b-432b-b40d-8704831efe46)
+
+
+
+
+Now modify the `sky130_inv.spice` file to find the transient respone:
+
+```
+* SPICE3 file created from sky130_inv.ext - technology: sky130A
+
+.option scale=0.01u
+.include ./libs/pshort.lib
+.include ./libs/nshort.lib
+
+//.subckt sky130_inv A Y VPWR VGND
+M1000 Y A VGND VGND nshort_model.0 w=35 l=23
++  ad=1.44n pd=0.152m as=1.37n ps=0.148m
+M1001 Y A VPWR VPWR pshort_model.0 w=37 l=23
++  ad=1.44n pd=0.152m as=1.52n ps=0.156m
+
+VDD VPWR 0 3.3V
+VSS VGND 0 0V
+Va A VGND PULSE(0V 3.3V 0 0.1ns 0.1ns 2ns 4ns)
+
+C0 A VPWR 0.0774f
+C1 VPWR Y 0.117f
+C2 A Y 0.0754f
+C3 Y VGND 2f
+C4 A VGND 0.45f
+C5 VPWR VGND 0.781f
+//.ends
+
+.tran 1n 20n
+.control
+run
+.endc
+.end
+```
+
+Now, simulate the spice netlist
+```
+ngspice sky130_inv.spice
+```
+
+![Screenshot from 2024-11-13 17-49-27](https://github.com/user-attachments/assets/7796f9f9-7969-4afb-95d8-e3a59045d9be)
+
+
+To plot the waveform:
+
+```
+plot y vs time a
+```
+![Screenshot from 2024-11-13 17-50-16](https://github.com/user-attachments/assets/bf9819e2-67e9-4701-9085-e41bfc24599b)
+
+
+Using this transient response, we will now characterize the cell's slew rate and propagation delay:
+
+Rise Transition: Time taken for the output to rise from 20% to 80% of max value
+Fall Transition: Time taken for the output to fall from 80% to 20% of max value
+Cell Rise delay: difference in time(50% output rise) to time(50% input fall)
+Cell Fall delay: difference in time(50% output fall) to time(50% input rise)
+
+```
+Rise Transition : 2.24638 - 2.18242 =  0.06396 ns = 63.96 ps
+Fall Transition : 4.0955 - 4.05536 =  0.0419 ns = 41.9 ps
+Cell Rise Delay : 2.21144 - 2.15008 = 0.06136 ns = 61.36 ps
+Cell Fall Delay : 4.07807 - 4.05 =0.02 ns = 20 ps
+```
+
+Magic Tool options and DRC Rules:
+
+Now, go to home directory and run the below commands:
+
+```
+cd
+wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
+tar xfz drc_tests.tgz
+cd drc_tests
+ls -al
+gvim .magicrc
+magic -d XR &
+```
+
+
+![Screenshot from 2024-11-13 17-54-12](https://github.com/user-attachments/assets/22f2512e-8d30-484f-89f2-32ae3def0a84)
+#### Day-4: Pre-layout timing analysis and importance of good clock tree
 
