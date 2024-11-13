@@ -3348,5 +3348,29 @@ magic -d XR &
 
 
 ![Screenshot from 2024-11-13 17-54-12](https://github.com/user-attachments/assets/22f2512e-8d30-484f-89f2-32ae3def0a84)
+First load the poly file by load poly.mag on tkcon window.
+![Screenshot from 2024-11-13 18-56-25](https://github.com/user-attachments/assets/b4ff3b2f-5994-4647-8f72-422ca2a99350)
+
+
+
+We can see that Poly.9 is incorrect.
+
+Add the below commands in the sky130A.tech
+![Screenshot from 2024-11-13 19-02-21](https://github.com/user-attachments/assets/f59d598c-eada-4fff-9b35-c213578ff7ad)
+![Screenshot from 2024-11-13 19-09-11](https://github.com/user-attachments/assets/190107b6-fd41-4f95-95d3-2763946418a3)
+
+
+
+Run the commands in tkcon window:
+
+```
+tech load sky130A.tech
+drc check
+drc why
+```
+![Screenshot from 2024-11-13 19-09-43](https://github.com/user-attachments/assets/94c8dec2-d847-420f-a7c6-041c61354a2c)
+
+
+
 #### Day-4: Pre-layout timing analysis and importance of good clock tree
 
