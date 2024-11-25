@@ -4450,11 +4450,12 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
 <img width="1436" alt="Screenshot 2024-11-26 at 2 17 15 AM" src="https://github.com/user-attachments/assets/b3c30131-ab81-498a-98f9-d07859649ab6">
 
 Synthesis Reports:
-<img width="1440" alt="Screenshot 2024-11-26 at 2 40 08 AM" src="https://github.com/user-attachments/assets/86f74ae1-eb8c-4395-9767-b0ad48017ba2">
-<img width="1440" alt="Screenshot 2024-11-26 at 2 39 58 AM" src="https://github.com/user-attachments/assets/0a6aca30-bdf1-478a-92c1-4c6b953586f1">
+
 <img width="1440" alt="Screenshot 2024-11-26 at 2 21 30 AM" src="https://github.com/user-attachments/assets/f091442d-9fdd-4381-9989-cbb6564d3292">
 <img width="1440" alt="Screenshot 2024-11-26 at 2 21 02 AM" src="https://github.com/user-attachments/assets/a23e8fa6-344e-4e80-b22b-1b96eab025d9">
 <img width="1439" alt="Screenshot 2024-11-26 at 2 20 38 AM" src="https://github.com/user-attachments/assets/33419357-82cd-4ff0-a055-6bbd9da418d9">
+<img width="1440" alt="Screenshot 2024-11-26 at 2 40 08 AM" src="https://github.com/user-attachments/assets/86f74ae1-eb8c-4395-9767-b0ad48017ba2">
+<img width="1440" alt="Screenshot 2024-11-26 at 2 39 58 AM" src="https://github.com/user-attachments/assets/0a6aca30-bdf1-478a-92c1-4c6b953586f1">
 
 
 
