@@ -4413,3 +4413,54 @@ Now, go to flow directory
 │   ├── util            
 │   ├── scripts             
 ```
+Automated RTL2GDS Flow for VSDBabySoC:
+
+- Create a directory named `vsdbabysoc` inside `OpenROAD-flow-scripts/flow/designs/sky130hd`.  
+- Copy the folders `gds`, `include`, `lef`, and `lib` from the `VSDBabySoC` folder on your system into this new directory.  
+
+- Ensure the following files are present in each folder:  
+  - **gds folder**: `avsddac.gds`, `avsdpll.gds`  
+  - **include folder**: `sandpiper.vh`, `sandpiper_gen.vh`, `sp_default.vh`, `sp_verilog.vh`  
+  - **lef folder**: `avsddac.lef`, `avsdpll.lef`  
+  - **lib folder**: `avsddac.lib`, `avsdpll.lib`  
+
+- Copy the constraints file `vsdbabysoc_synthesis.sdc` from the `VSDBabySoC` folder into the `vsdbabysoc` directory.  
+- Copy the files `macro.cfg` and `pin_order.cfg` from the `VSDBabySoC` folder into the same directory.  
+
+
+Now run the following commands in terminal:
+
+```
+
+cd OpenROAD-flow-scripts
+
+source env.sh
+
+cd flow
+
+```
+
+### Commands for synthesis:
+
+```
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk synth
+```
+<img width="1440" alt="Screenshot 2024-11-26 at 2 46 37 AM" src="https://github.com/user-attachments/assets/e9d3e588-24ea-4899-9b12-b0518f9aba72">
+
+<img width="1436" alt="Screenshot 2024-11-26 at 2 17 15 AM" src="https://github.com/user-attachments/assets/b3c30131-ab81-498a-98f9-d07859649ab6">
+
+Synthesis Reports:
+<img width="1440" alt="Screenshot 2024-11-26 at 2 40 08 AM" src="https://github.com/user-attachments/assets/86f74ae1-eb8c-4395-9767-b0ad48017ba2">
+<img width="1440" alt="Screenshot 2024-11-26 at 2 39 58 AM" src="https://github.com/user-attachments/assets/0a6aca30-bdf1-478a-92c1-4c6b953586f1">
+<img width="1440" alt="Screenshot 2024-11-26 at 2 21 30 AM" src="https://github.com/user-attachments/assets/f091442d-9fdd-4381-9989-cbb6564d3292">
+<img width="1440" alt="Screenshot 2024-11-26 at 2 21 02 AM" src="https://github.com/user-attachments/assets/a23e8fa6-344e-4e80-b22b-1b96eab025d9">
+<img width="1439" alt="Screenshot 2024-11-26 at 2 20 38 AM" src="https://github.com/user-attachments/assets/33419357-82cd-4ff0-a055-6bbd9da418d9">
+
+
+
+### Commands for floorplan:
+
+```
+make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk floorplan
+```
+
