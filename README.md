@@ -3884,29 +3884,35 @@ exit
 
 **Introduction:**
 
-- **Bombe:** The Bombe was an electro-mechanical machine designed during World War II to decrypt German Enigma-encrypted messages. It was refined and built by Alan Turing and Gordon Welchman at Bletchley Park, UK. The Bombe systematically tested possible rotor settings of the Enigma machine by exploiting known plaintext patterns. Its logical operations helped narrow down the vast number of possible keys, significantly accelerating the decryption process. The Bombe played a critical role in the Allied war effort.
+- **Bombe:** The Bombe was an electro-mechanical machine developed during World War II to decode messages encrypted by the German Enigma machine. It was designed and constructed by Alan Turing and Gordon Welchman at Bletchley Park in the United Kingdom. By leveraging known plaintext patterns, the Bombe systematically tested various rotor configurations of the Enigma, greatly reducing the number of possible keys. Its logical processes significantly sped up the decryption effort, making it a vital tool in the Allied war strategy.
 
-- **ENIAC (Electronic Numerical Integrator and Computer):** It was developed during World War II by John Presper Eckert and John Mauchly at the University of Pennsylvania, was the first general-purpose, fully electronic digital computer. Completed in 1945, it was designed to compute artillery firing tables for the U.S. Army. ENIAC used vacuum tubes instead of mechanical or electromechanical components. However, it lacked a stored-program capability, requiring manual reconfiguration for each new task. ENIAC demonstrated the immense potential of electronic computing for large-scale numerical problems.
+- **ENIAC (Electronic Numerical Integrator and Computer):** ENIAC, created during World War II by John Presper Eckert and John Mauchly at the University of Pennsylvania, holds the distinction of being the first fully electronic, general-purpose digital computer. Completed in 1945, its primary role was to calculate artillery firing tables for the U.S. Army. Unlike earlier machines, ENIAC utilized vacuum tubes instead of mechanical components. However, it did not have the ability to store programs, requiring manual reconfiguration for each new computation. ENIAC showcased the tremendous potential of electronic computing for handling large-scale mathematical problems.
 
-- **EDVAC (Electronic Discrete Variable Automatic Computer):** EDVAC, also developed by Eckert and Mauchly with conceptual input from John von Neumann, was one of the first computers to implement the stored-program concept. Completed in 1949, EDVAC represented a significant improvement over ENIAC by using binary representation instead of decimal and storing both data and instructions in memory. This innovation simplified programming and laid the groundwork for the modern von Neumann architecture.
+- **EDVAC (Electronic Discrete Variable Automatic Computer):** EDVAC, also spearheaded by Eckert and Mauchly with theoretical guidance from John von Neumann, was among the first computers to adopt the stored-program model. Completed in 1949, EDVAC marked a significant advancement over ENIAC by employing binary coding rather than decimal and integrating both instructions and data within its memory. This innovation simplified programming and became a cornerstone for the modern von Neumann computer architecture.
+
 
 **50 Years of Microprocessor Trend Data:**
 
 <img width="771" alt="Screenshot 2024-11-26 at 12 28 34 AM" src="https://github.com/user-attachments/assets/b9ee63e3-bb04-42b9-a84e-858a8649672a">
 
 
-**The Key metrics are:**
+**The Key Metrics are:**
 
-- **Transistors (Orange Triangles):** The number of transistors on a microprocessor chip (in thousands) has increased exponentially, following Moore's Law, which predicts a doubling approximately every two years. This growth enabled more complex and capable processors, reaching the range of billions of transistors by the 2020s.
-- **Single-Thread Performance (Blue Circles):** It is measured using SpecINT. It indicates the computational ability of a single processor core. Performance grew steadily due to improvements in architecture, instruction-level parallelism, and clock speeds, but the growth rate slowed post-2005 due to physical limitations like power and heat.
-- **Frequency (Green Diamonds):** Processor clock speed (in MHz) rose steadily until the early 2000s but then stagnated as increasing clock speeds became inefficient due to heat dissipation issues.
-- **Typical Power (Red Triangles):** Power consumption increased with transistor density and frequency, becoming a critical design challenge around the mid-2000s.
-- **Number of Logical Cores (Black Dots):** The transition to multi-core processors gained momentum in the mid-2000s as a response to the stagnation in single-thread performance. By increasing the number of cores, processors enabled more efficient parallel processing, leading to significant improvements in overall performance
+- **Transistors (Orange Triangles):** The number of transistors on microprocessor chips (in thousands) has grown exponentially, aligning with Moore's Law, which predicts a doubling approximately every two years. By the 2020s, processors contained billions of transistors, enabling greater complexity and functionality.  
 
-**Key Milestones**
+- **Single-Thread Performance (Blue Circles):** Measured using SpecINT, this metric reflects the processing power of a single core. Performance improved steadily due to advances in architecture and clock speeds, but gains slowed after 2005 due to physical constraints like heat and power limits.  
 
-- **iPhone Release (~2007):** Signals the emergence of mobile computing, where power efficiency became as crucial as performance. This catalyzed innovations in low-power processor designs.
-- **Datacenter-Scale Computing (Post-2010):** Marks the rise of cloud computing and large-scale data centers, where energy efficiency, scalability, and parallelism became central concerns.
+- **Frequency (Green Diamonds):** Clock speeds (in MHz) increased consistently until the early 2000s but plateaued as further increases became inefficient due to thermal limitations.  
+
+- **Typical Power (Red Triangles):** Power consumption rose with transistor density and frequency, becoming a critical challenge by the mid-2000s as designs struggled to balance performance and efficiency.  
+
+- **Number of Logical Cores (Black Dots):** Multi-core processors gained prominence after single-thread performance stagnated. By adding cores, processors improved parallel processing and overall performance, especially from the mid-2000s onward.  
+
+**Key Milestones**  
+
+- **iPhone Release (~2007):** Marked the shift toward mobile computing, driving innovations in energy-efficient processor designs to prioritize performance within strict power limits.  
+
+- **Datacenter-Scale Computing (Post-2010):** Highlighted the importance of scalability, parallelism, and energy efficiency as cloud computing and large-scale data centers became critical to modern computing.
 
 **Path to zetta-scale computing**
 
@@ -3928,56 +3934,54 @@ The path to zetta-scale computing, tracing the evolution of computing performanc
 <img width="822" alt="Screenshot 2024-11-26 at 12 29 17 AM" src="https://github.com/user-attachments/assets/107a890b-28be-4e3a-8d89-05267fd81b17">
 
 
-This diagram illustrates the evolving landscape of CMOS (Complementary Metal-Oxide-Semiconductor) technology and highlights emerging materials, structures, and processes being explored for next-generation semiconductor devices. These innovations aim to address the challenges of scaling CMOS technology down to the 1nm node and beyond.
+This diagram highlights advancements in CMOS (Complementary Metal-Oxide-Semiconductor) technology, focusing on new materials, architectures, and processes aimed at overcoming scaling challenges as technology approaches the 1nm node and beyond.
 
+- **Channel Material**  
+  - **Current Trends**:  
+    - Silicon (Si) dominates as the channel material in CMOS transistors, with **strained SiGe** used to enhance carrier mobility in high-performance devices.  
 
-- **Channel Material**
-  - **Current Trends**: 
-    - Silicon (Si) is the primary material used for the channel in traditional CMOS transistors, with **strained SiGe** (Silicon-Germanium) being used in some high-performance applications to enhance carrier mobility.
-  
-  - **Future Materials**: 
-    - **2D materials** such as MoS₂ (Molybdenum Disulfide) are being explored due to their potential for better electrical characteristics at smaller scales.
-    - **Germanium (Ge)** is gaining interest as it offers higher electron mobility, which could significantly boost transistor performance at small nodes.
+  - **Future Materials**:  
+    - **2D materials** like MoS₂ (Molybdenum Disulfide) are being explored for superior electrical properties at smaller scales.  
+    - **Germanium (Ge)** offers higher mobility, promising better performance for next-generation nodes.  
 
-- **Patterning**
-  - **Current Techniques**: 
-    - **Deep Ultraviolet (DUV)** lithography is the most commonly used technique for defining transistor features, with **ArF (Argon Fluoride)** and **KrF (Krypton Fluoride)** lasers operating at different wavelengths.
-  
-  - **Next-Gen**: 
-    - **Extreme Ultraviolet (EUV)** lithography is expected to be a key technology for sub-7nm nodes. **High-NA (Numerical Aperture) EUV** will further improve the resolution for even smaller transistor nodes, pushing the boundaries of Moore's Law.
+- **Patterning**  
+  - **Current Techniques**:  
+    - **Deep Ultraviolet (DUV)** lithography, using **ArF** and **KrF** lasers, is standard for defining features in current CMOS technologies.  
 
-- **Gate Stack Material**
-  - **Current Materials**: 
-    - **High-K metal gates (HKMG)** are used in the gate stack of modern FETs to reduce gate leakage current and improve switching performance.
-  
-- **Next-Gen Candidates**:
-    - **NC-FET (Negative Capacitance FET)**: This is a promising transistor design that leverages ferroelectric materials to reduce power consumption by enabling lower voltage operation.
-    - **TFET (Tunnel FET)**: TFETs use quantum tunneling to switch on and off, offering a significant reduction in power consumption compared to conventional FETs, especially for low-power applications.
+  - **Next-Gen**:  
+    - **Extreme Ultraviolet (EUV)** lithography is critical for sub-7nm nodes, with **High-NA EUV** enhancing resolution to push Moore's Law further.  
 
-- **Interconnection Material**
-  - **Current Materials**: 
-    - **Copper (Cu)** is the primary material used for interconnects due to its low resistivity, which helps in minimizing power loss and delays in transistor connections.
-  
-  - **Next-Gen Materials**:
-    - **Ruthenium (Ru)** and **Compound metals** are being investigated for their potential to reduce resistance and improve performance in ultra-small transistors.
-    - **Topological semi-metals** may offer unique properties, such as lower resistivity and increased performance at the atomic scale.
+- **Gate Stack Material**  
+  - **Current Materials**:  
+    - Modern transistors use **High-K metal gates (HKMG)** to reduce leakage and improve switching performance.  
 
+  - **Next-Gen Candidates**:  
+    - **NC-FET (Negative Capacitance FET)**: Uses ferroelectric materials to enable lower-voltage, energy-efficient operation.  
+    - **TFET (Tunnel FET)**: Leverages quantum tunneling for ultra-low-power applications.  
 
-- **Device Structure**
-  - **Current Architectures**: 
-    - **FinFET** and **planar** transistors are used to maintain performance at smaller nodes. FinFETs, in particular, help improve control over short-channel effects by using a 3D structure.
-  
-  - **Next-Gen Architectures**:
-    - **3DS-FET (3D Stacked FET)**: These are three-dimensional transistors where multiple layers of devices are stacked vertically, reducing footprint and improving performance.
-    - **MBC-FET (Multi-Bridge Channel FET)**: This structure aims to enhance drive current by creating multiple channels within the same device.
-    - **VFET (Vertical FET)**: VFETs utilize vertical channels to improve density and reduce power consumption.
+- **Interconnection Material**  
+  - **Current Materials**:  
+    - **Copper (Cu)** remains the primary choice for interconnects, minimizing resistivity and power loss.  
 
-- **Design Co-Optimization**
-  - **DTCO (Design-Technology Co-Optimization)**: 
-    - DTCO focuses on integrating new design techniques with advanced process technologies to maximize chip performance, often involving **backside interconnects (BSI)**, where interconnections are made at the back of the wafer for improved signal integrity and reduced latency.
-  
-  - **STCO (System-Technology Co-Optimization)**: 
-    - This approach involves optimizing both the system architecture and the underlying technology. One example is the use of **chiplets**, which allow for modular, customized designs by integrating multiple smaller chips into one package, offering flexibility and reducing the complexity of scaling single-chip designs.
+  - **Next-Gen Materials**:  
+    - **Ruthenium (Ru)** and **Compound metals** are being evaluated for lower resistance in nanoscale transistors.  
+    - **Topological semi-metals** offer potential for improved performance at atomic scales.  
+
+- **Device Structure**  
+  - **Current Architectures**:  
+    - **FinFET** and planar transistors dominate, with FinFETs offering better short-channel control via 3D structures.  
+
+  - **Next-Gen Architectures**:  
+    - **3DS-FET (3D Stacked FET)**: Stacks devices vertically for improved performance and reduced footprint.  
+    - **MBC-FET (Multi-Bridge Channel FET)**: Enhances drive current with multiple parallel channels.  
+    - **VFET (Vertical FET)**: Uses vertical channels for higher density and lower power consumption.  
+
+- **Design Co-Optimization**  
+  - **DTCO (Design-Technology Co-Optimization)**:  
+    - Integrates design strategies with advanced processes, including **backside interconnects (BSI)** to improve signal integrity and reduce latency.  
+
+  - **STCO (System-Technology Co-Optimization)**:  
+    - Optimizes system architecture and technology through innovations like **chiplets**, allowing modular designs for greater flexibility and scalability.
 
 #### FinFETs
 <img width="810" alt="Screenshot 2024-11-26 at 12 29 32 AM" src="https://github.com/user-attachments/assets/45f2ea9f-4dd0-4eb8-9ebc-a30fed36fecd">
@@ -4072,34 +4076,34 @@ FEOL refers to the initial stages of semiconductor manufacturing where the activ
 
 **Key Technology Nodes and Innovations**
 
-- **22 nm**:
-  - Introduction of **FinFET (Tri-Gate)** transistors, which reduce leakage and improve gate control.
-  - Use of **self-aligned contacts (SAC)** and **copper interconnects (Co+Cu BEOL)**.
+- **22 nm**:  
+  - Introduction of **FinFET (Tri-Gate)** transistors for improved gate control and reduced leakage.  
+  - Use of **self-aligned contacts (SAC)** and **copper interconnects (Co+Cu BEOL)**.  
 
-- **14 nm**:
-  - Transition to **unidirectional metal routing** for better density.
-  - Implementation of **SADP (Self-Aligned Double Patterning)** and **SDB (Single Diffusion Break)** for precise layout.
+- **14 nm**:  
+  - Shift to **unidirectional metal routing** for enhanced density.  
+  - Adoption of **SADP (Self-Aligned Double Patterning)** and **SDB (Single Diffusion Break)** for precise layouts.  
 
-- **10 nm**:
-  - Adoption of **advanced patterning techniques** such as:
-    - **SA-SDB** (Self-Aligned SDB)
-    - **LELELE** (Litho-Etch-Litho-Etch-Litho-Etch)
-    - **SAQP (Self-Aligned Quadruple Patterning)** for tighter geometries.
+- **10 nm**:  
+  - Advanced patterning techniques such as:  
+    - **SA-SDB** (Self-Aligned Single Diffusion Break).  
+    - **LELELE** (Litho-Etch-Litho-Etch-Litho-Etch).  
+    - **SAQP (Self-Aligned Quadruple Patterning)** for tighter feature scaling.  
 
-- **7 nm**:
-  - Introduction of **Extreme Ultraviolet Lithography (EUV)** to simplify the patterning process and reduce overlay errors.
+- **7 nm**:  
+  - Adoption of **Extreme Ultraviolet Lithography (EUV)** to simplify patterning and reduce overlay errors.  
 
-- **5 nm**:
-  - Integration of **SiGe (Silicon-Germanium) channels** for PMOS to enhance hole mobility.
-  - Use of **EUV SA-LELE** (Self-Aligned Litho-Etch-Litho-Etch).
+- **5 nm**:  
+  - Use of **SiGe (Silicon-Germanium) channels** in PMOS to enhance hole mobility.  
+  - Implementation of **EUV SA-LELE** (Self-Aligned Litho-Etch-Litho-Etch).  
 
-- **3 nm / 2 nm / 1.4 nm**:
-  - Transition to **Gate-All-Around (GAA)** nanosheet transistors for improved electrostatic control.
-  - GAA stacks nanosheets or nanowires horizontally to maximize current drive.
+- **3 nm / 2 nm / 1.4 nm**:  
+  - Transition to **Gate-All-Around (GAA)** nanosheet transistors for better electrostatic control.  
+  - Stacking nanosheets or nanowires horizontally to increase current drive.  
 
-- **Sub-1 nm**:
-  - Development of **CFET (Complementary FET)**, which vertically stacks NMOS over PMOS to save area.
-  - Use of **2D materials**, such as **MoS₂**, for atomic-scale channel thickness in **2D FETs**.
+- **Sub-1 nm**:  
+  - Development of **CFET (Complementary FET)**, vertically stacking NMOS over PMOS to save space.  
+  - Exploration of **2D materials**, like **MoS₂**, for atomic-scale channels in **2D FETs**.  
 
 <img width="805" alt="Screenshot 2024-11-26 at 12 31 03 AM" src="https://github.com/user-attachments/assets/347bcf37-2027-44ac-acad-d6534f9d5a3a">
 
