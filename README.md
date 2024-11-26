@@ -4481,6 +4481,88 @@ export SKIP_GATE_CLONING = 1
 
 # export CORE_UTILIZATION=0.1  # Reduce this value to allow more whitespace for routing.
 ```
+# Step 1: Synthesis and Floorplanning
+
+Floorplanning is a critical step in the VLSI physical design process. It involves arranging blocks and macros within the chip/core area to achieve optimal performance, power, and area efficiency while ensuring reliable routing.
+
+## **Key Objectives**
+- Minimize area, wire length, power consumption, and timing delays.
+- Ensure smooth routing and chip reliability.
+
+---
+
+## **Inputs for Floorplanning**
+- **Gate-level Netlist**: Describes the logical connectivity (`.v` file).
+- **Libraries**: Physical and logical libraries (`.lefs` and `.libs`) for standard cells, macros, and IO pads.
+- **Design Constraints**: Timing and power constraints (`.sdc` file).
+- **RC Tech File**: (`TLU+ file`) Provides resistance-capacitance values for interconnect delays.
+- **Technology File**: Describes process details (`.tf` file).
+- **Partitioning Info**: Logical separation of the design.
+- **Floorplanning Parameters**: Core dimensions (height, width, aspect ratio).
+
+---
+
+## **Outputs of Floorplanning**
+- **Core/Die Area**: Defined physical layout of the design.
+- **IO Placement**: Locations of input/output pins.
+- **Macro Placement**: Positioned macro locations.
+- **Cell Placement Areas**: Regions allocated for standard cells.
+- **Power Grid**: Power distribution layout.
+- **Blockages**: Restricted areas where components cannot be placed.
+
+---
+
+## **Control Parameters**
+- **Aspect Ratio**: Determines height-to-width ratio, impacting routing and congestion.
+- **Core Utilization**: Percentage of core area occupied by cells, macros, and blockages.
+
+---
+
+## **Floorplanning Steps**
+1. **Define Dimensions**: Set core/die size.
+2. **Place IO Pins**: Arrange input/output pins along chip boundaries.
+3. **Power Planning**: Design power grid and distribution.
+4. **Macro Placement**: Manually place macros using flylines for guidance.
+5. **Create Standard Cell Rows**: Allocate areas for standard cell placement.
+6. **Add Blockages**: Define regions to restrict placement or routing.
+
+---
+
+## **Key Concepts**
+- **Standard Cell Rows**: Pre-defined areas for cell placement, organized in rows.
+- **Flylines**: Virtual links guiding logical macro placement.
+- **Halo (Keep-Out Margin)**: Buffer zones around macros to prevent overlap.
+
+---
+
+## **Impact of Poor Floorplanning**
+- **Increased Area & Power**: Inefficiencies in layout can waste space and energy.
+- **Timing Challenges**: Poor placement can cause timing violations.
+- **Reliability Issues**: May compromise chip performance and durability.
+
+---
+
+## **Qualities of a Good Floorplan**
+- Meets timing and congestion goals.
+- Optimizes area and power usage.
+- Ensures smooth routing and placement.
+
+---
+
+## **Automation and Tips**
+- **Automatic Macro Placement**: Automated tools can generate floorplans but may need manual refinement.
+- **Macro Placement Tips**:
+  - Align with data flow and hierarchy.
+  - Ensure macros are properly oriented with pins facing the core.
+  - Maintain adequate routing channels.
+
+---
+
+## **Blockage Types**
+- **Soft Blockages**: Can be modified during placement.
+- **Hard Blockages**: Permanent restrictions.
+- **Partial Blockages**: Allow some modifications to mitigate congestion.
+
 
 Now run the following commands in terminal:
 
@@ -4533,6 +4615,7 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_floorplan
 <img width="1440" alt="Screenshot 2024-11-26 at 4 43 31 AM" src="https://github.com/user-attachments/assets/b1edad87-13b5-4479-8823-da20115576b3">
 <img width="1437" alt="Screenshot 2024-11-26 at 4 44 17 AM" src="https://github.com/user-attachments/assets/52770ca0-1030-423c-bf69-1dd8de8fd31d">
 
+### Commands for placement:
 ```
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk place
 ```
@@ -4557,6 +4640,71 @@ Heatmap:
 <img width="1440" alt="Screenshot 2024-11-26 at 4 45 11 AM" src="https://github.com/user-attachments/assets/d2b3dfaf-fdb7-426b-a726-ceead38ee10c">
 
 <img width="1365" alt="Screenshot 2024-11-26 at 4 47 07 AM" src="https://github.com/user-attachments/assets/ac261977-925c-4235-9e29-d48674325fe1">
+
+### CTS:
+CTS involves connecting the clock signal from the clock port to the clock pins of sequential cells while minimizing insertion delay and balancing skew. The clock network is typically categorized as a high fanout net, which requires special handling due to its significant power consumption—often accounting for 30-40% of total chip power—and its susceptibility to electromigration (EM) effects.
+Key Objectives of CTS
+
+*	Minimize Insertion Delay: This is crucial for ensuring that the clock signal reaches all components in a timely manner, thus maintaining the overall performance of the design.
+
+*	Balance Skew: Skew refers to the difference in arrival times of the clock signal at different sequential elements. Balancing skew is vital to ensure synchronous operation of the circuit.
+
+*	Power Optimization: Since the clock network consumes a substantial amount of power, optimizing its design can lead to significant energy savings.
+
+**Steps in Clock Tree Synthesis:**
+
+The CTS process typically includes the following steps:
+
+*	Preparation: This involves checking the legality of the design, ensuring power connections are correct, and verifying that the timing quality of results (QoR) is acceptable.
+
+*	Clustering: Grouping sink pins based on their geometric locations to facilitate better skew management.
+
+*	Buffer Insertion: Automatically inserting buffers and inverters along the clock paths to manage load and reduce insertion delay.
+
+*	Balancing: Using clock buffers and inverters to achieve a balanced clock distribution across the design.
+
+*	Post-Conditioning: Final adjustments to ensure that all design rules are met and that the clock tree operates within specified parameters for skew and insertion delay.
+
+**Types of Clock Tree Structures:**
+--------
+
+Several structures can be utilized for building the clock tree, including:
+
+*	H-Tree Structure: A balanced tree structure that minimizes skew.
+*	X-Tree Structure: Similar to the H-tree but optimized for different geometries.
+*	Geometric Matching Algorithm (GMA): A method for optimizing the layout of the clock tree.
+*	Pi Tree Structure: A structure that balances loads effectively.
+*	Fishbone Structure: A more complex design that can handle varying loads and distances.
+
+**Inputs and Outputs of CTS:**
+-------
+**Inputs Required for CTS:**
+
+*	Placement Database (DB): Contains the netlist after placement, including various technology files and specifications.
+*	Clock Tree Specification File: Defines the requirements and constraints for the clock tree.
+*	Library Files: Include information on clock buffers and inverters used in the design.
+
+**Outputs of CTS:**
+
+After the CTS process, the outputs typically include:
+
+*	A netlist that reflects the clock tree configuration.
+*	Timing reports detailing setup and hold times.
+*	Skew and latency reports to assess clock performance.
+
+**Quality Checks Post-CTS:**
+
+After completing the CTS, several checks are necessary to ensure the clock tree meets design goals:
+
+*	Insertion Delay: Must meet target values.
+*	Skew Balancing: Should be within acceptable limits.
+*	Signal Integrity: Ensuring minimal crosstalk and other noise effects.
+*	Power Consumption: Evaluating the clock tree's power usage to ensure it aligns with design specifications.
+
+In summary, Clock Tree Synthesis is a fundamental aspect of VLSI design that directly impacts the performance, power efficiency, and reliability of integrated circuits. Proper execution of CTS ensures that the clock signal is effectively distributed, enabling synchronous operation of all components within the design.
+
+
+**Command to run Clock Tree Synthesis (CTS):**
 
 ```
 make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk cts
