@@ -4481,7 +4481,7 @@ export SKIP_GATE_CLONING = 1
 
 # export CORE_UTILIZATION=0.1  # Reduce this value to allow more whitespace for routing.
 ```
-# Step 1: Synthesis and Floorplanning
+### Synthesis and Floorplanning
 
 Floorplanning is a critical step in the VLSI physical design process. It involves arranging blocks and macros within the chip/core area to achieve optimal performance, power, and area efficiency while ensuring reliable routing.
 
@@ -4722,6 +4722,7 @@ make DESIGN_CONFIG=./designs/sky130hd/vsdbabysoc/config.mk gui_cts
 <img width="1437" alt="Screenshot 2024-11-26 at 5 15 52 AM" src="https://github.com/user-attachments/assets/89fb5b49-3df5-4546-a5db-59dd737f8db2">
 <img width="1439" alt="Screenshot 2024-11-26 at 5 16 33 AM" src="https://github.com/user-attachments/assets/68d8caa4-39f6-4e31-91fa-9dcb20882673">
 
+## In the above screenshots we can see the clock name as clk_yog
 
 CTS final report:
 
